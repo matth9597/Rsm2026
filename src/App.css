@@ -1,45 +1,21 @@
-/* Container principal flexible */
+/* --- CONFIGURATION DE BASE --- */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #f4f4f4;
+}
+
 .app-container {
   max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start; /* Tout aligné à gauche */
+  text-align: left;
 }
 
-/* Boutons qui s'adaptent */
-.button-group {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap; /* Permet de passer à la ligne sur mobile */
-  justify-content: center;
-}
-
-button {
-  padding: 12px 24px;
-  font-size: 16px;
-  cursor: pointer;
-  width: auto;
-  min-width: 150px; /* Largeur minimum pour être cliquable au doigt */
-}
-
-/* --- LA RÈGLE MOBILE --- */
-@media (max-width: 600px) {
-  h1 { font-size: 1.5rem; } /* Titre un peu plus petit */
-  
-  .button-group {
-    flex-direction: column; /* Boutons l'un sous l'autre sur mobile */
-    width: 100%;
-  }
-
-  button {
-    width: 100%; /* Boutons pleine largeur pour plus de confort */
-  }
-}
-
-
-/* --- Style de base --- */
+/* --- EN-TÊTE (LOGO + NOM) --- */
 .header {
   width: 100%;
   background-color: #ffffff;
@@ -58,66 +34,33 @@ button {
 .logo {
   height: 45px;
   width: auto;
-  /* On s'assure qu'il n'y a aucune marge sur l'image */
-  display: block; 
-  margin: 0;
+  display: block;
 }
 
-/* --- Mode WEB --- */
-@media (min-width: 768px) {
-  .header {
-    /* Garde 0 en haut/bas et ajuste les côtés si besoin */
-    padding: 0 50px; 
-  }
-
-  .logo {
-    height: 120px; /* Votre logo prendra toute la hauteur disponible sans espace blanc */
-  }
-
-  .brand-name {
-    font-size: 4rem;
-  }
-}
-
-
+/* Bandeau dynamique sous l'en-tête */
 .sub-header-bande {
   width: 100%;
-  background-color: #333; /* Couleur de la bande (anthracite) */
-  color: white;           /* Couleur du texte */
+  background-color: #333;
+  color: white;
   text-align: center;
-  padding: 10px 0;        /* Épaisseur de la bande */
+  padding: 10px 0;
   font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
-@media (min-width: 768px) {
-  .sub-header-bande {
-    padding: 15px 0;
-    font-size: 1.8rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .button-group {
-    flex-direction: column;
-  }
-}
-
-
-
+/* --- ACCUEIL : GROUPES DE SPORTS --- */
 .sport-group {
   margin-bottom: 40px;
   width: 100%;
-  text-align: left; 
 }
 
 .sport-group h2 {
   border-bottom: 2px solid #ddd;
   padding-bottom: 10px;
   margin-bottom: 20px;
-  text-align: left;
+  font-size: 1.8rem;
 }
 
 .button-group {
@@ -125,4 +68,89 @@ button {
   gap: 10px;
   justify-content: flex-start; 
   flex-wrap: wrap;
+}
+
+/* --- BOUTONS UNIFORMES (Home & Details) --- */
+/* On force l'égalité parfaite pour tous les boutons du site */
+button, .btn-inscription, .btn-action {
+  height: 55px;
+  width: 100%;
+  max-width: 350px;
+  padding: 0 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+  flex: none;
+}
+
+/* Couleurs spécifiques */
+.btn-inscription {
+  background-color: #28a745;
+  color: white;
+  margin-bottom: 0; /* Supprime le décalage */
+}
+
+.btn-action {
+  background-color: #007bff;
+  color: white;
+}
+
+/* --- PAGE DETAILS : CONTENEUR DES BOUTONS --- */
+.button-group-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+  margin-bottom: 50px; /* Espace généreux sous le bouton Horaires */
+  width: 100%;
+  align-items: flex-start;
+}
+
+.details-list {
+  width: 100%;
+}
+
+/* --- MODE WEB (ÉCRANS LARGES > 768px) --- */
+@media (min-width: 768px) {
+  .header {
+    padding: 0 50px; 
+  }
+
+  .logo {
+    height: 120px;
+  }
+
+  .brand-name {
+    font-size: 4rem;
+  }
+
+  .sub-header-bande {
+    padding: 15px 0;
+    font-size: 1.8rem;
+  }
+
+  /* Sur PC, les boutons d'accueil ne sont pas forcément en pleine largeur */
+  .button-group button {
+    width: auto;
+    min-width: 180px;
+  }
+}
+
+/* --- MODE MOBILE (< 600px) --- */
+@media (max-width: 600px) {
+  .button-group {
+    flex-direction: column;
+  }
+  
+  /* Les boutons Details restent à 100% de la largeur du mobile */
+  .button-group-details {
+    max-width: 100%;
+  }
 }
