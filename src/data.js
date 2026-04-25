@@ -2,24 +2,57 @@ export const sportsData = {
   soccer_h: {
     categorie: "Soccer Homme",
     slug: "soccer-homme",
-    lienInscription: "https://google.com", // lien formulaire d insciption
+    lienInscriptionEquipe: "https://google.com", // lien formulaire d insciption
     lienHoraires: "https://google.com", // lien calendrier
     sections: [
       { nom: "Type", texte: "Compétition" },
       { nom: "Format", texte: "11 vs 11" },
       {
         nom: "Âge",
-        texte: "2006, 2005, 2004\n(Et toutes les années précédentes)",
+        texte: "Open",
       },
       {
-        nom: "Conditions d'inscription",
-        texte: "50$ par joueur - Paiement via virement",
+        nom: "Frais",
+        texte: "800$ par équipe, 40$ par personne",
       },
-      { nom: "Conditions", lien: "https://google.com" }, // lien JOM
+      { nom: "Conditions", texte: "Maximum 20 joueurs dans l'équipe" }, // lien JOM
+      {
+        nom: "Terrain(s)",
+        texte: "Naturel (éliminatoires) et synthétique (Finale)",
+      },
     ],
     equipes: [
       { nom: "ASC Zato", lienForm: "https://google.com" }, // lien liste de joueurs
       { nom: "Barea", lienForm: "https://google.com" },
+    ],
+  },
+
+  soccer_v: {
+    categorie: "Soccer Vétéran",
+    slug: "soccer-veteran",
+    lienInscriptionEquipe: "https://google.com", // lien formulaire d insciption
+    lienInscriptionIndividuelle: "https://google.com", // lien formulaire d insciption
+    lienHoraires: "https://google.com", // lien calendrier
+    sections: [
+      { nom: "Type", texte: "Compétition" },
+      { nom: "Format", texte: "9 vs 9" },
+      {
+        nom: "Âge",
+        texte: "Né(e) en 1986 ou avant",
+      },
+      {
+        nom: "Frais",
+        texte: "800$ par équipe, 40$ par personne",
+      },
+      { nom: "Conditions", texte: "Maximum 15 joueurs dans l'équipe" }, // lien JOM
+      {
+        nom: "Terrain(s)",
+        texte: "Naturel (éliminatoires) et synthétique (Finale)",
+      },
+    ],
+    equipes: [
+      { nom: "Nostalgia", lienForm: "https://google.com" }, // lien liste de joueurs
+      { nom: "Old Timers", lienForm: "https://google.com" },
     ],
   },
 

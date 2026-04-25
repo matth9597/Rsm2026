@@ -10,24 +10,53 @@ export default function Details() {
       <div className="app-container">Sport non trouvé ou lien invalide.</div>
     );
 
+  const hasSpecificLinks =
+    info.lienInscriptionIndividuelle || info.lienInscriptionEquipe;
+
   return (
     <div className="details-wrapper">
       {/* ── Action buttons ── */}
       <div className="details-actions">
-        {info.lienInscription && (
-          <button
-            className="btn-inscription"
-            onClick={() => window.open(info.lienInscription, "_blank")}
-          >
-            ✦ S'inscrire
-          </button>
+        {hasSpecificLinks ? (
+          <>
+            {info.lienInscriptionEquipe && (
+              <button
+                className="btn-inscription"
+                onClick={() =>
+                  window.open(info.lienInscriptionEquipe, "_blank")
+                }
+              >
+                S'inscrire — Equipe
+              </button>
+            )}
+            {info.lienInscriptionIndividuelle && (
+              <button
+                className="btn-inscription individuelle"
+                onClick={() =>
+                  window.open(info.lienInscriptionIndividuelle, "_blank")
+                }
+              >
+                S'inscrire — Individuel
+              </button>
+            )}
+          </>
+        ) : (
+          info.lienInscription && (
+            <button
+              className="btn-inscription"
+              onClick={() => window.open(info.lienInscription, "_blank")}
+            >
+              S'inscrire
+            </button>
+          )
         )}
+
         {info.lienHoraires && (
           <button
             className="btn-action"
             onClick={() => window.open(info.lienHoraires, "_blank")}
           >
-            Voir les Horaires
+            Calendrier
           </button>
         )}
       </div>

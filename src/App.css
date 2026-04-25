@@ -39,7 +39,7 @@ body {
 }
 
 .brand-name {
-  font-size: 1.6rem;
+  font-size: 1rem;
   font-weight: 700;
   color: #111827;
 }
@@ -67,7 +67,7 @@ body {
 
 .bande-title-left {
   color: #f8fafc;
-  font-size: 0.85rem;
+  font-size: 1.1rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -253,7 +253,7 @@ body {
 
 .section-row__link {
   font-size: 0.9rem;
-  color: #2563eb;
+  color: #2563ea;
   text-decoration: underline;
   flex: 1;
 }
@@ -329,7 +329,7 @@ body {
   font-size: 1.6rem;
 }
 
-/* ─── LEGACY BUTTONS (Detail pages, inscription etc.) ────────── */
+/* ─── BUTTONS (Detail pages, inscription etc.) ────────── */
 .btn-inscription {
   display: inline-flex;
   align-items: center;
@@ -346,6 +346,10 @@ body {
   transition: background-color 0.15s ease;
   text-decoration: none;
   box-sizing: border-box;
+}
+
+.individuelle {
+  background-color: #16a397;
 }
 
 .btn-inscription:hover {
@@ -408,13 +412,13 @@ body {
 }
 
 .home-icon-img {
-  width: 20px;
+  width: 25px;
   filter: invert(1);
 }
 
 .separateur-vertical {
-  width: 1px;
-  height: 18px;
+  width: 2px;
+  height: 25px;
   background-color: rgba(255, 255, 255, 0.35);
   margin-right: 14px;
   display: inline-block;
@@ -431,12 +435,16 @@ body {
   }
 
   .brand-name {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   .sub-header-bande {
     padding: 12px 0;
     font-size: 1rem;
+  }
+
+  .bande-title-left {
+    font-size: 1.8rem;
   }
 
   .home-grid {

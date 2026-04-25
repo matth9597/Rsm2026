@@ -10,7 +10,7 @@ const sportCategories = [
     colorBorder: "#bbf7d0",
     variants: [
       { id: "soccer_h", label: "Adulte Homme" },
-      { id: "soccer_v", label: "Adulte Vétéran" },
+      { id: "soccer_v", label: "Vétéran 40+" },
       { id: "soccer_m", label: "Mixte (Homme U15 / Femme)" },
       { id: "soccer_j", label: "Junior Kids U13" },
     ],
@@ -58,7 +58,7 @@ export default function Home() {
 
   const navSport = (id) => {
     const sportSlug = sportsData[id].slug;
-    navigate(`/${sportSlug}/details`);
+    navigate(`/${sportSlug}`);
   };
 
   return (
