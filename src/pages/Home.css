@@ -1,0 +1,126 @@
+/* Container principal flexible */
+.app-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Boutons qui s'adaptent */
+.button-group {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap; /* Permet de passer à la ligne sur mobile */
+  justify-content: center;
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  width: auto;
+  min-width: 150px; /* Largeur minimum pour être cliquable au doigt */
+}
+
+/* --- LA RÈGLE MOBILE --- */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
+  } /* Titre un peu plus petit */
+
+  .button-group {
+    flex-direction: column; /* Boutons l'un sous l'autre sur mobile */
+    width: 100%;
+  }
+
+  button {
+    width: 100%; /* Boutons pleine largeur pour plus de confort */
+  }
+}
+
+/* --- Style de base --- */
+.header {
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 0 20px;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  height: 45px;
+  width: auto;
+  /* On s'assure qu'il n'y a aucune marge sur l'image */
+  display: block;
+  margin: 0;
+}
+
+/* --- Mode WEB --- */
+@media (min-width: 768px) {
+  .header {
+    /* Garde 0 en haut/bas et ajuste les côtés si besoin */
+    padding: 0 50px;
+  }
+
+  .logo {
+    height: 120px; /* Votre logo prendra toute la hauteur disponible sans espace blanc */
+  }
+
+  .brand-name {
+    font-size: 4rem;
+  }
+}
+
+.sub-header-bande {
+  width: 100%;
+  background-color: #333; /* Couleur de la bande (anthracite) */
+  color: white; /* Couleur du texte */
+  text-align: center;
+  padding: 10px 0; /* Épaisseur de la bande */
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+@media (min-width: 768px) {
+  .sub-header-bande {
+    padding: 15px 0;
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .button-group {
+    flex-direction: column;
+  }
+}
+
+.sport-group {
+  margin-bottom: 40px;
+  width: 100%;
+  text-align: left;
+}
+
+.sport-group h2 {
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
