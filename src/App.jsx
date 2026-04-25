@@ -1,6 +1,6 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
-import DetailPage from './pages/DetailPage';
+import Details from './pages/Details';
 import './App.css';
 
 export default function App() {
@@ -26,7 +26,7 @@ export default function App() {
       <main className="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/detail" element={<DetailPage />} />
+          <Route path="/details" element={<Details />} />
         </Routes>
       </main>
     </div>
