@@ -154,3 +154,47 @@ button, .btn-inscription, .btn-action {
     max-width: 100%;
   }
 }
+
+.bande-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.bande-title-left {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+  color: white;
+  text-align: left;
+}
+
+.btn-home-simple {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 12px 0 0 !important;
+  width: auto !important;
+  height: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  cursor: pointer !important;
+}
+
+.separateur-vertical {
+  width: 1px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.4);
+  margin-right: 15px;
+  display: inline-block;
+}
+
+.home-icon-img {
+  width: 22px;
+  filter: invert(1);
+}
+
