@@ -5,6 +5,7 @@ const sportCategories = [
   {
     id: "soccer",
     label: "Soccer",
+    icon: "soccer-ball.png",
     color: "#16a34a",
     colorLight: "#f0fdf4",
     colorBorder: "#bbf7d0",
@@ -18,6 +19,7 @@ const sportCategories = [
   {
     id: "basketball",
     label: "Basketball",
+    icon: "basketball.png",
     color: "#ea580c",
     colorLight: "#fff7ed",
     colorBorder: "#fed7aa",
@@ -31,6 +33,7 @@ const sportCategories = [
   {
     id: "volleyball",
     label: "Volleyball",
+    icon: "volleyball.png",
     color: "#537DFD",
     colorLight: "#e9eef7",
     colorBorder: "#B0C6FF",
@@ -42,6 +45,7 @@ const sportCategories = [
   {
     id: "autres",
     label: "Autres activités",
+    icon: "other.png",
     color: "#7c3aed",
     colorLight: "#faf5ff",
     colorBorder: "#ddd6fe",
@@ -76,6 +80,13 @@ export default function Home() {
           >
             <div className="sport-card__header">
               <h2 className="sport-card__title">{cat.label}</h2>
+                {cat.icon && (
+                  <img 
+                    src={`/icons/${cat.icon}`}
+                    alt={cat.label} 
+                    className="sport-card__icon" 
+                  />
+                )}
             </div>
             <div className="sport-card__buttons">
               {cat.variants.map((v) => (
