@@ -1,45 +1,97 @@
-import { useNavigate } from 'react-router-dom';
-import { sportsData } from '../data';
+import { useNavigate } from "react-router-dom";
+import { sportsData } from "../data";
+
+const sportCategories = [
+  {
+    id: "soccer",
+    label: "Soccer",
+    color: "#16a34a",
+    colorLight: "#f0fdf4",
+    colorBorder: "#bbf7d0",
+    variants: [
+      { id: "soccer_h", label: "Adulte Homme" },
+      { id: "soccer_v", label: "Adulte Vétéran" },
+      { id: "soccer_m", label: "Mixte (Homme U15 / Femme)" },
+      { id: "soccer_j", label: "Junior Kids U13" },
+    ],
+  },
+  {
+    id: "basketball",
+    label: "Basketball",
+    color: "#ea580c",
+    colorLight: "#fff7ed",
+    colorBorder: "#fed7aa",
+    variants: [
+      { id: "basketball_f", label: "Adulte Femme" },
+      { id: "basketball_h", label: "Adulte Homme" },
+      { id: "basketball_j", label: "Junior U15" },
+      { id: "basketball_k", label: "Junior Kids" },
+    ],
+  },
+  {
+    id: "volleyball",
+    label: "Volleyball",
+    color: "#537DFD",
+    colorLight: "#e9eef7",
+    colorBorder: "#B0C6FF",
+    variants: [
+      { id: "volleyball_f", label: "Adulte Femme" },
+      { id: "volleyball_h", label: "Adulte Homme" },
+    ],
+  },
+  {
+    id: "autres",
+    label: "Autres activités",
+    color: "#7c3aed",
+    colorLight: "#faf5ff",
+    colorBorder: "#ddd6fe",
+    variants: [
+      { id: "tennis", label: "Tennis" },
+      { id: "petanque", label: "Pétanque" },
+      { id: "soraTononina", label: "Sora-Tononina" },
+    ],
+  },
+];
 
 export default function Home() {
   const navigate = useNavigate();
 
-const navSport = (id) => {
-  const sportSlug = sportsData[id].slug; 
-  navigate(`/${sportSlug}/details`);
-};
+  const navSport = (id) => {
+    const sportSlug = sportsData[id].slug;
+    navigate(`/${sportSlug}/details`);
+  };
 
   return (
-    <div className="app-container">
-
-        <div key='Soccer' className="sport-group">
-            <h2>Soccer</h2>
-            <div className="button-group">
-              <button onClick={() => navSport('soccer_f')}>Adulte Femme</button>
-              <button onClick={() => navSport('soccer_h')}>Adulte Homme</button>
-              <button onClick={() => navSport('soccer_j')}>Junior Kids U13</button>
-              <button onClick={() => navSport('soccer_m')}>Mixte (Homme U15 / Femme)</button>
+    <div className="home-grid-wrapper">
+      <div className="home-grid">
+        {sportCategories.map((cat) => (
+          <div
+            key={cat.id}
+            className="sport-card"
+            style={{
+              "--card-accent": cat.color,
+              "--card-light": cat.colorLight,
+              "--card-border": cat.colorBorder,
+            }}
+          >
+            <div className="sport-card__header">
+              <h2 className="sport-card__title">{cat.label}</h2>
             </div>
-        </div>
-        
-        <div key='Basketball' className="sport-group">
-            <h2>Basketball</h2>
-            <div className="button-group">
-            <button onClick={() => navSport('basketball_f')}>Adulte Femme</button>
-            <button onClick={() => navSport('basketball_h')}>Adulte Homme</button>
-            <button onClick={() => navSport('basketball_j')}>Junior Kids U14</button>
+            <div className="sport-card__buttons">
+              {cat.variants.map((v) => (
+                <button
+                  key={v.id}
+                  className="sport-card__btn"
+                  onClick={() => navSport(v.id)}
+                >
+                  <span className="sport-card__btn-label">{v.label}</span>
+                  <span className="sport-card__btn-arrow">→</span>
+                </button>
+              ))}
             </div>
-        </div>
-
-
-        <div className="sport-group">
-            <h2>Autres activités</h2>
-            <div className="button-group">
-              <button onClick={() => navSport('tennis')}>Tennis</button>
-              <button onClick={() => navSport('petanque')}>Pétanque</button>
-              <button onClick={() => navSport('soraTononina')}>Sora-Tononina</button>
-            </div>
-        </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

@@ -1,114 +1,393 @@
-/* --- CONFIGURATION DE BASE --- */
+/* ─── BASE ─────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: sans-serif;
-  background-color: #f4f4f4;
+  font-family:
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  background-color: #f0f2f5;
+  color: #111827;
 }
 
-.app-container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Tout aligné à gauche */
-  text-align: left;
-}
-
-/* --- EN-TÊTE (LOGO + NOM) --- */
+/* ─── HEADER ────────────────────────────────────────────────── */
 .header {
   width: 100%;
   background-color: #ffffff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  padding: 0 20px; 
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0 20px;
 }
 
 .header-content {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 16px;
 }
 
 .logo {
-  height: 45px;
+  height: 48px;
   width: auto;
   display: block;
 }
 
-/* Bandeau dynamique sous l'en-tête */
+.brand-name {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* ─── SUB-HEADER BAND ───────────────────────────────────────── */
 .sub-header-bande {
   width: 100%;
-  background-color: #333;
-  color: white;
-  text-align: center;
+  background-color: #1e293b;
+  color: #f8fafc;
   padding: 10px 0;
-  font-size: 1.2rem;
-  font-weight: bold;
+  font-size: 0.85rem;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
-/* --- ACCUEIL : GROUPES DE SPORTS --- */
+.bande-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bande-title-left {
+  color: #f8fafc;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* ─── HOME GRID WRAPPER ─────────────────────────────────────── */
+.home-grid-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+/* ─── SPORT CARD ────────────────────────────────────────────── */
+.sport-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.sport-card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.sport-card__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 20px 16px;
+  background: var(--card-light, #f9fafb);
+  border-bottom: 1px solid var(--card-border, #e5e7eb);
+}
+
+.sport-card__icon {
+  font-size: 28px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.sport-card__title {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* ─── CARD BUTTONS ──────────────────────────────────────────── */
+.sport-card__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 8px 0;
+}
+
+.sport-card__btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 13px 20px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #f3f4f6;
+  border-radius: 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  text-align: left;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+  height: auto;
+  max-width: 100%;
+}
+
+.sport-card__btn:last-child {
+  border-bottom: none;
+}
+
+.sport-card__btn:hover {
+  background-color: var(--card-light, #f9fafb);
+  color: var(--card-accent, #111827);
+}
+
+.sport-card__btn:hover .sport-card__btn-arrow {
+  opacity: 1;
+  transform: translateX(2px);
+}
+
+.sport-card__btn-label {
+  flex: 1;
+}
+
+.sport-card__btn-arrow {
+  opacity: 0;
+  color: var(--card-accent, #6b7280);
+  font-size: 1rem;
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease;
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+
+/* ─── LEGACY: app-container (for non-home pages) ────────────── */
+.app-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+
+/* ─── DETAILS PAGE ──────────────────────────────────────────── */
+.details-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 20px 56px;
+}
+
+.details-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+  justify-content: flex-start;
+}
+
+/* Info + Teams shared card */
+.details-card {
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.details-card__label {
+  margin: 0;
+  padding: 14px 20px 0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #9ca3af;
+}
+
+/* Info section rows */
+.section-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 13px 20px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.section-row:last-child {
+  border-bottom: none;
+}
+
+.section-row__key {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #374151;
+  min-width: 180px;
+  flex-shrink: 0;
+}
+
+.section-row__value {
+  font-size: 0.9rem;
+  color: #6b7280;
+  flex: 1;
+}
+
+.section-row__link {
+  font-size: 0.9rem;
+  color: #2563eb;
+  text-decoration: underline;
+  flex: 1;
+}
+
+.section-row__link:hover {
+  color: #1d4ed8;
+}
+
+/* Team rows */
+.team-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 20px;
+  border-bottom: 1px solid #f3f4f6;
+  gap: 12px;
+}
+
+.team-row:last-child {
+  border-bottom: none;
+}
+
+.team-row__name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #111827;
+}
+
+.team-row__link {
+  font-size: 0.85rem;
+  color: #2563eb;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.team-row__link:hover {
+  text-decoration: underline;
+}
+
+/* ─── RESPONSIVE (Details) ──────────────────────────────────── */
+@media (max-width: 480px) {
+  .details-wrapper {
+    padding: 20px 12px 40px;
+  }
+
+  .section-row {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .section-row__key {
+    min-width: unset;
+  }
+
+  .team-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}
+
+/* ─── LEGACY: sport-group (Detail pages etc.) ───────────────── */
 .sport-group {
   margin-bottom: 40px;
   width: 100%;
 }
 
 .sport-group h2 {
-  border-bottom: 2px solid #ddd;
+  border-bottom: 2px solid #e5e7eb;
   padding-bottom: 10px;
   margin-bottom: 20px;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 
-.button-group {
-  display: flex;
-  gap: 10px;
-  justify-content: flex-start; 
-  flex-wrap: wrap;
-}
-
-/* --- BOUTONS UNIFORMES (Home & Details) --- */
-/* On force l'égalité parfaite pour tous les boutons du site */
-button, .btn-inscription, .btn-action {
-  height: 55px;
-  width: 100%;
-  max-width: 350px;
-  padding: 0 20px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  border: none;
-  border-radius: 6px;
-  display: flex;
+/* ─── LEGACY BUTTONS (Detail pages, inscription etc.) ────────── */
+.btn-inscription {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  height: 52px;
+  padding: 0 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  background-color: #16a34a;
+  color: #ffffff;
+  transition: background-color 0.15s ease;
+  text-decoration: none;
   box-sizing: border-box;
-  flex: none;
 }
 
-/* Couleurs spécifiques */
-.btn-inscription {
-  background-color: #28a745;
-  color: white;
-  margin-bottom: 0; /* Supprime le décalage */
+.btn-inscription:hover {
+  background-color: #15803d;
 }
 
 .btn-action {
-  background-color: #007bff;
-  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  padding: 0 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  background-color: #2563eb;
+  color: #ffffff;
+  transition: background-color 0.15s ease;
+  text-decoration: none;
+  box-sizing: border-box;
 }
 
-/* --- PAGE DETAILS : CONTENEUR DES BOUTONS --- */
+.btn-action:hover {
+  background-color: #1d4ed8;
+}
+
+/* ─── DETAIL PAGE BUTTON GROUP ──────────────────────────────── */
+.button-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
 .button-group-details {
   display: flex;
   flex-direction: column;
   gap: 12px;
   margin-top: 20px;
-  margin-bottom: 50px; /* Espace généreux sous le bouton Horaires */
+  margin-bottom: 40px;
   width: 100%;
   align-items: flex-start;
 }
@@ -117,84 +396,70 @@ button, .btn-inscription, .btn-action {
   width: 100%;
 }
 
-/* --- MODE WEB (ÉCRANS LARGES > 768px) --- */
-@media (min-width: 768px) {
-  .header {
-    padding: 0 50px; 
-  }
-
-  .logo {
-    height: 120px;
-  }
-
-  .brand-name {
-    font-size: 4rem;
-  }
-
-  .sub-header-bande {
-    padding: 15px 0;
-    font-size: 1.8rem;
-  }
-
-  /* Sur PC, les boutons d'accueil ne sont pas forcément en pleine largeur */
-  .button-group button {
-    width: auto;
-    min-width: 180px;
-  }
-}
-
-/* --- MODE MOBILE (< 600px) --- */
-@media (max-width: 600px) {
-  .button-group {
-    flex-direction: column;
-  }
-  
-  /* Les boutons Details restent à 100% de la largeur du mobile */
-  .button-group-details {
-    max-width: 100%;
-  }
-}
-
-.bande-content {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 20px;
+/* ─── NAV UTILS ─────────────────────────────────────────────── */
+.btn-home-simple {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0 12px 0 0;
+  cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
 }
 
-.bande-title-left {
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 1.1rem;
-  color: white;
-  text-align: left;
-}
-
-.btn-home-simple {
-  background: transparent !important;
-  border: none !important;
-  padding: 0 !important;
-  margin: 0 12px 0 0 !important;
-  width: auto !important;
-  height: auto !important;
-  display: flex !important;
-  align-items: center !important;
-  cursor: pointer !important;
+.home-icon-img {
+  width: 20px;
+  filter: invert(1);
 }
 
 .separateur-vertical {
   width: 1px;
-  height: 20px;
-  background-color: rgba(255, 255, 255, 0.4);
-  margin-right: 15px;
+  height: 18px;
+  background-color: rgba(255, 255, 255, 0.35);
+  margin-right: 14px;
   display: inline-block;
 }
 
-.home-icon-img {
-  width: 22px;
-  filter: invert(1);
+/* ─── RESPONSIVE ────────────────────────────────────────────── */
+@media (min-width: 768px) {
+  .header {
+    padding: 0 40px;
+  }
+
+  .logo {
+    height: 100px;
+  }
+
+  .brand-name {
+    font-size: 3rem;
+  }
+
+  .sub-header-bande {
+    padding: 12px 0;
+    font-size: 1rem;
+  }
+
+  .home-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
 }
 
+@media (max-width: 480px) {
+  .home-grid-wrapper {
+    padding: 16px 12px 32px;
+  }
+
+  .home-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .sport-card__header {
+    padding: 16px 16px 12px;
+  }
+
+  .sport-card__btn {
+    padding: 13px 16px;
+    font-size: 0.9rem;
+  }
+}

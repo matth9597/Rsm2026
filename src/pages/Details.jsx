@@ -1,54 +1,79 @@
-import { useParams } from 'react-router-dom';
-import { sportsData } from '../data';
+import { useParams } from "react-router-dom";
+import { sportsData } from "../data";
 
 export default function Details() {
-
   const { slug } = useParams();
-  const info = Object.values(sportsData).find(s => s.slug === slug);
+  const info = Object.values(sportsData).find((s) => s.slug === slug);
 
-  if (!info) return <div className="app-container">Sport non trouvé ou lien invalide.</div>;
+  if (!info)
+    return (
+      <div className="app-container">Sport non trouvé ou lien invalide.</div>
+    );
 
   return (
-    <div className="app-container" style={{ textAlign: 'left', alignItems: 'flex-start' }}>
-      
-      <div className="button-group-details">
+    <div className="details-wrapper">
+      {/* ── Action buttons ── */}
+      <div className="details-actions">
         {info.lienInscription && (
-          <button className="btn-inscription" onClick={() => window.open(info.lienInscription, "_blank")}>
-            S'inscrire
+          <button
+            className="btn-inscription"
+            onClick={() => window.open(info.lienInscription, "_blank")}
+          >
+            ✦ S'inscrire
           </button>
         )}
-        
         {info.lienHoraires && (
-          <button className="btn-action" onClick={() => window.open(info.lienHoraires, "_blank")}>
+          <button
+            className="btn-action"
+            onClick={() => window.open(info.lienHoraires, "_blank")}
+          >
             Voir les Horaires
           </button>
         )}
       </div>
 
-      <div className="details-list" style={{ width: '100%' }}>
-        {info.sections.map((section, index) => (
-          <div key={index} style={{ marginBottom: '15px' }}>
-            <strong>{section.nom} : </strong>
-            {section.texte && <span>{section.texte}</span>}
-            {section.lien && (
-              <a href={section.lien} target="_blank" rel="noreferrer" style={{ color: '#007bff', textDecoration: 'underline' }}>
-                 Consulter ici
-              </a>
-            )}
-          </div>
-        ))}
-      </div>
+      {/* ── Info sections ── */}
+      {info.sections && info.sections.length > 0 && (
+        <div className="details-card">
+          <p className="details-card__label">Informations</p>
+          {info.sections.map((section, index) => (
+            <div key={index} className="section-row">
+              <span className="section-row__key">{section.nom}</span>
+              {section.texte && (
+                <span className="section-row__value">{section.texte}</span>
+              )}
+              {section.lien && (
+                <a
+                  href={section.lien}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="section-row__link"
+                >
+                  Consulter ici →
+                </a>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
 
+      {/* ── Teams ── */}
       {info.equipes && info.equipes.length > 0 && (
-        <div style={{ marginTop: '30px', borderTop: '1px solid #ddd', paddingTop: '20px', width: '100%' }}>
-          <strong>Équipes inscrites :</strong>
-          <ul style={{ marginTop: '10px', paddingLeft: '20px' }}>
-            {info.equipes.map((eq, i) => (
-              <li key={i} style={{ marginBottom: '10px' }}>
-                {eq.nom} — <a href={eq.lienForm} target="_blank" rel="noreferrer">Liste des joueurs</a>
-              </li>
-            ))}
-          </ul>
+        <div className="details-card">
+          <p className="details-card__label">Équipes inscrites</p>
+          {info.equipes.map((eq, i) => (
+            <div key={i} className="team-row">
+              <span className="team-row__name">{eq.nom}</span>
+              <a
+                href={eq.lienForm}
+                target="_blank"
+                rel="noreferrer"
+                className="team-row__link"
+              >
+                Liste des joueurs →
+              </a>
+            </div>
+          ))}
         </div>
       )}
     </div>
