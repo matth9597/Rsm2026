@@ -1,14 +1,23 @@
 import { useNavigate } from "react-router-dom";
 import { sportsData } from "../data";
+import {
+  BasketballIcon,
+  VolleyballIcon,
+  SoccerBallIcon,
+  TennisBallIcon,
+  PencilIcon,
+  CheckerboardIcon,
+  SphereIcon,
+} from "@phosphor-icons/react";
 
 const sportCategories = [
   {
     id: "soccer",
     label: "Soccer",
-    icon: "soccer-ball.png",
+    icon: SoccerBallIcon,
     color: "#16a34a",
     colorLight: "#f0fdf4",
-    colorBorder: "#bbf7d0",
+    colorBorder: "#14ab02",
     variants: [
       { id: "soccer_h", label: "Adulte Homme" },
       { id: "soccer_v", label: "Vétéran 40+" },
@@ -19,10 +28,10 @@ const sportCategories = [
   {
     id: "basketball",
     label: "Basketball",
-    icon: "basketball.png",
+    icon: BasketballIcon,
     color: "#ea580c",
     colorLight: "#fff7ed",
-    colorBorder: "#fed7aa",
+    colorBorder: "#d77300",
     variants: [
       { id: "basketball_f", label: "Adulte Femme" },
       { id: "basketball_h", label: "Adulte Homme" },
@@ -33,10 +42,10 @@ const sportCategories = [
   {
     id: "volleyball",
     label: "Volleyball",
-    icon: "volleyball.png",
+    icon: VolleyballIcon,
     color: "#537DFD",
     colorLight: "#e9eef7",
-    colorBorder: "#B0C6FF",
+    colorBorder: "#545efc",
     variants: [
       { id: "volleyball_f", label: "Adulte Femme" },
       { id: "volleyball_h", label: "Adulte Homme" },
@@ -45,10 +54,10 @@ const sportCategories = [
   {
     id: "autres",
     label: "Autres activités",
-    icon: "other.png",
+    icon: [TennisBallIcon, SphereIcon, PencilIcon],
     color: "#7c3aed",
     colorLight: "#faf5ff",
-    colorBorder: "#ddd6fe",
+    colorBorder: "#9b3aff",
     variants: [
       { id: "tennis", label: "Tennis" },
       { id: "petanque", label: "Pétanque" },
@@ -80,13 +89,30 @@ export default function Home() {
           >
             <div className="sport-card__header">
               <h2 className="sport-card__title">{cat.label}</h2>
-                {cat.icon && (
-                  <img 
-                    src={`/icons/${cat.icon}`}
-                    alt={cat.label} 
-                    className="sport-card__icon" 
-                  />
-                )}
+              {cat.icon &&
+                (Array.isArray(cat.icon) ? (
+                  <div className="sport-card__icon-group">
+                    {cat.icon.map((Icon, index) => (
+                      <Icon
+                        key={index}
+                        color="#ffffff"
+                        weight="duotone"
+                        className="sport-card__icon"
+                      />
+                    ))}
+                  </div>
+                ) : (
+                  (() => {
+                    const Icon = cat.icon;
+                    return (
+                      <Icon
+                        color="#ffffff"
+                        weight="duotone"
+                        className="sport-card__icon"
+                      />
+                    );
+                  })()
+                ))}
             </div>
             <div className="sport-card__buttons">
               {cat.variants.map((v) => (

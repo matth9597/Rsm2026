@@ -47,7 +47,7 @@ body {
 /* ─── SUB-HEADER BAND ───────────────────────────────────────── */
 .sub-header-bande {
   width: 100%;
-  background-color: #1e293b;
+  background-color: #9f1617;
   color: #f8fafc;
   padding: 10px 0;
   font-size: 0.85rem;
@@ -90,7 +90,7 @@ body {
 .sport-card {
   background: #ffffff;
   border-radius: 16px;
-  border: 1px solid #e5e7eb;
+  border: 2px solid #e5e7eb;
   overflow: hidden;
   transition:
     box-shadow 0.2s ease,
@@ -106,9 +106,9 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 10px 20px;
-  background: var(--card-light, #f9fafb);
-  border-bottom: 1px solid var(--card-border, #e5e7eb);
+  padding: 20px 20px 16px;
+  background: #3d3d3d;
+  border-bottom: 3px solid var(--card-border, #e5e7eb);
 }
 
 .sport-card__icon {
@@ -116,15 +116,29 @@ body {
   line-height: 1;
   flex-shrink: 0;
   width: auto;
-  height: 20px;
+  height: 23px;
   object-fit: contain;
+  color: #ffffff;
+}
+
+.sport-card__icon-group {
+  display: flex;
+  align-items: center;
+}
+
+.sport-card__icon.stacked {
+  margin-left: -10px;
+}
+
+.sport-card__icon.stacked:first-child {
+  margin-left: 0;
 }
 
 .sport-card__title {
   margin: 0;
   font-size: 1.2rem;
   font-weight: 700;
-  color: #111827;
+  color: #ffffff;
   line-height: 1;
 }
 
@@ -133,7 +147,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0;
-  padding: 8px 0;
+  padding: 0;
 }
 
 .sport-card__btn {
@@ -345,19 +359,23 @@ body {
   cursor: pointer;
   border: none;
   border-radius: 10px;
-  background-color: #16a34a;
+  background-color: #107435;
   color: #ffffff;
   transition: background-color 0.15s ease;
   text-decoration: none;
   box-sizing: border-box;
 }
 
-.individuelle {
-  background-color: #16a397;
+.btn-inscription:hover {
+  background-color: #0e632e;
 }
 
-.btn-inscription:hover {
-  background-color: #15803d;
+.individuelle {
+  background-color: #1665a3;
+}
+
+.individuelle:hover {
+  background-color: #135c94;
 }
 
 .btn-action {
@@ -371,7 +389,7 @@ body {
   cursor: pointer;
   border: none;
   border-radius: 10px;
-  background-color: #2563eb;
+  background-color: #4c4c4c;
   color: #ffffff;
   transition: background-color 0.15s ease;
   text-decoration: none;
@@ -379,7 +397,7 @@ body {
 }
 
 .btn-action:hover {
-  background-color: #1d4ed8;
+  background-color: #404040;
 }
 
 /* ─── DETAIL PAGE BUTTON GROUP ──────────────────────────────── */
