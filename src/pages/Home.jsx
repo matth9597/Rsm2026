@@ -19,9 +19,9 @@ const sportCategories = [
     colorLight: "#f0fdf4",
     colorBorder: "#14ab02",
     variants: [
-      { id: "soccer_h", label: "Adulte Homme" },
-      { id: "soccer_v", label: "Vétéran 40+" },
-      { id: "soccer_m", label: "Mixte (Homme U15 / Femme)" },
+      { id: "soccer_h", label: "Adulte Hommes" },
+      { id: "soccer_v", label: "Vétérans 40+" },
+      { id: "soccer_m", label: "Mixte (Hommes U15 / Femmes)" },
       { id: "soccer_j", label: "Junior Kids U13" },
     ],
   },
@@ -33,8 +33,8 @@ const sportCategories = [
     colorLight: "#fff7ed",
     colorBorder: "#d77300",
     variants: [
-      { id: "basketball_f", label: "Adulte Femme" },
-      { id: "basketball_h", label: "Adulte Homme" },
+      { id: "basketball_f", label: "Adulte Femmes" },
+      { id: "basketball_h", label: "Adulte Hommes" },
       { id: "basketball_j", label: "Junior U15" },
       { id: "basketball_k", label: "Junior Kids" },
     ],
@@ -47,8 +47,8 @@ const sportCategories = [
     colorLight: "#e9eef7",
     colorBorder: "#545efc",
     variants: [
-      { id: "volleyball_f", label: "Adulte Femme" },
-      { id: "volleyball_h", label: "Adulte Homme" },
+      { id: "volleyball_f", label: "Adulte Femmes" },
+      { id: "volleyball_h", label: "Adulte Hommes" },
     ],
   },
   {
