@@ -39,8 +39,10 @@ export const sportsData = {
   soccer_v: {
     categorie: "Soccer Vétérans",
     slug: "soccer-veteran",
-    lienInscriptionEquipe: "https://google.com", // lien formulaire d insciption
-    lienInscriptionIndividuelle: "https://google.com", // lien formulaire d insciption
+    lienInscriptionEquipe:
+      "https://docs.google.com/forms/d/e/1FAIpQLSfCO0faR6qc4D8oXjFg1skXPQOsAQco-yCdpcYjryBAoiLsZg/viewform?usp=dialog", // lien formulaire d insciption
+    lienInscriptionIndividuelle:
+      "https://docs.google.com/forms/d/e/1FAIpQLSdPU8TNFat0hiTM6pgyZiEYopx7pL5oyztgBKL7VBJ3kHXTfA/viewform?usp=dialog", // lien formulaire d insciption
     lienHoraires: "https://google.com", // lien calendrier
     sections: [
       { nom: "Type", texte: "Compétition" },
