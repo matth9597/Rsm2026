@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { sportsData } from "../data";
+import { UserIcon, UsersIcon } from "@phosphor-icons/react";
 
 export default function Details() {
   const { slug } = useParams();
@@ -26,6 +27,7 @@ export default function Details() {
                   window.open(info.lienInscriptionEquipe, "_blank")
                 }
               >
+                <UsersIcon size={25} color="#ffffff" weight="duotone" />
                 S'inscrire — Equipe
               </button>
             )}
@@ -36,6 +38,7 @@ export default function Details() {
                   window.open(info.lienInscriptionIndividuelle, "_blank")
                 }
               >
+                <UserIcon size={21} color="#ffffff" weight="duotone" />
                 S'inscrire — Individuel
               </button>
             )}
@@ -73,12 +76,12 @@ export default function Details() {
               )}
               {section.lien && (
                 <a
-                  href={section.lien}
+                  href={section.lien.url}
                   target="_blank"
                   rel="noreferrer"
                   className="section-row__link"
                 >
-                  Consulter ici →
+                  {section.lien.texte} →
                 </a>
               )}
             </div>

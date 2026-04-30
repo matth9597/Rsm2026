@@ -1,3 +1,16 @@
+/* ─── FONTS ─────────────────────────────────────────────────── */
+@font-face {
+  font-family: "Inter Variable";
+  src: url("/public/Inter-VariableFont_opsz\,wght.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/public/Poppins-SemiBold.ttf") format("truetype");
+  font-style: normal;
+}
 /* ─── BASE ─────────────────────────────────────────────────── */
 *,
 *::before,
@@ -8,7 +21,7 @@
 body {
   margin: 0;
   font-family:
-    "Segoe UI",
+    "Inter Variable",
     system-ui,
     -apple-system,
     sans-serif;
@@ -39,8 +52,8 @@ body {
 }
 
 .brand-name {
-  font-size: 1rem;
-  font-weight: 700;
+  font-family: "Poppins";
+  font-size: 1.5rem;
   color: #111827;
 }
 
@@ -275,13 +288,14 @@ body {
 
 .section-row__link {
   font-size: 0.9rem;
-  color: #2563ea;
+  color: #ec1f26;
   text-decoration: underline;
-  flex: 1;
+  align-self: flex-start;
+  margin-left: 0;
 }
 
 .section-row__link:hover {
-  color: #1d4ed8;
+  color: #bf191e;
 }
 
 /* Team rows */
@@ -306,7 +320,7 @@ body {
 
 .team-row__link {
   font-size: 0.85rem;
-  color: #d62930;
+  color: #ec1f26;
   text-decoration: none;
   white-space: nowrap;
   flex-shrink: 0;
@@ -314,6 +328,7 @@ body {
 
 .team-row__link:hover {
   text-decoration: underline;
+  color: #bf191e;
 }
 
 /* ─── RESPONSIVE (Details) ──────────────────────────────────── */
@@ -354,6 +369,7 @@ body {
 /* ─── BUTTONS (Detail pages, inscription etc.) ────────── */
 .btn-inscription {
   display: flex;
+  gap: 10px;
   width: 100%;
   align-items: center;
   justify-content: center;
@@ -420,7 +436,7 @@ body {
 }
 
 .home-icon-img {
-  width: 25px;
+  width: 27px;
   filter: invert(1);
 }
 
@@ -443,7 +459,7 @@ body {
   }
 
   .brand-name {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
   }
 
   .sub-header-bande {
@@ -452,7 +468,7 @@ body {
   }
 
   .bande-title-left {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   .home-grid {
@@ -468,6 +484,10 @@ body {
   .home-grid {
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+
+  .brand-name {
+    font-size: 1rem;
   }
 
   .sport-card__header {

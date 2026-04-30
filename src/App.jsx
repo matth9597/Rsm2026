@@ -21,7 +21,7 @@ export default function App() {
       <header className="header">
         <div className="header-content">
           <img src="/logo.png" alt="Logo" className="logo" />
-          <span className="brand-name">RSM Ottawa-Gatineau 2026</span>
+          <span className="brand-name">RSM 2026 Ottawa-Gatineau</span>
         </div>
       </header>
 
@@ -32,7 +32,7 @@ export default function App() {
               <button className="btn-home-simple" onClick={() => navigate("/")}>
                 <img src="/home.png" alt="Home" className="home-icon-img" />
               </button>
-              {/* VOICI LE VRAI TRAIT SÉPARATEUR */}
+              {/* TRAIT SÉPARATEUR */}
               <span className="separateur-vertical"></span>
             </>
           )}
