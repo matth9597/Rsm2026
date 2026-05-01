@@ -59,7 +59,7 @@ export default function Details() {
             className="btn-calendar"
             onClick={() => window.open(info.lienHoraires, "_blank")}
           >
-            <CalendarBlankIcon size={21} />
+            <CalendarBlankIcon size={21} color="#ffffff" weight="duotone" />
             Calendrier
           </button>
         )}
