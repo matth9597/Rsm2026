@@ -18,7 +18,7 @@ export const sportsData = {
       },
       {
         nom: "Frais",
-        texte: "800$ par équipe, 40$ par personne",
+        texte: "50$ par personne (Caution équipe: 100$)",
       },
       {
         nom: "Conditions",

@@ -22,7 +22,7 @@ const sportCategories = [
       { id: "soccer_h", label: "Adulte Hommes" },
       { id: "soccer_v", label: "Vétérans 40+" },
       { id: "soccer_m", label: "Mixte (Hommes U15 / Femmes)" },
-      { id: "soccer_j", label: "Junior Kids U13" },
+      { id: "soccer_j", label: "Kids U13" },
     ],
   },
   {
@@ -36,7 +36,7 @@ const sportCategories = [
       { id: "basketball_f", label: "Adulte Femmes" },
       { id: "basketball_h", label: "Adulte Hommes" },
       { id: "basketball_j", label: "Junior U15" },
-      { id: "basketball_k", label: "Junior Kids" },
+      { id: "basketball_k", label: "Kids" },
     ],
   },
   {
@@ -62,6 +62,9 @@ const sportCategories = [
       { id: "tennis", label: "Tennis" },
       { id: "petanque", label: "Pétanque" },
       { id: "soraTononina", label: "Sora-Tononina" },
+      { id: "tableTennis", label: "Tennis de Table (à confirmer)" },
+      { id: "marche", label: "Marche 5 km (à confirmer)" },
+      { id: "zumba", label: "Zumba (à confirmer)" },
     ],
   },
 ];
