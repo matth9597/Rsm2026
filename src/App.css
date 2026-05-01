@@ -381,7 +381,7 @@ body {
   cursor: pointer;
   border: none;
   border-radius: 10px;
-  background-color: #107435;
+  background-color: #107435a9;
   color: #ffffff;
   transition: background-color 0.15s ease;
   text-decoration: none;
@@ -393,7 +393,7 @@ body {
 }
 
 .individuelle {
-  background-color: #1665a3;
+  background-color: #1666a3b7;
 }
 
 .individuelle:hover {
@@ -414,7 +414,7 @@ body {
   cursor: pointer;
   border: none;
   border-radius: 10px;
-  background-color: #4A5568;
+  background-color: #4a5568a9;
   color: #ffffff;
   transition: background-color 0.15s ease;
   text-decoration: none;
@@ -422,7 +422,7 @@ body {
 }
 
 .btn-calendar:hover {
-  background-color: #404040;
+  background-color: #4A5568;
 }
 
 /* ─── NAV UTILS ─────────────────────────────────────────────── */
