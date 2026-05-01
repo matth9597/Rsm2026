@@ -3,7 +3,9 @@ export const sportsData = {
     categorie: "Soccer Hommes",
     slug: "soccer-homme",
     lienInscriptionEquipe:
-      "https://docs.google.com/forms/d/e/1FAIpQLSeKssMyz6YTZtaXliDHH1vGWpy-VNpkxtXMZ9KYaqOIR9o8jQ/viewform?usp=dialog", // lien formulaire d insciption
+      "https://docs.google.com/forms/d/e/1FAIpQLSeKssMyz6YTZtaXliDHH1vGWpy-VNpkxtXMZ9KYaqOIR9o8jQ/viewform?", // lien formulaire d insciption
+    lienInscriptionIndividuelle:
+      "https://docs.google.com/forms/d/e/1FAIpQLSdPU8TNFat0hiTM6pgyZiEYopx7pL5oyztgBKL7VBJ3kHXTfA/viewform?",
     lienHoraires: "https://google.com", // lien calendrier
     sections: [
       { nom: "Type", texte: "Compétition" },
@@ -39,10 +41,8 @@ export const sportsData = {
   soccer_v: {
     categorie: "Soccer Vétérans",
     slug: "soccer-veteran",
-    lienInscriptionEquipe:
-      "https://docs.google.com/forms/d/e/1FAIpQLSfCO0faR6qc4D8oXjFg1skXPQOsAQco-yCdpcYjryBAoiLsZg/viewform?usp=dialog", // lien formulaire d insciption
-    lienInscriptionIndividuelle:
-      "https://docs.google.com/forms/d/e/1FAIpQLSdPU8TNFat0hiTM6pgyZiEYopx7pL5oyztgBKL7VBJ3kHXTfA/viewform?usp=dialog", // lien formulaire d insciption
+    lienInscriptionEquipe: "", // lien formulaire d insciption
+    lienInscriptionIndividuelle: "", // lien formulaire d insciption
     lienHoraires: "https://google.com", // lien calendrier
     sections: [
       { nom: "Type", texte: "Compétition" },
