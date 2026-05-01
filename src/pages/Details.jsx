@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { sportsData } from "../data";
-import { UserIcon, UsersIcon } from "@phosphor-icons/react";
+import { UserIcon, UsersIcon, CalendarBlankIcon } from "@phosphor-icons/react";
 
 export default function Details() {
   const { slug } = useParams();
@@ -56,9 +56,10 @@ export default function Details() {
 
         {info.lienHoraires && (
           <button
-            className="btn-action"
+            className="btn-calendar"
             onClick={() => window.open(info.lienHoraires, "_blank")}
           >
+            <CalendarBlankIcon size={21} />
             Calendrier
           </button>
         )}

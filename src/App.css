@@ -381,7 +381,7 @@ body {
   cursor: pointer;
   border: none;
   border-radius: 10px;
-  background-color: #107435;
+  background-color: #107435a9;
   color: #ffffff;
   transition: background-color 0.15s ease;
   text-decoration: none;
@@ -393,15 +393,16 @@ body {
 }
 
 .individuelle {
-  background-color: #1665a3;
+  background-color: #1666a3b7;
 }
 
 .individuelle:hover {
   background-color: #135c94;
 }
 
-.btn-action {
+.btn-calendar {
   display: flex;
+  gap: 10px;
   width: 100%;
   align-items: center;
   justify-content: center;
@@ -413,15 +414,15 @@ body {
   cursor: pointer;
   border: none;
   border-radius: 10px;
-  background-color: #4c4c4c;
+  background-color: #4a5568a9;
   color: #ffffff;
   transition: background-color 0.15s ease;
   text-decoration: none;
   box-sizing: border-box;
 }
 
-.btn-action:hover {
-  background-color: #404040;
+.btn-calendar:hover {
+  background-color: #4A5568;
 }
 
 /* ─── NAV UTILS ─────────────────────────────────────────────── */
