@@ -32,9 +32,11 @@ export default function App() {
                 style={{ cursor: 'pointer' }} 
               />
           <span className="brand-name">RSM 2026 Ottawa-Gatineau</span>
-          <button className="lang-toggle-btn" onClick={toggleLang}>
-            {lang === 'fr' ? 'EN' : 'FR'}
-          </button>
+          <div className="lang-switcher">
+            <span className={lang === 'fr' ? 'active' : ''} onClick={() => lang !== 'fr' && toggleLang()}>FR</span>
+            <span className="separator">|</span>
+            <span className={lang === 'en' ? 'active' : ''} onClick={() => lang !== 'en' && toggleLang()}>EN</span>
+          </div>
         </div>
       </header>
       <div className="sub-header-bande">

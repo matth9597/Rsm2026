@@ -25,6 +25,7 @@ export const translations = {
     marche5Km: "marche 5 Km (à confirmer)",
     zumba: "Zumba (à confirmer)",
     aConfirme: "(à confirmer)",
+    type: "Type",
     format: "Format",
     anneeNaissance: "Année de naissance",
     frais: "Frais",
