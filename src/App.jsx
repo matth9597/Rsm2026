@@ -1,8 +1,9 @@
-import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
+import { Routes, Route, useLocation, useNavigate, NavLink } from "react-router-dom";
 import Home from "./pages/Home";
 import Details from "./pages/Details";
 import "./App.css";
 import { sportsData } from "./data";
+import Reglement from './pages/Reglement';
 
 export default function App() {
   const location = useLocation();
@@ -10,10 +11,7 @@ export default function App() {
   const currentSport = Object.values(sportsData).find(
     (s) => s.slug === slugFromUrl,
   );
-  const texteBande =
-    location.pathname === "/"
-      ? "Disciplines"
-      : currentSport?.categorie || "DÉTAILS";
+  const texteBande = currentSport?.categorie || "DÉTAILS";
   const navigate = useNavigate();
 
   return (
@@ -24,25 +22,47 @@ export default function App() {
           <span className="brand-name">RSM 2026 Ottawa-Gatineau</span>
         </div>
       </header>
-
       <div className="sub-header-bande">
         <div className="bande-content">
-          {location.pathname !== "/" && (
-            <>
-              <button className="btn-home-simple" onClick={() => navigate("/")}>
-                <img src="/home.png" alt="Home" className="home-icon-img" />
-              </button>
-              {/* TRAIT SÉPARATEUR */}
-              <span className="separateur-vertical"></span>
-            </>
-          )}
-          <span className="bande-title-left">{texteBande}</span>
+          <nav className="bande-nav">
+            <NavLink 
+              to="/" 
+              className={({ isActive }) => {
+                  const currentPath = location.pathname.replace('/', '');
+                  const isSportPage = Object.values(sportsData).some(sport => sport.slug === currentPath);
+                  return (isActive || isSportPage) ? 'nav-item active' : 'nav-item';
+              }}
+            >
+              Disciplines
+            </NavLink>
+
+            <NavLink 
+              to="/reglements" 
+              className={({ isActive }) => (isActive ? 'nav-item active' : 'nav-item')}
+            >
+              Règlements
+            </NavLink>
+
+            <NavLink 
+              to="/planning" 
+              className={({ isActive }) => (isActive ? 'nav-item active' : 'nav-item')}
+            >
+              Planning
+            </NavLink>
+          </nav>
         </div>
       </div>
-
+      {location.pathname !== "/" && location.pathname !== "/reglements" && location.pathname !== "/planning" && (
+        <div className="sub-header-info">
+          <div className="bande-content">
+            <span className="info-text">{texteBande}</span>
+          </div>
+        </div>
+      )}
       <main className="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/reglements" element={<Reglement />} />
           <Route path="/:slug" element={<Details />} />
         </Routes>
       </main>
