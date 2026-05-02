@@ -12,10 +12,10 @@ export const sportsData = {
       {
         nom: "Format",
         texte: "11 vs 11",
-        lien: { url: "reglements-soccer-h", texte: "Règlements" },
+        lien: { url: "reglement", texte: "Règlements" },
       },
       {
-        nom: "Âge",
+        nom: "Année de naissance",
         texte: "Open",
       },
       {
@@ -25,8 +25,7 @@ export const sportsData = {
       {
         nom: "Conditions",
         texte: "Maximum 20 joueurs dans l'équipe",
-        lien: { url: "lien-JOM", texte: "Conditions JOM" },
-      }, // lien JOM
+      },
       {
         nom: "Terrain(s)",
         texte: "Naturel (éliminatoires) et synthétique (Finale)",
@@ -52,14 +51,14 @@ export const sportsData = {
         lien: { url: "reglements-soccer-v", texte: "Règlements" },
       },
       {
-        nom: "Âge",
+        nom: "Année de naissance",
         texte: "Né(e) en 1986 ou avant",
       },
       {
         nom: "Frais",
         texte: "800$ par équipe, 40$ par personne",
       },
-      { nom: "Conditions", texte: "Maximum 15 joueurs dans l'équipe" }, // lien JOM
+      { nom: "Conditions", texte: "Maximum 15 joueurs dans l'équipe" },
       {
         nom: "Terrain(s)",
         texte: "Naturel (éliminatoires) et synthétique (Finale)",
@@ -84,7 +83,7 @@ export const sportsData = {
         lien: { url: "reglements-basket-f", texte: "Règlements" },
       },
       {
-        nom: "Âge",
+        nom: "Année de naissance",
         texte: "Open",
       },
       {
@@ -120,7 +119,7 @@ export const sportsData = {
         lien: { url: "reglements-basket-h", texte: "Règlements" },
       },
       {
-        nom: "Âge",
+        nom: "Année de naissance",
         texte: "Open",
       },
       {
@@ -157,7 +156,7 @@ export const sportsData = {
         lien: { url: "reglements-basket-h", texte: "Règlements" },
       },
       {
-        nom: "Âge",
+        nom: "Année de naissance",
         texte: "202...",
       },
       {

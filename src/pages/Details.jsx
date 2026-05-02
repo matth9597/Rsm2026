@@ -1,6 +1,6 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { sportsData } from "../data";
-import { UserIcon, UsersIcon, CalendarBlankIcon } from "@phosphor-icons/react";
+import { UserIcon, UsersIcon } from "@phosphor-icons/react";
 
 export default function Details() {
   const { slug } = useParams();
@@ -11,6 +11,7 @@ export default function Details() {
       <div className="app-container">Sport non trouvé ou lien invalide.</div>
     );
 
+  const navigate = useNavigate();
   const hasSpecificLinks =
     info.lienInscriptionIndividuelle || info.lienInscriptionEquipe;
 
@@ -53,16 +54,6 @@ export default function Details() {
             </button>
           )
         )}
-
-        {info.lienHoraires && (
-          <button
-            className="btn-calendar"
-            onClick={() => window.open(info.lienHoraires, "_blank")}
-          >
-            <CalendarBlankIcon size={21} color="#ffffff" weight="duotone" />
-            Calendrier
-          </button>
-        )}
       </div>
 
       {/* ── Info sections ── */}
@@ -75,15 +66,14 @@ export default function Details() {
               {section.texte && (
                 <span className="section-row__value">{section.texte}</span>
               )}
-              {section.lien && (
-                <a
-                  href={section.lien.url}
-                  target="_blank"
-                  rel="noreferrer"
+              {section.lien && section.nom == "Format" && (
+                <button 
+                  onClick={() => navigate(section.lien.url)} 
                   className="section-row__link"
+                  style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
                 >
                   {section.lien.texte} →
-                </a>
+                </button>
               )}
             </div>
           ))}

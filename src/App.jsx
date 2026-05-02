@@ -2,9 +2,12 @@ import { Routes, Route, useLocation, useNavigate, NavLink } from "react-router-d
 import Home from "./pages/Home";
 import Details from "./pages/Details";
 import "./App.css";
+import { ArrowLeft } from "@phosphor-icons/react";
 import { sportsData } from "./data";
 import Reglement from './pages/Reglement';
 import Planning from './pages/Planning';
+import RegSoccerFr from './pages/reglementsSports/RegSoccerFr';
+import RegSoccerEn from './pages/reglementsSports/RegSoccerEn';
 
 export default function App() {
   const location = useLocation();
@@ -12,14 +15,20 @@ export default function App() {
   const currentSport = Object.values(sportsData).find(
     (s) => s.slug === slugFromUrl,
   );
-  const texteBande = currentSport?.categorie || "DÉTAILS";
   const navigate = useNavigate();
+  const notInMainMenuItem = location.pathname !== "/" && location.pathname !== "/reglements" && location.pathname !== "/planning"
 
   return (
     <div className="site-wrapper">
       <header className="header">
         <div className="header-content">
-          <img src="/logo.png" alt="Logo" className="logo" />
+              <img 
+                src="/logo.png" 
+                alt="Logo" 
+                className="logo" 
+                onClick={() => navigate('/')} 
+                style={{ cursor: 'pointer' }} 
+              />
           <span className="brand-name">RSM 2026 Ottawa-Gatineau</span>
         </div>
       </header>
@@ -41,31 +50,37 @@ export default function App() {
               to="/reglements" 
               className={({ isActive }) => (isActive ? 'nav-item active' : 'nav-item')}
             >
-              Règlements
+              Reg JOM
             </NavLink>
 
             <NavLink 
               to="/planning" 
               className={({ isActive }) => (isActive ? 'nav-item active' : 'nav-item')}
             >
-              Planning
+              Programmation
             </NavLink>
           </nav>
         </div>
       </div>
-      {location.pathname !== "/" && location.pathname !== "/reglements" && location.pathname !== "/planning" && (
-        <div className="sub-header-info">
-          <div className="bande-content">
-            <span className="info-text">{texteBande}</span>
+        {notInMainMenuItem && (
+          <div className="sub-header-info">
+            <div className="bande-content">
+              {location.pathname !== '/' && (
+                <button className="btn-back-minimal" onClick={() => navigate(-1)}>
+                  <ArrowLeft size={20} weight="bold" />
+                </button>
+              )}
+                <span className="info-text">{currentSport?.categorie || "DÉTAILS"} {location.pathname.includes("reglement") ? "- reglement":"" }</span>
+            </div>
           </div>
-        </div>
-      )}
+        )}
       <main className="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/reglements" element={<Reglement />} />
           <Route path="/planning" element={<Planning />} />
           <Route path="/:slug" element={<Details />} />
+          <Route path="/soccer-homme/reglement" element={<RegSoccerFr />} />
         </Routes>
       </main>
     </div>
