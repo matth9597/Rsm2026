@@ -4,6 +4,7 @@ import Details from "./pages/Details";
 import "./App.css";
 import { sportsData } from "./data";
 import Reglement from './pages/Reglement';
+import Planning from './pages/Planning';
 
 export default function App() {
   const location = useLocation();
@@ -63,6 +64,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/reglements" element={<Reglement />} />
+          <Route path="/planning" element={<Planning />} />
           <Route path="/:slug" element={<Details />} />
         </Routes>
       </main>
