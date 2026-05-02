@@ -1,15 +1,17 @@
 import { Routes, Route, useLocation, useNavigate, NavLink } from "react-router-dom";
+import React, { useState } from 'react';
 import Home from "./pages/Home";
 import Details from "./pages/Details";
 import "./App.css";
 import { ArrowLeft } from "@phosphor-icons/react";
 import { sportsData } from "./data";
-import Reglement from './pages/Reglement';
+import ReglementJOM from './pages/ReglementJOM';
 import Planning from './pages/Planning';
-import RegSoccerFr from './pages/reglementsSports/RegSoccerFr';
-import RegSoccerEn from './pages/reglementsSports/RegSoccerEn';
+import { useLanguage } from './LanguageContext';
+import ReglementSoccer from './pages/reglementsSports/ReglementSoccer';
 
 export default function App() {
+  const { lang, toggleLang, t } = useLanguage(); 
   const location = useLocation();
   const slugFromUrl = location.pathname.split("/")[1];
   const currentSport = Object.values(sportsData).find(
@@ -30,6 +32,9 @@ export default function App() {
                 style={{ cursor: 'pointer' }} 
               />
           <span className="brand-name">RSM 2026 Ottawa-Gatineau</span>
+          <button className="lang-toggle-btn" onClick={toggleLang}>
+            {lang === 'fr' ? 'EN' : 'FR'}
+          </button>
         </div>
       </header>
       <div className="sub-header-bande">
@@ -43,21 +48,21 @@ export default function App() {
                   return (isActive || isSportPage) ? 'nav-item active' : 'nav-item';
               }}
             >
-              Disciplines
+              {t('disciplines')}
             </NavLink>
 
             <NavLink 
               to="/reglements" 
               className={({ isActive }) => (isActive ? 'nav-item active' : 'nav-item')}
             >
-              Reg JOM
+              JOM
             </NavLink>
 
             <NavLink 
               to="/planning" 
               className={({ isActive }) => (isActive ? 'nav-item active' : 'nav-item')}
             >
-              Programmation
+              {t('programmation')}
             </NavLink>
           </nav>
         </div>
@@ -70,17 +75,17 @@ export default function App() {
                   <ArrowLeft size={20} weight="bold" />
                 </button>
               )}
-                <span className="info-text">{currentSport?.categorie || "DÉTAILS"} {location.pathname.includes("reglement") ? "- reglement":"" }</span>
+                <span className="info-text">{t(currentSport?.categorie) || ""} {location.pathname.includes("reglement") ? "- "+ t("reglements"):"" }</span>
             </div>
           </div>
         )}
       <main className="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/reglements" element={<Reglement />} />
+          <Route path="/reglements" element={<ReglementJOM />} />
           <Route path="/planning" element={<Planning />} />
           <Route path="/:slug" element={<Details />} />
-          <Route path="/soccer-homme/reglement" element={<RegSoccerFr />} />
+          <Route path="/soccer-homme/reglement" element={<ReglementSoccer />} />
         </Routes>
       </main>
     </div>

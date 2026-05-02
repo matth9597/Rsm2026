@@ -1,6 +1,6 @@
 export const sportsData = {
   soccer_h: {
-    categorie: "Soccer Hommes",
+    categorie: "soccerHommes",
     slug: "soccer-homme",
     lienInscriptionEquipe:
       "https://docs.google.com/forms/d/e/1FAIpQLSeKssMyz6YTZtaXliDHH1vGWpy-VNpkxtXMZ9KYaqOIR9o8jQ/viewform?", // lien formulaire d insciption
@@ -8,27 +8,32 @@ export const sportsData = {
       "https://docs.google.com/forms/d/e/1FAIpQLSdPU8TNFat0hiTM6pgyZiEYopx7pL5oyztgBKL7VBJ3kHXTfA/viewform?",
     lienHoraires: "https://google.com", // lien calendrier
     sections: [
-      { nom: "Type", texte: "Compétition" },
+      { nom: "type", texteFR: "Compétition", texteEN: "Competition" },
       {
-        nom: "Format",
-        texte: "11 vs 11",
-        lien: { url: "reglement", texte: "Règlements" },
+        nom: "format",
+        texteFR: "11 vs 11",
+        texteEN: "11 vs 11",
+        lien: { url: "reglement", texteFR: "reglements", texteEN: "regulations" },
       },
       {
-        nom: "Année de naissance",
-        texte: "Open",
+        nom: "anneeNaissance",
+        texteFR: "Ouvert",
+        texteEN: "Open",
       },
       {
-        nom: "Frais",
-        texte: "50$ par personne (Caution équipe: 100$)",
+        nom: "frais",
+        texteFR: "50$ par personne (Caution équipe: 100$)",
+        texteEN: "$50 per person (Team deposit: $100)",
       },
       {
-        nom: "Conditions",
-        texte: "Maximum 20 joueurs dans l'équipe",
+        nom: "conditions",
+        texteFR: "Maximum 20 joueurs dans l'équipe",
+        texteEN: "Maximum 20 players on the team",
       },
       {
-        nom: "Terrain(s)",
-        texte: "Naturel (éliminatoires) et synthétique (Finale)",
+        nom: "terrain",
+        texteFR: "Naturel (éliminatoires) et synthétique (Finale)",
+        texteEN: "Natural (elimination rounds) and synthetic (final)",
       },
     ],
     equipes: [
@@ -149,27 +154,27 @@ export const sportsData = {
     lienInscriptionIndividuelle: "https://google.com",
     lienHoraires: "https://google.com", // lien calendrier
     sections: [
-      { nom: "Type", texte: "Compétition" },
+      { nom: "type", texte: "Compétition" },
       {
-        nom: "Format",
+        nom: "format",
         texte: "5 vs 5 mixte Garçons/Filles",
         lien: { url: "reglements-basket-h", texte: "Règlements" },
       },
       {
-        nom: "Année de naissance",
+        nom: "anneeNaissance",
         texte: "202...",
       },
       {
-        nom: "Frais",
+        nom: "frais",
         texte: "240$ par équipe ou 20$ par personne",
       },
       {
-        nom: "Conditions",
+        nom: "conditions",
         texte:
           "Maximum 15 joueurs dans l'équipe. Maximum 12 joueurs sur la feuille de match.",
       }, // lien JOM
       {
-        nom: "Terrain(s)",
+        nom: "terrain",
         texte: "Gymnase Intérieur",
       },
     ],
