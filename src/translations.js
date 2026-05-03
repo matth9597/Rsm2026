@@ -22,7 +22,7 @@ export const translations = {
     soraTononina: "Sora-Tononina",
     petanque: "Pétanque",
     tennisDeTable: "Tennis de table (à confirmer)",
-    marche5Km: "marche 5 Km (à confirmer)",
+    marche5Km: "Marche 5 Km (à confirmer)",
     zumba: "Zumba (à confirmer)",
     aConfirme: "(à confirmer)",
     type: "Type",

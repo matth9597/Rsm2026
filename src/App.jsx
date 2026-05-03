@@ -18,7 +18,7 @@ export default function App() {
     (s) => s.slug === slugFromUrl,
   );
   const navigate = useNavigate();
-  const notInMainMenuItem = location.pathname !== "/" && location.pathname !== "/reglements" && location.pathname !== "/planning"
+  const notInMainMenuItem = location.pathname !== "/" && location.pathname !== "/jom" && location.pathname !== "/planning"
 
   return (
     <div className="site-wrapper">
@@ -54,7 +54,7 @@ export default function App() {
             </NavLink>
 
             <NavLink 
-              to="/reglements" 
+              to="/jom" 
               className={({ isActive }) => (isActive ? 'nav-item active' : 'nav-item')}
             >
               JOM
@@ -84,7 +84,7 @@ export default function App() {
       <main className="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/reglements" element={<ReglementJOM />} />
+          <Route path="/jom" element={<ReglementJOM />} />
           <Route path="/planning" element={<Planning />} />
           <Route path="/:slug" element={<Details />} />
           <Route path="/soccer-homme/reglement" element={<ReglementSoccer />} />
