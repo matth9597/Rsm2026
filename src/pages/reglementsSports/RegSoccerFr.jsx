@@ -39,9 +39,10 @@ export default function RegSoccerFr() {
       <p>Les arbitres devront porter un chandail de couleur différente des équipes sur le terrain.</p>
 
       <h3>Loi VI : Durée de match</h3>
-      <p>Avant chaque match, on encourage les équipes à faire un échauffement pour éviter les blessures.</p>
+      <p>Avant chaque match, on encourage les équipes à faire un échauffement en dehors des terrains.  </p>
       <ul>
-        <li>Phase éliminatoire et Quart de finale : 2 x 22 minutes</li>
+        <li>Phase éliminatoire: 2 x 22 minutes</li>
+        <li>Quart de finale: 2 x 25 minutes</li>
         <li>Demi-finale et finale : 2 x 30 minutes</li>
       </ul>
       <p>Il y a une pause de 3 minutes entre chaque mi-temps.</p>
@@ -63,12 +64,13 @@ export default function RegSoccerFr() {
       <p>S’il y a des équipes qui sont à égalité au classement à la fin de la phase éliminatoire, elles seront départagées de la façon suivante :</p>
       <p>a) Le plus grand nombre de victoires au classement.<br />
       b) La plus grande différence entre les buts marqués et buts concédés par chacune des équipes.<br />
-      c) Le plus grand nombre de points dans les matchs ayant opposés les équipes concernées.<br />
+      c) Le plus grand nombre de buts dans les matchs ayant opposés les équipes concernées.<br />
       d) La plus grande différence entre les buts marqués et les buts concédés dans les matchs ayant opposés les équipes concernées.<br />
       e) L’équipe ayant marqué le plus grand nombre de buts au classement.<br />
-      f) L’équipe ayant marqué le plus grand nombre de buts dans les matchs ayant opposés les équipes concernées.<br />
-      g) Et si l’égalité persiste, on va passer au tirage de « PILE ou FACE »</p>
-      <p>h) PENDANT LES PHASES DE QUART DE FINALE, DEMI-FINALE ET FINALE, TOUTE ÉGALITÉ DE SCORE ENTRE 2 ÉQUIPES DOIT ÊTRE DÉPARTAGÉ PAR DES TIRS AU BUT DE 5 JOUEURS EN DÉBUTANT ET APRÈS 1 À LA FOIS.</p>
+      f) Le nombre de cartons. Un carton rouge vaut 2 cartons jaunes.<br />
+      g) Et si l’égalité persiste, on va passer au tirage de « PILE ou FACE »<br />
+      h) PENDANT LES PHASES DE QUART DE FINAL ET  DEMI-FINALE,  TOUTE ÉGALITÉ DE SCORE ENTRE 2 ÉQUIPES DOIT ÊTRE DÉPARTAGÉ PAR DES TIRS AU BUT DE 3 JOUEURS, SUIVI D 1 TIR A LA FOIS SI L'ÉGALITÉ PERSISTE  (IL N'Y AURA PAS DE PROLONGATION)<br />
+      i) PENDANT LA FINALE,  TOUTE ÉGALITÉ DE SCORE ENTRE 2 ÉQUIPES DOIT ÊTRE DÉPARTAGÉ PAR DES TIRS AU BUT DE 5 JOUEURS, SUIVI D 1 TIR A LA FOIS SI L'ÉGALITÉ PERSISTE  (IL N'Y AURA PAS DE PROLONGATION)</p>
 
       <h3>Loi VIII : Hors-jeu</h3>
       <p>Le hors-jeu s’applique au soccer à 11.</p>
