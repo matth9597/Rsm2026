@@ -39,9 +39,10 @@ export default function RegSoccerEN() {
       <p>Referees must wear a jersey of a different color than the teams on the field.</p>
 
       <h3>Law VI: Match Duration</h3>
-      <p>Before each match, teams are encouraged to warm up to avoid injuries.</p>
+      <p>Before each match, teams are encouraged to warm up outside the playing fields.</p>
       <ul>
-        <li>Elimination Phase and Quarter-finals: 2 x 22 minutes</li>
+        <li>Elimination Phase: 2 x 22 minutes</li>
+        <li>Quarter-finals: 2 x 25 minutes</li>
         <li>Semi-finals and final: 2 x 30 minutes</li>
       </ul>
       <p>There is a 3-minute break between each half.</p>
@@ -63,12 +64,13 @@ export default function RegSoccerEN() {
       <p>If teams are tied in the standings at the end of the elimination phase, they will be separated as follows:</p>
       <p>a) Greatest number of wins in the standings.<br />
       b) Greatest difference between goals scored and goals conceded by each team.<br />
-      c) Greatest number of points in matches between the teams concerned.<br />
+      c) The highest number of goals scored in matches between the tied teams.<br />
       d) Greatest difference between goals scored and goals conceded in matches between the teams concerned.<br />
       e) Team that scored the greatest number of goals in the standings.<br />
-      f) Team that scored the greatest number of goals in matches between the teams concerned.<br />
-      g) If the tie persists, we will proceed to a "HEADS or TAILS" toss.</p>
-      <p>h) DURING QUARTER-FINALS, SEMI-FINALS, AND FINALS, ANY SCORE TIE BETWEEN 2 TEAMS MUST BE DECIDED BY PENALTY SHOOTOUTS OF 5 PLAYERS INITIALLY AND THEN 1 AT A TIME.</p>
+      f) The number of cards received. A red card counts as 2 yellow cards.<br />
+      g) If the tie still persists, a coin toss will be used.<br />
+      h) DURING THE QUARTER-FINALS AND SEMI-FINALS, ANY TIE BETWEEN TWO TEAMS WILL BE DECIDED BY A PENALTY SHOOTOUT OF 3 PLAYERS, FOLLOWED BY SUDDEN DEATH (ONE SHOT EACH) IF THE TIE PERSISTS (NO EXTRA TIME).<br />
+      i) DURING THE FINAL, ANY TIE BETWEEN TWO TEAMS WILL BE DECIDED BY A PENALTY SHOOTOUT OF 5 PLAYERS, FOLLOWED BY SUDDEN DEATH (ONE SHOT EACH) IF THE TIE PERSISTS. (NO EXTRA TIME).</p>
 
       <h3>Law VIII: Offside</h3>
       <p>Offside applies to 11-a-side soccer.</p>
