@@ -63,6 +63,7 @@ const sportCategories = [
       { id: "tennis", label: "tennis" },
       { id: "petanque", label: "petanque" },
       { id: "soraTononina", label: "soraTononina" },
+      { id: "fanorona", label: "fanorona" },
       { id: "tableTennis", label: "tennisDeTable" },
       { id: "marche", label: "marche5Km" },
       { id: "zumba", label: "zumba" },

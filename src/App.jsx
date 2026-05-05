@@ -8,7 +8,14 @@ import { sportsData } from "./data";
 import ReglementJOM from './pages/ReglementJOM';
 import Planning from './pages/Planning';
 import { useLanguage } from './LanguageContext';
-import ReglementSoccer from './pages/reglementsSports/ReglementSoccer';
+import ReglementSoccerHomme from './pages/reglementsSports/Soccer/ReglementSoccerHomme';
+import ReglementSoccerVeteran from './pages/reglementsSports/Soccer/ReglementSoccerVeteran';
+import ReglementBasketballHomme from './pages/reglementsSports/Basketball/ReglementBasketballHomme';
+import ReglementVolleyballFemme from './pages/reglementsSports/Volleyball/ReglementVolleyballFemme';
+import ReglementVolleyballHomme from './pages/reglementsSports/Volleyball/ReglementVolleyballHomme';
+import ReglementPetanque from './pages/reglementsSports/Other/ReglementPetanque';
+import ReglementTennis from './pages/reglementsSports/Other/ReglementTennis';
+
 
 export default function App() {
   const { lang, toggleLang, t } = useLanguage(); 
@@ -87,7 +94,13 @@ export default function App() {
           <Route path="/jom" element={<ReglementJOM />} />
           <Route path="/planning" element={<Planning />} />
           <Route path="/:slug" element={<Details />} />
-          <Route path="/soccer-homme/reglement" element={<ReglementSoccer />} />
+          <Route path="/soccer-homme/reglement" element={<ReglementSoccerHomme />} />
+          <Route path="/soccer-veteran/reglement" element={<ReglementSoccerVeteran />} />
+          <Route path="/basketball-homme/reglement" element={<ReglementBasketballHomme />} />
+          <Route path="/volleyball-homme/reglement" element={<ReglementVolleyballHomme />} />
+          <Route path="/volleyball-femme/reglement" element={<ReglementVolleyballFemme />} />
+          <Route path="/petanque/reglement" element={<ReglementPetanque />} />
+          <Route path="/tennis/reglement" element={<ReglementTennis />} />
         </Routes>
       </main>
     </div>

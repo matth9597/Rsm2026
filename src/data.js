@@ -157,7 +157,7 @@ export const sportsData = {
 
   basketball_f: {
     categorie: "basketballFemmes",
-    slug: "basketball-femme",
+    slug: "basketball-femmes",
     lienInscriptionEquipe:"https://docs.google.com/forms/d/e/1FAIpQLSeKssMyz6YTZtaXliDHH1vGWpy-VNpkxtXMZ9KYaqOIR9o8jQ/viewform?",
     lienInscriptionIndividuelle:"https://docs.google.com/forms/d/e/1FAIpQLSdPU8TNFat0hiTM6pgyZiEYopx7pL5oyztgBKL7VBJ3kHXTfA/viewform?",
     sections: [
@@ -196,7 +196,7 @@ export const sportsData = {
 
   basketball_h: {
     categorie: "basketballHommes",
-    slug: "basketball-femmes",
+    slug: "basketball-homme",
     lienInscriptionEquipe:"https://docs.google.com/forms/d/e/1FAIpQLSeKssMyz6YTZtaXliDHH1vGWpy-VNpkxtXMZ9KYaqOIR9o8jQ/viewform?",
     lienInscriptionIndividuelle:"https://docs.google.com/forms/d/e/1FAIpQLSdPU8TNFat0hiTM6pgyZiEYopx7pL5oyztgBKL7VBJ3kHXTfA/viewform?",
     sections: [
