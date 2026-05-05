@@ -78,8 +78,8 @@ export const sportsData = {
   },
   
   soccer_m: {
-    categorie: "soccerMixe",
-    slug: "soccer-mixe",
+    categorie: "soccerMixte",
+    slug: "soccer-mixte",
     lienInscriptionEquipe:"https://docs.google.com/forms/d/e/1FAIpQLSeKssMyz6YTZtaXliDHH1vGWpy-VNpkxtXMZ9KYaqOIR9o8jQ/viewform?",
     lienInscriptionIndividuelle:"https://docs.google.com/forms/d/e/1FAIpQLSdPU8TNFat0hiTM6pgyZiEYopx7pL5oyztgBKL7VBJ3kHXTfA/viewform?",
     sections: [

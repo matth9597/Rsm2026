@@ -10,6 +10,8 @@ import Planning from './pages/Planning';
 import { useLanguage } from './LanguageContext';
 import ReglementSoccerHomme from './pages/reglementsSports/Soccer/ReglementSoccerHomme';
 import ReglementSoccerVeteran from './pages/reglementsSports/Soccer/ReglementSoccerVeteran';
+import ReglementSoccerMixed from './pages/reglementsSports/Soccer/ReglementSoccerMixed';
+import ReglementSoccerKids from './pages/reglementsSports/Soccer/ReglementSoccerKids';
 import ReglementBasketballHomme from './pages/reglementsSports/Basketball/ReglementBasketballHomme';
 import ReglementVolleyballFemme from './pages/reglementsSports/Volleyball/ReglementVolleyballFemme';
 import ReglementVolleyballHomme from './pages/reglementsSports/Volleyball/ReglementVolleyballHomme';
@@ -96,6 +98,8 @@ export default function App() {
           <Route path="/:slug" element={<Details />} />
           <Route path="/soccer-homme/reglement" element={<ReglementSoccerHomme />} />
           <Route path="/soccer-veteran/reglement" element={<ReglementSoccerVeteran />} />
+          <Route path="/soccer-mixte/reglement" element={<ReglementSoccerMixed />} />
+          <Route path="/soccer-kids/reglement" element={<ReglementSoccerKids />} />
           <Route path="/basketball-homme/reglement" element={<ReglementBasketballHomme />} />
           <Route path="/volleyball-homme/reglement" element={<ReglementVolleyballHomme />} />
           <Route path="/volleyball-femme/reglement" element={<ReglementVolleyballFemme />} />
