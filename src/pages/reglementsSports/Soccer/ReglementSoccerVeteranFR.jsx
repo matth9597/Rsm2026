@@ -3,7 +3,7 @@ import React from 'react';
 export default function ReglementSoccerVeteranFR() {
   return (
     <div style={{ padding: '20px', maxWidth: '1000px', margin: '0 auto', fontFamily: 'sans-serif', lineHeight: '1.6', color: '#333' }}>
-      <h1 style={{ textAlign: 'center' }}>Soccer Vétéran 40+ RSM Ottawa 2026</h1>
+      <h1 style={{ textAlign: 'center' }}>Soccer Vétéran 40+ - RSM 2026</h1>
       
       <p>Le présent cahier de règlements s’applique aux disciplines de Soccer Vétéran 40+ (nés 1986 ou avant) pendant la RSM OTTAWA 2026.</p>
       <p>Les règlements de la FIFA s’appliquent intégralement, à moins de dispositions spécifiques contenues dans ce présent cahier de règlements.</p>
@@ -53,7 +53,7 @@ export default function ReglementSoccerVeteranFR() {
       <p>Tous les matchs vont être débutés à l’heure exacte assignée dans le calendrier.</p>
 
       <h3>Loi VII : Classement et série</h3>
-      <p>La RSM va garantir un (1) match pour chaque équipe participante au tournoi de Soccer Vétéran 40+.</p>
+      <p>La RSM va garantir un 2 match pour chaque équipe participante au tournoi de Soccer Vétéran 40+.</p>
       <p>Match gagné : 3 points | Match nul : 1 point | Match perdu : 0 point | Match forfait : -1 point</p>
       <p>S’il y a des équipes qui sont à égalité au classement à la fin de la phase éliminatoire, elles seront départagées de la façon suivante, suivant cet ordre:</p>
       <p>a) Le plus grand nombre de victoires au classement.<br />

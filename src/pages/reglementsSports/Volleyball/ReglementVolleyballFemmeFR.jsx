@@ -3,7 +3,7 @@ import React from 'react';
 export default function ReglementVolleyballFemmeFR() {
   return (
     <div style={{ padding: '20px', maxWidth: '1000px', margin: '0 auto', fontFamily: 'sans-serif', lineHeight: '1.6', color: '#333' }}>
-      <h1 style={{ textAlign: 'center' }}>Volleyball RSM Ottawa 2026 — RÈGLEMENTS OFFICIELS</h1>
+      <h1 style={{ textAlign: 'center' }}>Volleyball — RÈGLEMENTS OFFICIELS - RSM 2026</h1>
       
       <h3>a) Règlements :</h3>
       <ul>

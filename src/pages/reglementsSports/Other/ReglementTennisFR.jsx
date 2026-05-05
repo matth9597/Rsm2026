@@ -3,7 +3,7 @@ import React from 'react';
 export default function ReglementTennisFR() {
   return (
     <div style={{ padding: '20px', maxWidth: '1000px', margin: '0 auto', fontFamily: 'sans-serif', lineHeight: '1.6', color: '#333' }}>
-      <h1 style={{ textAlign: 'center' }}>RSM OTTAWA TENNIS 2026 — RÈGLEMENTS OFFICIELS</h1>
+      <h1 style={{ textAlign: 'center' }}>TENNIS — RÈGLEMENTS OFFICIELS - RSM 2026</h1>
       
       <p><strong>Lieu :</strong> Parc Bisson, 36 Rue Thérien, Gatineau, QC, J8Y 1H8</p>
       <p><strong>Dates :</strong> 3, 4 et 5 juillet 2026</p>

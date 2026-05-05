@@ -3,7 +3,7 @@ import React from 'react';
 export default function ReglementSoccerVeteranEN() {
   return (
     <div style={{ padding: '20px', maxWidth: '1000px', margin: '0 auto', fontFamily: 'sans-serif', lineHeight: '1.6', color: '#333' }}>
-      <h1 style={{ textAlign: 'center' }}>Soccer 40+ RSM Ottawa 2026</h1>
+      <h1 style={{ textAlign: 'center' }}>Soccer 40+ - RSM 2026</h1>
       
       <p><em>Disclaimer: Translation Accuracy — This document is an English translation of the official French tournament rules and is provided for informational purposes only. While every effort has been made to ensure the accuracy of this translation, the French version remains the sole official and legally binding reference. In the event of any discrepancy, ambiguity, or conflict between the English and French versions, the French text shall prevail.</em></p>
 
@@ -56,7 +56,7 @@ export default function ReglementSoccerVeteranEN() {
       <p>All matches will start at the exact time assigned in the schedule.</p>
 
       <h3>Law VII: Standings and Series</h3>
-      <p>The RSM guarantees a minimum of 3 matches for each team participating in the tournament.</p>
+      <p>The RSM guarantees a minimum of 2 matches for each team participating in the tournament.</p>
       <ul>
         <li>Match won: 3 points</li>
         <li>Match tied: 1 point</li>

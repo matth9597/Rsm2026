@@ -3,7 +3,7 @@ import React from 'react';
 export default function ReglementBasketballHommeFR() {
   return (
     <div style={{ padding: '20px', maxWidth: '1000px', margin: '0 auto', fontFamily: 'sans-serif', lineHeight: '1.6', color: '#333' }}>
-      <h1 style={{ textAlign: 'center' }}>RÈGLEMENT BASKETBALL - RSM OTTAWA 2026</h1>
+      <h1 style={{ textAlign: 'center' }}>RÈGLEMENT BASKETBALL - RSM 2026</h1>
       
       <h3>Art.1 Règlement de jeu</h3>
       <p>1.1 Les règles préconisées par la FIBA sont les seules applicables pour le tournoi. Néanmoins, il existe quelques règles particulières et des formules adaptées au tournoi de la RSM notamment pour la durée des confrontations entre les équipes, la gestion de l’équipe et la communication auprès de la RSM que les capitaines, coach ou membre de l’encadrement de l’équipe sont tenues de respecter.</p>
