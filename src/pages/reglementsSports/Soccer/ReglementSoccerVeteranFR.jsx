@@ -3,7 +3,7 @@ import React from 'react';
 export default function ReglementSoccerVeteranFR() {
   return (
     <div style={{ padding: '20px', maxWidth: '1000px', margin: '0 auto', fontFamily: 'sans-serif', lineHeight: '1.6', color: '#333' }}>
-      <h1 style={{ textAlign: 'center' }}>Soccer Vétéran 40+ - RSM 2026</h1>
+      <h1 style={{ textAlign: 'center' }}>Soccer Vétéran 40+ RSM 2026</h1>
       
       <p>Le présent cahier de règlements s’applique aux disciplines de Soccer Vétéran 40+ (nés 1986 ou avant) pendant la RSM OTTAWA 2026.</p>
       <p>Les règlements de la FIFA s’appliquent intégralement, à moins de dispositions spécifiques contenues dans ce présent cahier de règlements.</p>

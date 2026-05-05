@@ -3,7 +3,7 @@ import React from 'react';
 export default function ReglementPetanqueFR() {
   return (
     <div style={{ padding: '20px', maxWidth: '1000px', margin: '0 auto', fontFamily: 'sans-serif', lineHeight: '1.6', color: '#333' }}>
-      <h3 style={{ textAlign: 'center' }}>RÈGLEMENT – PÉTANQUE – RSM 2026</h3>
+      <h3 style={{ textAlign: 'center' }}>RÈGLEMENT – PÉTANQUE RSM 2026</h3>
 
       <h3>1. 1. Règlement de jeu</h3>
       <p>1.1 Afin de garantir une RSM toujours plus conviviale et compétitive, les organisateurs
