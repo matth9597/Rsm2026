@@ -4,6 +4,7 @@ export default function RegSoccerEN() {
   return (
     <div style={{ padding: '20px', maxWidth: '1000px', margin: '0 auto', fontFamily: 'sans-serif', lineHeight: '1.6', color: '#333' }}>
       <h1>SOCCER 11-A-SIDE REGULATIONS — RSM OTTAWA 2026</h1>
+      <p><em>Disclaimer: Translation Accuracy — This document is an English translation of the official French tournament rules and is provided for informational purposes only. While every effort has been made to ensure the accuracy of this translation, the French version remains the sole official and legally binding reference. In the event of any discrepancy, ambiguity, or conflict between the English and French versions, the French text shall prevail.</em></p>
       
       <p>These regulations apply to soccer disciplines during RSM OTTAWA 2026.</p>
       <p>FIFA regulations apply in their entirety, unless specific provisions are contained in these regulations.</p>
