@@ -4,6 +4,7 @@ export default function ReglementBasketballHommeEN() {
   return (
     <div style={{ padding: '20px', maxWidth: '1000px', margin: '0 auto', fontFamily: 'sans-serif', lineHeight: '1.6', color: '#333' }}>
       <h1 style={{ textAlign: 'center' }}>BASKETBALL REGULATIONS - RSM 2026</h1>
+      <p><em>Disclaimer: Translation Accuracy — This document is an English translation of the official French tournament rules and is provided for informational purposes only. While every effort has been made to ensure the accuracy of this translation, the French version remains the sole official and legally binding reference. In the event of any discrepancy, ambiguity, or conflict between the English and French versions, the French text shall prevail.</em></p>
 
       <h3>Art.1 Game Rules</h3>
       <p>1.1 The rules recommended by FIBA are the only ones applicable for the tournament. However, there are some specific rules and formats adapted to the RSM tournament, particularly regarding the duration of matches between teams, team management, and communication with the RSM, which captains, coaches, or team management members are required to respect.</p>
