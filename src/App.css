@@ -83,6 +83,8 @@ body {
   background-color: #9f1617;
   color: #f8fafc;
   padding: 10px 0;
+  overflow: visible !important;
+  position: relative;
 }
 
 .bande-content {
@@ -120,6 +122,58 @@ body {
   color: #ffffff !important; 
   opacity: 1 !important;
   border: none !important; 
+}
+
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .hamburger-btn {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    padding: 0;
+    margin-bottom: 10px; /* Espace sous l'icône avant les liens */
+    cursor: pointer;
+    text-align: left; /* Aligne l'icône à gauche comme le texte */
+  }
+  .bande-nav.open {
+    display: flex !important; 
+  }
+  .bande-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #a85050;
+    padding: 20px 25px;
+    box-sizing: border-box;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+  }
+  .nav-item {
+    font-size: 1.1rem !important;
+    padding: 15px 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    text-align: left;
+    display: block;
+  }
+
+  .nav-item.active {
+    color: #ffffff !important;
+    font-weight: 800;
+  }
+
 }
 
 /* ─── SUB-HEADER INFO ───────────────────────────────────────── */

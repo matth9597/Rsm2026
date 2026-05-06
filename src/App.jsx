@@ -3,11 +3,12 @@ import React, { useState } from 'react';
 import Home from "./pages/Home";
 import Details from "./pages/Details";
 import "./App.css";
-import { ArrowLeft } from "@phosphor-icons/react";
+import { ArrowLeft, List, X } from "@phosphor-icons/react";
 import { sportsData } from "./data";
 import ReglementJOM from './pages/ReglementJOM';
 import Programmation from './pages/Programmation';
 import { useLanguage } from './LanguageContext';
+import Paiement from './pages/Paiement';
 import ReglementSoccerHomme from './pages/reglementsSports/Soccer/ReglementSoccerHomme';
 import ReglementSoccerVeteran from './pages/reglementsSports/Soccer/ReglementSoccerVeteran';
 import ReglementSoccerMixed from './pages/reglementsSports/Soccer/ReglementSoccerMixed';
@@ -23,6 +24,7 @@ import ReglementTennis from './pages/reglementsSports/Other/ReglementTennis';
 export default function App() {
   const { lang, toggleLang, t } = useLanguage(); 
   const location = useLocation();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const slugFromUrl = location.pathname.split("/")[1];
   const currentSport = Object.values(sportsData).find(
     (s) => s.slug === slugFromUrl,
@@ -51,13 +53,17 @@ export default function App() {
       </header>
       <div className="sub-header-bande">
         <div className="bande-content">
-          <nav className="bande-nav">
+          <button className="hamburger-btn" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            {isMenuOpen ? <X size={25} weight="bold" /> : <List size={25} weight="bold" />}
+          </button>
+          <nav className={`bande-nav ${isMenuOpen ? 'open' : ''}`}>
             <NavLink 
               to="/" 
+              onClick={() => setIsMenuOpen(false)}
               className={({ isActive }) => {
-                  const currentPath = location.pathname.replace('/', '');
-                  const isSportPage = Object.values(sportsData).some(sport => sport.slug === currentPath);
-                  return (isActive || isSportPage) ? 'nav-item active' : 'nav-item';
+                const currentPath = location.pathname.replace('/', '');
+                const isSportPage = Object.values(sportsData).some(sport => sport.slug === currentPath);
+                return (isActive || isSportPage) ? 'nav-item active' : 'nav-item';
               }}
             >
               {t('disciplines')}
@@ -65,6 +71,7 @@ export default function App() {
 
             <NavLink 
               to="/jom" 
+              onClick={() => setIsMenuOpen(false)}
               className={({ isActive }) => (isActive ? 'nav-item active' : 'nav-item')}
             >
               JOM
@@ -72,6 +79,7 @@ export default function App() {
 
             <NavLink 
               to="/programmation" 
+              onClick={() => setIsMenuOpen(false)}
               className={({ isActive }) => (isActive ? 'nav-item active' : 'nav-item')}
             >
               {t('programmation')}
@@ -97,6 +105,7 @@ export default function App() {
           <Route path="/jom" element={<ReglementJOM />} />
           <Route path="/programmation" element={<Programmation />} />
           <Route path="/:slug" element={<Details />} />
+          <Route path="/paiement" element={<Paiement />} />
           <Route path="/soccer-homme/reglement" element={<ReglementSoccerHomme />} />
           <Route path="/soccer-veteran/reglement" element={<ReglementSoccerVeteran />} />
           <Route path="/soccer-mixte/reglement" element={<ReglementSoccerMixed />} />
