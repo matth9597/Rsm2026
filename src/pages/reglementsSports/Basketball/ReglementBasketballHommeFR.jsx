@@ -4,21 +4,20 @@ export default function ReglementBasketballHommeFR() {
   return (
     <div style={{ padding: '20px', maxWidth: '1000px', margin: '0 auto', fontFamily: 'sans-serif', lineHeight: '1.6', color: '#333' }}>
       <h1 style={{ textAlign: 'center' }}>RÈGLEMENT BASKETBALL - RSM 2026</h1>
-      
       <h3>Art.1 Règlement de jeu</h3>
       <p>1.1 Les règles préconisées par la FIBA sont les seules applicables pour le tournoi. Néanmoins, il existe quelques règles particulières et des formules adaptées au tournoi de la RSM notamment pour la durée des confrontations entre les équipes, la gestion de l’équipe et la communication auprès de la RSM que les capitaines, coach ou membre de l’encadrement de l’équipe sont tenues de respecter.</p>
 
       <h3>Art. 2 Inscription des joueurs</h3>
-      <p>2.1 L’inscription des équipes est ouverte jusqu’au 31 mai 2026 à minuit.</p>
-      <p>2.2 Le droit d’inscription par équipe et une caution remboursable à la fin du tournoi sont demandés à chaque équipe. La date limite pour le paiement est le 31 mai 2026 à minuit.</p>
+      <p>2.1 L’inscription des équipes est ouverte jusqu’a la date limite uniquement pré-établie.</p>
+      <p>2.2 Le droit d’inscription par équipe et une caution remboursable à la fin du tournoi sont demandés à chaque équipe. Verifiez pour la date limite pour le paiement établie par le comité Organisateur.</p>
       <p>2.3 Tout joueur admis au tournoi doit respecter les conditions de participation dans l’article du Joueur Originaire de Madagascar (JOM) 1. Des pièces justificatives seront demandées lors du tournoi.</p>
-      <p>2.2 Seuls les joueurs inscrits sur la fiche d’inscription avant 14 juin 2026 à minuit pourront jouer lors de la RSM 2026 et le tournoi de préqualification si applicable.</p>
+      <p>2.2 Seuls les joueurs inscrits sur la fiche d’inscription avant la date limite à minuit pourront jouer lors de la RSM 2026 et le tournoi de préqualification si applicable.</p>
       <p>2.3 Le nombre des joueurs qui composent une équipe est limité à quinze (15). Et seul 12 joueurs actifs par match.</p>
       <p>2.4 Un joueur inscrit dans une équipe ne peut pas jouer dans une autre équipe. Si c’est le cas, l’équipe qui fait jouer un joueur d’une autre équipe sera sanctionnée par un forfait général de l’équipe. Le cas s’applique également pour les associations qui présentent plusieurs équipes. Le Comité d’organisation se réserve le droit de contrôler les joueurs et d’appliquer les sanctions pouvant aller jusqu’au forfait de l’équipe en cas d’infraction.</p>
 
       <h3>Art. 3 Programme des matchs</h3>
       <p>3.1 Le planning des matchs indique le déroulement du tournoi attribué au basket-ball et vaut convocation pour les officiels de tables, les arbitres et les joueurs.</p>
-      <p>3.2 Le tirage au sort des matches aura lieu sur Zoom le 20 juin 2026. Une fiche de déroulement du tournoi sera établie à l’issue du tirage au sort pour définir le programme des matches.</p>
+      <p>3.2 Le tirage au sort des matches aura lieu sur une plateforme virtuelle de réunion (Zoom, Teams, etc). Une fiche de déroulement du tournoi sera établie à l’issue du tirage au sort pour définir le programme des matches.</p>
       <p>3.3 L’horaire indiqué doit être respecté scrupuleusement. Chaque équipe doit être présente dans le gymnase 20 min avant son match et remplir à l’avance la feuille de match.</p>
 
       <h3>Art. 4 Déroulement du tournoi</h3>
@@ -69,47 +68,52 @@ export default function ReglementBasketballHommeFR() {
       <p><strong>13.1 Temps de jeu, score nul et prolongations</strong></p>
       <p>13.1.1 La rencontre consiste en :</p>
       <ul>
-        <li>deux (2) périodes de treize (13) minutes lors des phases éliminatoires jusqu’aux 1/4 de finale. Si le différentiel au niveau du score est à moins de 10 points à la dernière minute du dernier quart, le temps sera arrêté.</li>
+        <li>deux (2) périodes de treize (13) minutes lors des phases éliminatoires jusqu’aux 1/4 de finale. Si le differentiel au niveau du score est à moins de 10 points à la dernière minute du dernier quart, le temps sera arrêté.</li>
         <li>quatre (4) périodes de dix (10) minutes lors des phases finales à partir de la demi-finale, le chrono sera arrêté seulement pour les 3 dernières minutes du dernier quart-temps soit au 4e QT. Les lancers-franc ne seront arrêtés que lors des phases finales.</li>
       </ul>
       <p>13.1.2 Il doit avoir un intervalle d’une (1) minute entre la première et la seconde période, entre la troisième et la quatrième période et avant chaque prolongation.</p>
       <p>13.1.3 Il doit y avoir un intervalle de deux (2) minutes à la mi-temps.</p>
       <p>13.1.4 Si le score est à égalité à l’expiration du temps de jeu de la dernière période, le jeu doit continuer par autant de prolongations de deux (2) minutes nécessaires pour qu’un résultat positif soit obtenu lors des phases éliminatoires et quatre (4) minutes lors des phases finales à partir des demi-finales. Comme il y a prolongation et que le différentiel de moins de 10 points est en cours, la règle du chrono arrêté s’applique.</p>
-      
+
       <p><strong>13.2 Temps mort</strong></p>
       <p>13.2.1 Un temps mort n’est accordé que lorsque l’équipe requérante a la possession de la balle.</p>
       <p>13.2.2 Chaque équipe aura droit à un (1) temps mort à chaque quart-temps et à chaque prolongation.</p>
       <p>13.2.3 Un temps mort dure 30 secondes</p>
       <p>13.2.4 Pour les 2 dernières minutes du temps réglementaire, la remise en jeu se fait à la moitié du terrain de jeu (si c’est l’équipe qui a la remise en jeu qui a demandé le temps mort).</p>
-      
       <p>13.3 Temps permis pour sortir le ballon du terrain arrière, la règle de 8 secondes applicable.</p>
       <p>13.4 Temps permis pour effectuer un tir au panier : la règle de 24 secondes applicable</p>
       <p>13.5 La règle des 14 secondes sur un rebond offensif applicable si l’équipement le permet</p>
-      
-      <p><strong>13.6 Remplacements</strong></p>
+
+      <h3>13.6 Remplacements</h3>
       <p>13.6.1 Les remplacements ne se font qu’à chaque balle morte.</p>
       <p>13.6.2 Le remplaçant doit aller devant la table et attendre que l’arbitre le fasse rentrer.</p>
       <p>13.6.3 Le nombre de remplacements est illimité.</p>
-      
-      <p><strong>13.7 Entre-deux</strong></p>
+
+      <h3>13.7 Entre-deux</h3>
       <p>13.7.1 L’entre-deux n’a lieu qu’en début de rencontre, puis application de la règle de la possession alternée.</p>
-      
-      <p><strong>13.8 Fautes</strong></p>
+
+      <h3>13.8 Fautes</h3>
       <p>13.8.1 Un joueur qui a commis :</p>
       <ul>
-        <li>quatre (4) fautes phase éliminatoires</li>
+        <li>quatre (4) fautes phase eliminatoires</li>
         <li>cinq (5) fautes phase finales (à partir des 1/8 ici), qu’elles soient personnelles et/ou techniques, est éliminé. Il doit en être informé par l’arbitre et doit quitter le jeu immédiatement. Il doit être remplacé dans les trente (30) secondes.</li>
       </ul>
-      
-      <p><strong>13.9 Sanction de fautes d’équipe</strong></p>
+
+      <h3>13.9 Sanction de fautes d’équipe</h3>
       <p>13.9.1 Une équipe est en situation de sanction de faute d’équipe lorsqu’elle a commis cinq (5) fautes d’équipe au cours d’une période.</p>
       <p>13.9.2 Lorsqu’une équipe est en situation de sanction de fautes d’équipe, toutes les fautes personnelles de joueur ultérieurement commises sur un joueur qui n’est pas en action de tir doivent être sanctionnées par deux (2) lancers francs au lieu d’une remise en jeu.</p>
 
       <h3>Art. 14 Sanctions</h3>
       <p>14.1 Concernant les fautes techniques (T), antisportives (A) et disqualifiantes (D), voici comment seront appliquées les sanctions :</p>
-      <p><strong>Fautes techniques</strong><br />2e faute technique : 1 partie automatique de suspension plus une amende<br />3e faute technique : Suspension pour le reste du tournoi.</p>
-      <p><strong>Fautes disqualifiantes</strong><br />1ere faute disqualifiante : 1 partie automatique de suspension (réf. Réglementation FIBA) plus une amende<br />2e faute disqualifiante : Suspension pour le reste du tournoi</p>
-      <p><strong>Fautes antisportives</strong><br />2e faute antisportive : 1 partie automatique de suspension plus une amende<br />3e faute antisportive : Suspension pour le reste du tournoi</p>
+      <p><strong>Fautes techniques</strong><br />
+      2e faute technique : 1 partie automatique de suspension plus une amende de 5$<br />
+      3e faute technique : Suspension pour le reste du tournoi.</p>
+      <p><strong>Fautes disqualifiantes</strong><br />
+      1ere faute disqualifiante : 1 partie automatique de suspension (réf. Réglementation FIBA) plus une amende de 5$<br />
+      2e faute disqualifiante : Suspension pour le reste du tournoi</p>
+      <p><strong>Fautes antisportives</strong><br />
+      2e faute antisportive : 1 partie automatique de suspension plus une amende de 10$<br />
+      3e faute antisportive : Suspension pour le reste du tournoi</p>
       <p>14.2 Ce système s’applique aux joueurs et aux entraîneurs. Il est cumulatif par type de faute et s’applique pour le tournoi. Une liste sera maintenue par le Comité et elle ne sera pas diffusée.</p>
       <p>14.3 Si une faute technique, antisportive ou disqualifiante est commise par un joueur sur le banc ou un entraîneur adjoint, la faute technique sera décernée à l’entraîneur-chef.</p>
       <p>14.4 Le non-paiement de l’amende entraîne la non-participation du joueur à la prochaine rencontre de son équipe. Dès lors qu’une sanction est appliquée, la caution n’est plus remboursée.</p>
@@ -130,7 +134,7 @@ export default function ReglementBasketballHommeFR() {
       <p>18.1 Des trophées et des médailles seront offerts aux équipes finalistes.</p>
 
       <h3>Art. 19 Civisme</h3>
-      <p>19.1 Nous souhaiterions que les lieux et gymnases restent propres. Il en va de la responsabilité de tout un chacun de ramasser les bouteilles d’eau etc… Il est interdit de manger à l’intérieur des gymnases. Nous vous conseillons d’amener une bouteille réutilisable (il y a plusieurs borne-fontaines sur le site). Aucun joueur sous l’influence de l’alcool ne sera accepté sur terrain.</p>
+      <p>19.1 Nous souhaiterions que les lieux et gymnases restent propre. Il en va de la responsabilité de tout un chacun de ramasser les bouteilles d’eau etc… Il est interdit de manger à l’intérieur des gymnases. Nous vous conseillons d’amener une bouteille réutilisable (il y a plusieurs borne-fontaines sur le site). Aucun joueur sous l’influence de l’alcool ne sera accepté sur terrain.</p>
     </div>
   );
 }

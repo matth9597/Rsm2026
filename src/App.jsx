@@ -13,6 +13,7 @@ import ReglementSoccerVeteran from './pages/reglementsSports/Soccer/ReglementSoc
 import ReglementSoccerMixed from './pages/reglementsSports/Soccer/ReglementSoccerMixed';
 import ReglementSoccerKids from './pages/reglementsSports/Soccer/ReglementSoccerKids';
 import ReglementBasketballHomme from './pages/reglementsSports/Basketball/ReglementBasketballHomme';
+import ReglementBasketballFemme from './pages/reglementsSports/Basketball/ReglementBasketballFemme';
 import ReglementVolleyballFemme from './pages/reglementsSports/Volleyball/ReglementVolleyballFemme';
 import ReglementVolleyballHomme from './pages/reglementsSports/Volleyball/ReglementVolleyballHomme';
 import ReglementPetanque from './pages/reglementsSports/Other/ReglementPetanque';
@@ -100,6 +101,7 @@ export default function App() {
           <Route path="/soccer-veteran/reglement" element={<ReglementSoccerVeteran />} />
           <Route path="/soccer-mixte/reglement" element={<ReglementSoccerMixed />} />
           <Route path="/soccer-kids/reglement" element={<ReglementSoccerKids />} />
+          <Route path="/basketball-femme/reglement" element={<ReglementBasketballFemme />} />
           <Route path="/basketball-homme/reglement" element={<ReglementBasketballHomme />} />
           <Route path="/volleyball-homme/reglement" element={<ReglementVolleyballHomme />} />
           <Route path="/volleyball-femme/reglement" element={<ReglementVolleyballFemme />} />

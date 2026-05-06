@@ -173,7 +173,7 @@ export const sportsData = {
 
   basketball_f: {
     categorie: "basketballFemmes",
-    slug: "basketball-femmes",
+    slug: "basketball-femme",
     lienInscriptionEquipe:
       "https://docs.google.com/forms/d/e/1FAIpQLSenaEuzHUqq4DzQ73a82B5Ydznvb1JRumrekRg50OZzz_t51Q/viewform",
     lienInscriptionIndividuelle:
@@ -278,8 +278,8 @@ export const sportsData = {
       },
       {
         nom: "anneeNaissance",
-        texteFR: " 2011+",
-        texteEN: " 2011+",
+        texteFR: "Né(e) en 2011, 2012 et 2013",
+        texteEN: "Born 2011, 2012 and 2013",
       },
       {
         nom: "frais",
@@ -321,8 +321,8 @@ export const sportsData = {
       },
       {
         nom: "anneeNaissance",
-        texteFR: " 2011+",
-        texteEN: " 2011+",
+        texteFR: "Né(e) 2014, 2015 et 2016",
+        texteEN: "Born 2014, 2015 and 2016",
       },
       {
         nom: "frais",

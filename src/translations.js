@@ -20,7 +20,7 @@ export const translations = {
     basketball  : "Basketball",
     volleyball  : "Volleyball",
     adulteHommes  : "Adulte Hommes",
-    adulteFemmes  : "Adult Femmes",
+    adulteFemmes  : "Adulte Femmes",
     veterans  : "Vétérans 40+",
     mixe  : "Mixte (Hommes U15 / Femmes)",
     kidsU13  : "Enfant U13",
@@ -31,7 +31,7 @@ export const translations = {
     soraTononina: "Sora-Tononina",
     petanque: "Pétanque",
     tennisDeTable: "Tennis de table (à confirmer)",
-    fanorona: "fanorona (à confirmer)",
+    fanorona: "Fanorona (à confirmer)",
     marche5Km: "Marche 5 Km (à confirmer)",
     zumba: "Zumba (à confirmer)",
     aConfirme: "(à confirmer)",
@@ -47,7 +47,7 @@ export const translations = {
     sInscrire: "S'inscrire",
     equipe: "Equipe",
     individuel: "Individuel",
-    programmationMessage:"Here you will find the schedule and locations of activities once registration is closed and the schedule is finalized.",
+    programmationMessage:"Vous trouverez ici le programme et les lieux des activités une fois les inscriptions closes et le programme finalisé.",
   },
   en: {
     disciplines: "Disciplines",
@@ -81,7 +81,7 @@ export const translations = {
     soraTononina: "Sora-Tononina",
     petanque: "Petanque",
     tennisDeTable: "Table tennis (to be confirmed)",
-    fanorona: "fanorona (to be confirmed)",
+    fanorona: "Fanorona (to be confirmed)",
     marche5Km: "Walk 5 Km (to be confirmed)",
     zumba: "Zumba (to be confirmed)",
     toBeConfirmed: "(to be confirmed)",
@@ -97,6 +97,6 @@ export const translations = {
     sInscrire: "Register",
     equipe: "Team",
     individuel: "Individual",
-    programmationMessage:"Vous trouverez ici le programme et les lieux des activités une fois les inscriptions closes et le programme finalisé."
+    programmationMessage:"Here you will find the schedule and locations of activities once registration is closed and the schedule is finalized.",
   }
 };
