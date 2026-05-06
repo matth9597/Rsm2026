@@ -48,6 +48,8 @@ export const translations = {
     equipe: "Equipe",
     individuel: "Individuel",
     paiement: "Paiement",
+    contact: "Contact",
+    contactezNous: "Contactez-nous",
     programmationMessage:"Vous trouverez ici le programme et les lieux des activités une fois les inscriptions closes et le programme finalisé.",
   },
   en: {
@@ -99,6 +101,8 @@ export const translations = {
     equipe: "Team",
     individuel: "Individual",
     paiement: "Payment",
+    contact: "Contact",
+    contactezNous: "Contact Us",
     programmationMessage:"Here you will find the schedule and locations of activities once registration is closed and the schedule is finalized.",
   }
 };

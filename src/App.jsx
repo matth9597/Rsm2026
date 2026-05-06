@@ -8,6 +8,7 @@ import { sportsData } from "./data";
 import ReglementJOM from './pages/ReglementJOM';
 import Programmation from './pages/Programmation';
 import { useLanguage } from './LanguageContext';
+import Contact from './pages/Contact';
 import Paiement from './pages/Paiement';
 import ReglementSoccerHomme from './pages/reglementsSports/Soccer/ReglementSoccerHomme';
 import ReglementSoccerVeteran from './pages/reglementsSports/Soccer/ReglementSoccerVeteran';
@@ -30,7 +31,7 @@ export default function App() {
     (s) => s.slug === slugFromUrl,
   );
   const navigate = useNavigate();
-  const notInMainMenuItem = location.pathname !== "/" && location.pathname !== "/jom" && location.pathname !== "/programmation"
+  const notInMainMenuItem = location.pathname !== "/" && location.pathname !== "/jom" && location.pathname !== "/programmation" && location.pathname !== "/contact" && location.pathname !== "/paiement" 
 
   return (
     <div className="site-wrapper">
@@ -84,6 +85,14 @@ export default function App() {
             >
               {t('programmation')}
             </NavLink>
+
+            <NavLink 
+              to="/contact" 
+              onClick={() => setIsMenuOpen(false)}
+              className={({ isActive }) => (isActive ? 'nav-item active' : 'nav-item')}
+            >
+              {t('contact')}
+            </NavLink>
           </nav>
         </div>
       </div>
@@ -106,6 +115,7 @@ export default function App() {
           <Route path="/programmation" element={<Programmation />} />
           <Route path="/:slug" element={<Details />} />
           <Route path="/paiement" element={<Paiement />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/soccer-homme/reglement" element={<ReglementSoccerHomme />} />
           <Route path="/soccer-veteran/reglement" element={<ReglementSoccerVeteran />} />
           <Route path="/soccer-mixte/reglement" element={<ReglementSoccerMixed />} />
