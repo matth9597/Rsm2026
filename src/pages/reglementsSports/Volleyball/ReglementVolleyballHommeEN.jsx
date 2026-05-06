@@ -9,7 +9,7 @@ export default function ReglementVolleyballHommeEN() {
 
       <h3>RSM Ottawa 2026 Volleyball - Men</h3>
       
-      <p><strong>Regulations:</strong></p>
+      <p><strong>a) Regulations:</strong></p>
       <ul>
         <li>FIVB: Each team must know the minimum requirements of Volleyball regulations.</li>
         <li>PRELIMINARY Match: Best of 3 sets (3rd set to 15 points).</li>
@@ -25,7 +25,7 @@ export default function ReglementVolleyballHommeEN() {
         <li>In case of a dispute over a rule not specified in this document, FIVB rules will be used as a reference, adapted to the tournament context.</li>
       </ul>
 
-      <h3>Tournament Regulations:</h3>
+      <h3>b) Tournament Regulations:</h3>
       <p>To all teams, players, and officials: Table b.1</p>
       
       <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '20px' }}>
