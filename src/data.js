@@ -106,8 +106,8 @@ export const sportsData = {
       },
       {
         nom: "anneeNaissance",
-        texteFR: "Garcons(2011+) et Files(ouvert)",
-        texteEN: "Boys (2011+) and Girls (open)",
+        texteFR: "Garçons(2011+) et Femme 14+",
+        texteEN: "Boys (2011+) and Women 14+",
       },
       {
         nom: "frais",

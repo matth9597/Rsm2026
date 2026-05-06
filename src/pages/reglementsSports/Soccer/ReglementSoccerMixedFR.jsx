@@ -3,7 +3,7 @@ import React from 'react';
 export default function ReglementSoccerMixedFR() {
   return (
     <div style={{ padding: '20px', maxWidth: '1000px', margin: '0 auto', fontFamily: 'sans-serif', lineHeight: '1.6', color: '#333' }}>
-      <h1 style={{ textAlign: 'center' }}>Soccer Mixte GarconsU15-Femmes RSM 2026</h1>
+      <h1 style={{ textAlign: 'center' }}>Soccer Mixte Garçons U15-Femmes 14+ RSM 2026</h1>
       
       <p>Le présent cahier de règlements s’applique aux disciplines de Soccer Mixte (Garçons U15 & Femmes) pendant la RSM 2026.</p>
       <p>Les règlements de la FIFA s’appliquent intégralement, à moins de dispositions spécifiques contenues dans ce présent cahier de règlements.</p>

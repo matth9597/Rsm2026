@@ -22,7 +22,7 @@ const sportCategories = [
     variants: [
       { id: "soccer_h", label: "adulteHommes" },
       { id: "soccer_v", label: "veterans" },
-      { id: "soccer_m", label: "mixe" },
+      { id: "soccer_m", label: "mixte" },
       { id: "soccer_k", label: "kidsU13" },
     ],
   },
