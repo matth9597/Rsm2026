@@ -18,7 +18,7 @@ const sportCategories = [
     icon: SoccerBallIcon,
     color: "#9f1617",
     colorLight: "#f0fdf4",
-    colorBorder: "#9f1617",
+    colorBorder: "#a85050",
     variants: [
       { id: "soccer_h", label: "adulteHommes" },
       { id: "soccer_v", label: "veterans" },
@@ -32,7 +32,7 @@ const sportCategories = [
     icon: BasketballIcon,
     color: "#9f1617",
     colorLight: "#f0fdf4",
-    colorBorder: "#9f1617",
+    colorBorder: "#a85050",
     variants: [
       { id: "basketball_f", label: "adulteFemmes" },
       { id: "basketball_h", label: "adulteHommes" },
@@ -46,7 +46,7 @@ const sportCategories = [
     icon: VolleyballIcon,
     color: "#9f1617",
     colorLight: "#f0fdf4",
-    colorBorder: "#9f1617",
+    colorBorder: "#a85050",
     variants: [
       { id: "volleyball_f", label: "adulteFemmes" },
       { id: "volleyball_h", label: "adulteHommes" },
@@ -58,7 +58,7 @@ const sportCategories = [
     icon: [TennisBallIcon, SphereIcon, PencilIcon],
     color: "#9f1617",
     colorLight: "#f0fdf4",
-    colorBorder: "#9f1617",
+    colorBorder: "#a85050",
     variants: [
       { id: "tennis", label: "tennis" },
       { id: "petanque", label: "petanque" },

@@ -6,7 +6,7 @@ import "./App.css";
 import { ArrowLeft } from "@phosphor-icons/react";
 import { sportsData } from "./data";
 import ReglementJOM from './pages/ReglementJOM';
-import Planning from './pages/Planning';
+import Programmation from './pages/Programmation';
 import { useLanguage } from './LanguageContext';
 import ReglementSoccerHomme from './pages/reglementsSports/Soccer/ReglementSoccerHomme';
 import ReglementSoccerVeteran from './pages/reglementsSports/Soccer/ReglementSoccerVeteran';
@@ -27,7 +27,7 @@ export default function App() {
     (s) => s.slug === slugFromUrl,
   );
   const navigate = useNavigate();
-  const notInMainMenuItem = location.pathname !== "/" && location.pathname !== "/jom" && location.pathname !== "/planning"
+  const notInMainMenuItem = location.pathname !== "/" && location.pathname !== "/jom" && location.pathname !== "/programmation"
 
   return (
     <div className="site-wrapper">
@@ -70,7 +70,7 @@ export default function App() {
             </NavLink>
 
             <NavLink 
-              to="/planning" 
+              to="/programmation" 
               className={({ isActive }) => (isActive ? 'nav-item active' : 'nav-item')}
             >
               {t('programmation')}
@@ -94,7 +94,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/jom" element={<ReglementJOM />} />
-          <Route path="/planning" element={<Planning />} />
+          <Route path="/programmation" element={<Programmation />} />
           <Route path="/:slug" element={<Details />} />
           <Route path="/soccer-homme/reglement" element={<ReglementSoccerHomme />} />
           <Route path="/soccer-veteran/reglement" element={<ReglementSoccerVeteran />} />
