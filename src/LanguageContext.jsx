@@ -4,11 +4,15 @@ import { translations } from './translations';
 const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
-  const [lang, setLang] = useState('fr');
+  const [lang, setLang] = useState(localStorage.getItem('rsm_lang') || 'fr');
 
   const t = (id) => translations[lang][id] || id;
   
-  const toggleLang = () => setLang(prev => prev === 'fr' ? 'en' : 'fr');
+  const toggleLang = () => {
+    const newLang = lang === 'fr' ? 'en' : 'fr';
+    setLang(newLang);
+    localStorage.setItem('rsm_lang', newLang);
+  };
 
   return (
     <LanguageContext.Provider value={{ lang, t, toggleLang }}>
@@ -16,6 +20,4 @@ export const LanguageProvider = ({ children }) => {
     </LanguageContext.Provider>
   );
 };
-
-// C'est cette fonction que tu utiliseras dans tes pages
 export const useLanguage = () => useContext(LanguageContext);
