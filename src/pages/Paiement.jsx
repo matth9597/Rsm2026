@@ -43,7 +43,7 @@ export default function Paiement() {
           {lang === 'fr' ? 'Effectuer vos paiements pour la RSM ici' : 'Make your RSM payments here'}
         </h2>
       <div className="paypal-container" style={{ marginTop: '30px' }}>
-        <p>{lang === 'fr' ? 'Cliquez sur le bouton ci-dessous pour finaliser :' : 'Click the button below to finalize:'}</p>
+        <p>{lang === 'fr' ? 'Choisissez sur la discipline et cliquez sur le bouton ci-dessous pour finaliser :' : 'Choose the discipline and click the button below to finalize:'}</p>
         <div className="paypal-wrapper">
           <div dangerouslySetInnerHTML={{ __html: paypalFormCode }} />
         </div>

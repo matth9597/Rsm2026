@@ -479,9 +479,9 @@ export const sportsData = {
     equipes: [{ nom: "ASC Zato", lienForm: "https://google.com" }],
   },
 
-  tennis: {
-    categorie: "tennis",
-    slug: "tennis",
+  tennis_s: {
+    categorie: "tennisSimple",
+    slug: "tennis-simple",
     lienInscriptionIndividuelle:
       "https://docs.google.com/forms/d/e/1FAIpQLScI0UHtJYlz7xSU-yzKiDCj44efVJmcpNoAWImfj4LZWVVTCA/viewform",
     sections: [
@@ -503,13 +503,62 @@ export const sportsData = {
       },
       {
         nom: "frais",
-        texteFR: "50$ par personne (Caution : 100$)",
-        texteEN: "$50 per person (Deposit: $100)",
+        texteFR: "40$ par personne",
+        texteEN: "$40 per person",
       },
       {
         nom: "conditions",
         texteFR: "",
         texteEN: "",
+      },
+      {
+        nom: "terrain",
+        texteFR: "Surface acrylique",
+        texteEN: "Acrylic surface",
+      },
+      {
+        nom: "coordinateur",
+        texteFR: "Mirado (mirado.ralijaona@gmail.com)",
+        texteEN: "Mirado (mirado.ralijaona@gmail.com)",
+      },
+    ],
+    equipes: [{ nom: "ASC Zato", lienForm: "https://google.com" }],
+  },
+
+  
+  tennis_d: {
+    categorie: "tennisDouble",
+    slug: "tennis-double",
+    lienInscriptionEquipe:
+      "https://docs.google.com/forms/d/e/1FAIpQLSfUfkkQ_a6UKuyAtXhSVO5_eDv4udVkbh6GkeXFrKb_6-6JhQ/viewform",
+    lienInscriptionIndividuelle:
+      "https://docs.google.com/forms/d/e/1FAIpQLScI0UHtJYlz7xSU-yzKiDCj44efVJmcpNoAWImfj4LZWVVTCA/viewform",
+    sections: [
+      { nom: "type", texteFR: "Compétition", texteEN: "Competition" },
+      {
+        nom: "format",
+        texteFR: "2 vs 2",
+        texteEN: "2 vs 2",
+        lien: {
+          url: "reglement",
+          texteFR: "reglements",
+          texteEN: "regulations",
+        },
+      },
+      {
+        nom: "anneeNaissance",
+        texteFR: "Ouvert",
+        texteEN: "Open",
+      },
+      {
+        nom: "frais",
+        texteFR: "60$ par equipe (Caution : 50$)",
+        texteEN: "$60 per team (Deposit: $50)",
+      },
+      {
+        nom: "conditions",
+        texteFR: "Mixte",
+        texteEN: "Mixed",
       },
       {
         nom: "terrain",

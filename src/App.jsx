@@ -141,7 +141,8 @@ export default function App() {
           <Route path="/volleyball-homme/reglement" element={<ReglementVolleyballHomme />} />
           <Route path="/volleyball-femme/reglement" element={<ReglementVolleyballFemme />} />
           <Route path="/petanque/reglement" element={<ReglementPetanque />} />
-          <Route path="/tennis/reglement" element={<ReglementTennis />} />
+          <Route path="/tennis-simple/reglement" element={<ReglementTennis />} />
+          <Route path="/tennis-double/reglement" element={<ReglementTennis />} />
         </Routes>
       </main>
     </div>

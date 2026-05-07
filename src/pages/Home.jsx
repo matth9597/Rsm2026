@@ -52,10 +52,22 @@ const sportCategories = [
       { id: "volleyball_h", label: "adulteHommes" },
     ],
   },
+    {
+    id: "tennis",
+    label: "tennis",
+    icon: TennisBallIcon,
+    color: "#9f1617",
+    colorLight: "#f0fdf4",
+    colorBorder: "#a85050",
+    variants: [
+      { id: "tennis_s", label: "tennisSimple" },
+      { id: "tennis_d", label: "tennisDouble" },
+    ]
+  },
   {
     id: "autres",
     label: "autreActivites",
-    icon: [TennisBallIcon, SphereIcon, PencilIcon],
+    icon: [SphereIcon, PencilIcon],
     color: "#9f1617",
     colorLight: "#f0fdf4",
     colorBorder: "#a85050",
