@@ -846,13 +846,13 @@ body {
 }
 
 .paypal-wrapper input[type="text"] {
-  width: 95%;            /* Prend presque toute la largeur sur mobile */
-  max-width: 500px;      /* Même largeur maximum que ton menu déroulant sur PC */
-  padding: 12px;         /* Pour que ce soit plus facile de taper dedans */
-  margin-top: 10px;      /* Petit espace avec le texte au-dessus */
+  width: 95%;
+  max-width: 500px;
+  padding: 12px;
+  margin-top: 10px;
   border: 1px solid #cbd5e1;
   border-radius: 8px;
   font-size: 1rem;
   font-family: inherit;
-  box-sizing: border-box; /* Très important pour que le padding ne fasse pas déborder le champ */
+  box-sizing: border-box;
 }
