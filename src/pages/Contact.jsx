@@ -15,20 +15,20 @@ export default function Contact() {
       color: '#9f1617'
     },
     {
-      id: 'insta',
-      icon: <InstagramLogo size={32} weight="duotone" />,
-      label: 'Instagram',
-      value: '@RSMOttawa',
-      url: 'https://www.instagram.com/rsm.ottawagatineau',
-      color: '#E1306C'
-    },
-    {
       id: 'fb',
       icon: <FacebookLogo size={32} weight="duotone" />,
       label: 'Facebook',
       value: 'RSM Ottawa-Gatineau',
       url: 'https://www.facebook.com/people/RSM-Ottawa-Gatineau/61580375546106/',
       color: '#1877F2'
+    },
+    {
+      id: 'insta',
+      icon: <InstagramLogo size={32} weight="duotone" />,
+      label: 'Instagram',
+      value: '@RSMOttawa',
+      url: 'https://www.instagram.com/rsm.ottawagatineau',
+      color: '#E1306C'
     },
   ];
 

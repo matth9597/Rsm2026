@@ -7,7 +7,7 @@ export default function Programmation() {
   const { lang, toggleLang, t } = useLanguage();
     const sites = [
     { nom: "École Secondaire Mont-Bleu", adresse: "389 Boulevard de la Cité-des-Jeunes, Gatineau, Québec J8Z 1W6" },
-    { nom: "Cégep de l'Outaouais", adresse: "333 Boulevard de la Cité-des-Jeunes, Gatineau, Québec J8Y 6L5" },
+    { nom: "Cégep de l'Outaouais (! Parking Payant)", adresse: "333 Boulevard de la Cité-des-Jeunes, Gatineau, Québec J8Y 6L5" },
     { nom: "Cégep Heritage", adresse: "325 Boulevard de la Cité-des-Jeunes, Gatineau, Québec J8Y 6T3" },
     { nom: "Collège Nouvelles Frontières", adresse: "250 Rue Gamelin, Gatineau, QC J8Y 1W9" }
   ];
