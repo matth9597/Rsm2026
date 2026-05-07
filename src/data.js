@@ -73,7 +73,7 @@ export const sportsData = {
       },
       {
         nom: "frais",
-        texteFR: "50$/personne (Caution de 100$/equipe retourne apres RSM)",
+        texteFR: "50$/personne (Caution de 100$/équipe retourne apres RSM)",
         texteEN: "$50/person (Deposit of $100/team returned after RSM)",
       },
       {
@@ -121,7 +121,7 @@ export const sportsData = {
       },
       {
         nom: "frais",
-        texteFR: "30$/personne (Caution de 50$/equipe retourne apres RSM)",
+        texteFR: "30$/personne (Caution de 50$/équipe retourne apres RSM)",
         texteEN: "$30/person (Deposit of $50/team returned after RSM)",
       },
       {
@@ -313,8 +313,8 @@ export const sportsData = {
       },
       {
         nom: "frais",
-        texteFR: "50$ par personne (Caution équipe: 100$)",
-        texteEN: "$50 per person (Team deposit: $100)",
+        texteFR: "20$ par personne (Caution équipe: 50$)",
+        texteEN: "$20 per person (Team deposit: $50)",
       },
       {
         nom: "conditions",
@@ -552,7 +552,7 @@ export const sportsData = {
       },
       {
         nom: "frais",
-        texteFR: "60$ par equipe (Caution : 50$)",
+        texteFR: "60$ par équipe (Caution : 50$)",
         texteEN: "$60 per team (Deposit: $50)",
       },
       {
@@ -600,7 +600,7 @@ export const sportsData = {
       },
       {
         nom: "frais",
-        texteFR: "40$/personne (Caution de 50$/equipe retourne apres RSM)",
+        texteFR: "40$/personne (Caution de 50$/équipe retourne apres RSM)",
         texteEN: "$40/person (Deposit of $50/team returned after RSM)",
       },
       {
