@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 
 const SHEET_ID = "1ks52tn2sPB4Jvvk6brG-BOCp6-CB_JFceTcPsnUpVJE";
-const TAB_NAME = "Teams WEB";
+const TAB_NAME = "Players WEB";
 const CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(TAB_NAME)}`;
 
-export function useTeams() {
-  const [teams, setTeams] = useState({});
+export function usePlayers() {
+  const [players, setPlayers] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -13,7 +13,6 @@ export function useTeams() {
     fetch(CSV_URL)
       .then((res) => res.text())
       .then((text) => {
-        // Google wraps the JSON in a callback — strip it
         const raw = text.match(
           /google\.visualization\.Query\.setResponse\(([\s\S]*?)\);/,
         );
@@ -22,27 +21,29 @@ export function useTeams() {
         const json = JSON.parse(raw[1]);
         const rows = json.table.rows;
 
-        // Group teams by sport_key
+        // Group by sportKey, then by team
         const data = {};
         rows.forEach((row) => {
           const sportKey = row.c[0]?.v || "";
-          const nom = row.c[1]?.v || "";
-          const ville = row.c[2]?.v || "";
+          const team = row.c[1]?.v || "";
+          const fullName = row.c[2]?.v || "";
+          const jomStatus = row.c[3]?.v || "";
 
-          if (!sportKey || !nom) return;
-          if (!data[sportKey]) data[sportKey] = [];
-          data[sportKey].push({ nom, ville });
+          if (!sportKey || !team || !fullName) return;
+          if (!data[sportKey]) data[sportKey] = {};
+          if (!data[sportKey][team]) data[sportKey][team] = [];
+          data[sportKey][team].push({ fullName, jomStatus });
         });
 
-        setTeams(data);
+        setPlayers(data);
         setLoading(false);
       })
       .catch((err) => {
-        console.error("useTeams fetch error:", err);
+        console.error("usePlayers fetch error:", err);
         setError(err);
         setLoading(false);
       });
   }, []);
 
-  return { teams, loading, error };
+  return { players, loading, error };
 }
