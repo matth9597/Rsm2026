@@ -7,6 +7,14 @@ export default function Contact() {
 
   const contacts = [
     {
+      id: 'mail',
+      icon: <EnvelopeSimple size={32} weight="duotone" />,
+      label: 'Email',
+      value: 'rsmottawagatineau@gmail.com',
+      url: 'mailto:rsmottawagatineau@gmail.com',
+      color: '#9f1617'
+    },
+    {
       id: 'insta',
       icon: <InstagramLogo size={32} weight="duotone" />,
       label: 'Instagram',
@@ -22,14 +30,6 @@ export default function Contact() {
       url: 'https://www.facebook.com/people/RSM-Ottawa-Gatineau/61580375546106/',
       color: '#1877F2'
     },
-    {
-      id: 'mail',
-      icon: <EnvelopeSimple size={32} weight="duotone" />,
-      label: 'Email',
-      value: 'rsmottawagatineau@gmail.com',
-      url: 'mailto:rsmottawagatineau@gmail.com',
-      color: '#9f1617'
-    }
   ];
 
   return (

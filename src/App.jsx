@@ -57,6 +57,14 @@ export default function App() {
           <button className="hamburger-btn" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? <X size={25} weight="bold" /> : <List size={25} weight="bold" />}
           </button>
+          <span className="current-menu-title">
+            {location.pathname === "/" ? t('disciplines') : 
+            location.pathname === "/reglements" ? t('reglements') :
+            location.pathname === "/planning" ? t('planning') :
+            location.pathname === "/jom" ? "JOM" :
+            location.pathname === "/contact" ? t('contact') : 
+            t('disciplines')} 
+          </span>
           <nav className={`bande-nav ${isMenuOpen ? 'open' : ''}`}>
             <NavLink 
               to="/" 
@@ -92,6 +100,14 @@ export default function App() {
               className={({ isActive }) => (isActive ? 'nav-item active' : 'nav-item')}
             >
               {t('contact')}
+            </NavLink>
+
+            <NavLink 
+              to="/paiement" 
+              onClick={() => setIsMenuOpen(false)}
+              className={({ isActive }) => (isActive ? 'nav-item active' : 'nav-item')}
+            >
+              {t('paiement')}
             </NavLink>
           </nav>
         </div>
