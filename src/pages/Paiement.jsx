@@ -33,7 +33,7 @@ export default function Paiement() {
                 Inscription Individuelle (Petanque/TennisSimple)  $40.00 CAD
               </option>
               <option value="Insciption (TennisDouble)">
-                Insciption (TennisDouble) $50.00 CAD
+                Insciption (TennisDouble) $60.00 CAD
               </option>
             </select>
           </td>

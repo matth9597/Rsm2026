@@ -552,8 +552,8 @@ export const sportsData = {
       },
       {
         nom: "frais",
-        texteFR: "50$ par équipe",
-        texteEN: "$50 per team",
+        texteFR: "60$ par équipe",
+        texteEN: "$60 per team",
       },
       {
         nom: "conditions",
