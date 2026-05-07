@@ -94,9 +94,13 @@ export default function App() {
                   ? t("planning")
                   : location.pathname === "/jom"
                     ? "JOM"
-                    : location.pathname === "/contact"
-                      ? t("contact")
-                      : t("disciplines")}
+                    : location.pathname === "/programmation"
+                      ? t("programmation")
+                      : location.pathname === "/paiement"
+                        ? t("paiement")
+                        : location.pathname === "/contact"
+                          ? t("contact")
+                          : t("disciplines")}
           </span>
           <nav className={`bande-nav ${isMenuOpen ? "open" : ""}`}>
             <NavLink
