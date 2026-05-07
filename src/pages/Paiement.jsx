@@ -61,7 +61,7 @@ export default function Paiement() {
             {lang === 'fr' ? 'Mais vous pouvez effectuer vos paiements ici aussi' : 'But you can also make payments here.'}
         </h2>
       <div className="paypal-container" style={{ marginTop: '40px' }}>
-        <p>{lang === 'fr' ? "1 Choisissez l'option :" : "1-Choose the discipline"}</p>
+        <p>{lang === 'fr' ? "1 Choisissez l'option :" : "1 Choose the discipline"}</p>
         <div className="paypal-wrapper">
           <div dangerouslySetInnerHTML={{ __html: paypalFormCode }} />
         </div>
