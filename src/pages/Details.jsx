@@ -104,18 +104,24 @@ export default function Details() {
           ) : equipes && equipes.length > 0 ? (
             equipes.map((eq, i) => (
               <div key={i} className="team-row">
-                <span className="team-row__name">{eq.nom}</span>
-                {eq.ville && <span className="team-row__city">{eq.ville}</span>}
-                {eq.lienForm && (
-                  <a
-                    href={eq.lienForm}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="team-row__link"
-                  >
-                    {t("listeJoueurs")} →
-                  </a>
-                )}
+                <span className="team-row__name">
+                  {eq.nom}
+                  {eq.ville ? ` (${eq.ville})` : ""}
+                </span>
+                <button
+                  className="team-row__link"
+                  style={{
+                    background: "none",
+                    border: "none",
+                    cursor: "pointer",
+                    padding: 0,
+                  }}
+                  onClick={() =>
+                    navigate(`/${slug}/equipe/${encodeURIComponent(eq.nom)}`)
+                  }
+                >
+                  {t("listeJoueurs")} →
+                </button>
               </div>
             ))
           ) : (
