@@ -37,12 +37,13 @@ export default function Paiement() {
       </table>
       <td>
           <input type="hidden" name="on1" value="Equipe et/ou Personne / Team and/or Person"/>
-          2 Inscrivez l'equipe et/ou Personne / Register team and/or Person
+          2 Inscrivez l'equipe et/ou Personne / Register team and/or Person<br/>
+            (e.g. ASC ZATO - Rakoto Rabe )
         </td>
       </tr>
       <tr>
         <td>
-          <input type="text" name="os1" maxLength="200" required  />
+          <input type="text" name="os1" length="500" required  />
       </td>
       <input type="hidden" name="currency_code" value="CAD" />
       <input type="image" src="https://www.paypalobjects.com/fr_CA/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
@@ -54,7 +55,7 @@ export default function Paiement() {
       
       <div style={{ background: '#f8fafc', padding: '30px', borderRadius: '12px', border: '1px solid #e2e8f0', marginTop: '30px' }}>
         <h2 style={{ color: '#9f1617', fontSize: '20px', fontWeight: 'bold' }}>
-            {lang === 'fr' ? 'Le paiement e-Interac est notre mode de paiement recommandée.' : 'Interac e-Pay is our suggested payment method.'}
+            {lang === 'fr' ? 'Le paiement e-Interac est notre mode de paiement recommandé.' : 'Interac e-Pay is our suggested payment method.'}
         </h2>
         <h2 className="section-title">
             {lang === 'fr' ? 'Mais vous pouvez effectuer vos paiements ici aussi' : 'But you can also make payments here.'}
