@@ -552,8 +552,8 @@ export const sportsData = {
       },
       {
         nom: "frais",
-        texteFR: "60$ par équipe (Caution : 50$)",
-        texteEN: "$60 per team (Deposit: $50)",
+        texteFR: "50$ par équipe",
+        texteEN: "$50 per team",
       },
       {
         nom: "conditions",
