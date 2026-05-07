@@ -17,14 +17,23 @@ export default function Paiement() {
         <tr>
           <td>
             <select name="os0">
-              <option value="Basket / Soccer / Volley Individuel">
-                Basket / Soccer / Volley Individuel $50.00 CAD
+              <option value="Caution Equipe Adulte (Basket/Soccer/Volley) ">
+                Caution Equipe Adulte (Basket/Soccer/Volley)  $100.00 CAD
               </option>
-              <option value="Tennis">
-                Tennis $50.00 CAD
+              <option value="Caution Equipe (SoccerMixte/BasketJunior/Petanque)">
+                Caution Equipe (SoccerMixte/BasketJunior/Petanque) $50.00 CAD
               </option>
-              <option value="Basket / Soccer / Volley Team">
-                Basket / Soccer / Volley Team $100.00 CAD
+              <option value="Inscription Individuelle Adulte (Basket/Soccer/Volley)">
+                Inscription Individuelle Adulte (Basket/Soccer/Volley) $50.00 CAD
+              </option>
+              <option value="Inscription Individuelle (Soccer Mixte, BasketJunior) ">
+                Inscription Individuelle (Soccer Mixte, BasketJunior)  $30.00 CAD
+              </option>
+              <option value="Inscription Individuelle (Petanque/TennisSimple) ">
+                Inscription Individuelle (Petanque/TennisSimple)  $40.00 CAD
+              </option>
+              <option value="Insciption (TennisDouble)">
+                Insciption (TennisDouble) $50.00 CAD
               </option>
             </select>
           </td>
