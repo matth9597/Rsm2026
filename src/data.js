@@ -313,8 +313,8 @@ export const sportsData = {
       },
       {
         nom: "frais",
-        texteFR: "20$ par personne (Caution équipe: 50$)",
-        texteEN: "$20 per person (Team deposit: $50)",
+        texteFR: "30$ par personne (Caution équipe: 50$)",
+        texteEN: "$30 per person (Team deposit: $50)",
       },
       {
         nom: "conditions",

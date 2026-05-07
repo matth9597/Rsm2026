@@ -42,6 +42,8 @@ export default function Paiement() {
         <h2 className="section-title">
           {lang === 'fr' ? 'Effectuer vos paiements pour la RSM ici' : 'Make your RSM payments here'}
         </h2>
+        <p>{lang === 'fr' ? 'Etape 1: Inscrivez votre equipe et payez la caution' : 'Step 1: Register your team and pay the deposit'}</p>
+        <p>{lang === 'fr' ? 'Etape 2: Inscrivez-vous (personnellement ou pour joindre votre equipe) et payez les frais' : 'Step 2: Register (personally or to join your team) and pay the fees'}</p>
       <div className="paypal-container" style={{ marginTop: '30px' }}>
         <p>{lang === 'fr' ? 'Choisissez sur la discipline et cliquez sur le bouton ci-dessous pour finaliser :' : 'Choose the discipline and click the button below to finalize:'}</p>
         <div className="paypal-wrapper">
