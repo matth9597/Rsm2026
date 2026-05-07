@@ -72,7 +72,6 @@ const sportCategories = [
     colorLight: "#f0fdf4",
     colorBorder: "#a85050",
     variants: [
-      { id: "tennis", label: "tennis" },
       { id: "petanque", label: "petanque" },
       { id: "soraTononina", label: "soraTononina" },
       { id: "fanorona", label: "fanorona" },

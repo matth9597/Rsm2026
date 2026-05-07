@@ -9,10 +9,6 @@ export default function Paiement() {
       <input type="hidden" name="hosted_button_id" value="PF55G4FMKDWMQ" />
       <table>
         <tr>
-          <td>
-            <input type="hidden" name="on0" value="Inscription &amp; Caution RSM 2026"/>
-            Inscription &amp; Caution RSM 2026
-          </td>
         </tr>
         <tr>
           <td>
@@ -39,6 +35,15 @@ export default function Paiement() {
           </td>
         </tr>
       </table>
+      <td>
+          <input type="hidden" name="on1" value="Equipe et/ou Personne / Team and/or Person"/>
+          2 Inscrivez l'equipe et/ou Personne / Register team and/or Person
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="text" name="os1" maxLength="200" required  />
+      </td>
       <input type="hidden" name="currency_code" value="CAD" />
       <input type="image" src="https://www.paypalobjects.com/fr_CA/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
     </form>
@@ -48,13 +53,14 @@ export default function Paiement() {
     <div style={{ padding: '40px 20px', maxWidth: '800px', margin: '0 auto', textAlign: 'center', fontFamily: 'sans-serif' }}>
       
       <div style={{ background: '#f8fafc', padding: '30px', borderRadius: '12px', border: '1px solid #e2e8f0', marginTop: '30px' }}>
-        <h2 className="section-title">
-          {lang === 'fr' ? 'Effectuer vos paiements pour la RSM ici' : 'Make your RSM payments here'}
+        <h2 style={{ color: '#9f1617', fontSize: '20px', fontWeight: 'bold' }}>
+            {lang === 'fr' ? 'Le paiement e-Interac est notre mode de paiement recommandée.' : 'Interac e-Pay is our suggested payment method.'}
         </h2>
-        <p>{lang === 'fr' ? 'Etape 1: Inscrivez votre equipe et payez la caution' : 'Step 1: Register your team and pay the deposit'}</p>
-        <p>{lang === 'fr' ? 'Etape 2: Inscrivez-vous (personnellement ou pour joindre votre equipe) et payez les frais' : 'Step 2: Register (personally or to join your team) and pay the fees'}</p>
-      <div className="paypal-container" style={{ marginTop: '30px' }}>
-        <p>{lang === 'fr' ? 'Choisissez sur la discipline et cliquez sur le bouton ci-dessous pour finaliser :' : 'Choose the discipline and click the button below to finalize:'}</p>
+        <h2 className="section-title">
+            {lang === 'fr' ? 'Mais vous pouvez effectuer vos paiements ici aussi' : 'But you can also make payments here.'}
+        </h2>
+      <div className="paypal-container" style={{ marginTop: '40px' }}>
+        <p>{lang === 'fr' ? "1 Choisissez l'option :" : "1-Choose the discipline"}</p>
         <div className="paypal-wrapper">
           <div dangerouslySetInnerHTML={{ __html: paypalFormCode }} />
         </div>
