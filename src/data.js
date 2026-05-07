@@ -280,8 +280,10 @@ export const sportsData = {
       },
       {
         nom: "coordinateur",
-        texteFR: "Herizo (herizo@gmail.com), Lalaina (ramarotafika.lalaina@gmail.com)",
-        texteEN: "Herizo (herizo@gmail.com), Lalaina (ramarotafika.lalaina@gmail.com)",
+        texteFR:
+          "Herizo (herizo@gmail.com), Lalaina (ramarotafika.lalaina@gmail.com)",
+        texteEN:
+          "Herizo (herizo@gmail.com), Lalaina (ramarotafika.lalaina@gmail.com)",
       },
     ],
     equipes: [{ nom: "ASC Zato", lienForm: "https://google.com" }],
@@ -525,14 +527,13 @@ export const sportsData = {
     equipes: [{ nom: "ASC Zato", lienForm: "https://google.com" }],
   },
 
-  
   tennis_d: {
     categorie: "tennisDouble",
     slug: "tennis-double",
     lienInscriptionEquipe:
-      "https://docs.google.com/forms/d/e/1FAIpQLSfUfkkQ_a6UKuyAtXhSVO5_eDv4udVkbh6GkeXFrKb_6-6JhQ/viewform",
+      "https://docs.google.com/forms/d/e/1FAIpQLSfDomLQIl4WC0ohNN0JvSfGb8weEdx76jTjVT9szo-FDIYCig/viewform",
     lienInscriptionIndividuelle:
-      "https://docs.google.com/forms/d/e/1FAIpQLScI0UHtJYlz7xSU-yzKiDCj44efVJmcpNoAWImfj4LZWVVTCA/viewform",
+      "https://docs.google.com/forms/d/e/1FAIpQLSdFwHgLV5v6bZ26j1m7pP62Y0uUDBKTu09uRgXJythgMR51hw/viewform",
     sections: [
       { nom: "type", texteFR: "Compétition", texteEN: "Competition" },
       {
