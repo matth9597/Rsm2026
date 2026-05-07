@@ -106,7 +106,7 @@ body {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: rgba(248, 250, 252, 0.5) !important; 
+  color: rgba(248, 250, 252, 0.5) !important;
   text-decoration: none;
   transition: color 0.3s ease;
   cursor: pointer;
@@ -119,9 +119,9 @@ body {
 }
 
 .nav-item.active {
-  color: #ffffff !important; 
+  color: #ffffff !important;
   opacity: 1 !important;
-  border: none !important; 
+  border: none !important;
 }
 
 .hamburger-btn {
@@ -214,8 +214,8 @@ body {
 
 .sub-header-info {
   width: 100%;
-  background-color: #F9FAFB;
-  border-bottom: 1px solid #E5E7EB;
+  background-color: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
   padding: 10px 0;
 }
 
@@ -230,7 +230,7 @@ body {
 
 .info-text {
   font-size: 0.85rem;
-  color: #4B5563;
+  color: #4b5563;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1.2px;
@@ -246,8 +246,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.2s, color 0.2s;
-  
+  transition:
+    transform 0.2s,
+    color 0.2s;
+
   width: auto !important;
   height: auto !important;
   min-width: 0 !important;
@@ -502,6 +504,21 @@ body {
   color: #bf191e;
 }
 
+.team-row__loading,
+.team-row__empty {
+  font-size: 0.9rem;
+  color: #6b7280;
+  padding: 13px 20px;
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.teams-list {
+  min-height: 48px;
+}
+
 /* ─── RESPONSIVE (Details) ──────────────────────────────────── */
 @media (max-width: 480px) {
   .details-wrapper {
@@ -593,7 +610,7 @@ body {
 }
 
 .btn-calendar:hover {
-  background-color: #4A5568;
+  background-color: #4a5568;
 }
 
 /* ─── NAV UTILS ─────────────────────────────────────────────── */
@@ -691,8 +708,8 @@ body {
 
 /* L'iframe doit prendre TOUTE la place du conteneur */
 .google-sheet-iframe {
-  width: 100%;       /* <--- Obligatoire pour la largeur */
-  height: 85vh;      /* <--- Hauteur (85% de la hauteur de l'écran) */
+  width: 100%; /* <--- Obligatoire pour la largeur */
+  height: 85vh; /* <--- Hauteur (85% de la hauteur de l'écran) */
   border: 1px solid #e5e7eb;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -708,7 +725,6 @@ body {
     padding: 0 10px;
   }
 }
-
 
 /* ─── Contact ───────────────────────────────────────── */
 
@@ -773,7 +789,7 @@ body {
   font-size: 1.1rem;
   font-weight: 600;
   color: #1e293b;
-  word-break: break-all; 
+  word-break: break-all;
   line-height: 1.2;
 }
 

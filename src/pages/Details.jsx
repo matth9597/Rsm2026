@@ -1,21 +1,26 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { sportsData } from "../data";
 import { UserIcon, UsersIcon } from "@phosphor-icons/react";
-import { useLanguage } from '../LanguageContext';
+import { useLanguage } from "../LanguageContext";
+import { useTeams } from "../hooks/useTeams";
 
 export default function Details() {
   const { slug } = useParams();
   const info = Object.values(sportsData).find((s) => s.slug === slug);
+  const sportKey = Object.keys(sportsData).find(
+    (k) => sportsData[k].slug === slug,
+  );
 
-  if (!info)
-    return (
-      <div className="app-container">ERROR</div>
-    );
+  const { teams, loading } = useTeams();
+
+  if (!info) return <div className="app-container">ERROR</div>;
 
   const navigate = useNavigate();
   const { lang, toggleLang, t } = useLanguage();
   const hasSpecificLinks =
     info.lienInscriptionIndividuelle || info.lienInscriptionEquipe;
+
+  const equipes = !loading && teams[sportKey] ? teams[sportKey] : info.equipes;
 
   return (
     <div className="details-wrapper">
@@ -31,7 +36,7 @@ export default function Details() {
                 }
               >
                 <UsersIcon size={25} color="#ffffff" weight="duotone" />
-                    {t("sInscrire")} — {t("equipe")}
+                {t("sInscrire")} — {t("equipe")}
               </button>
             )}
             {info.lienInscriptionIndividuelle && (
@@ -64,43 +69,64 @@ export default function Details() {
           <p className="details-card__label">{t("informations")}</p>
           {info.sections.map((section, index) => (
             <div key={index} className="section-row">
-            <span className="section-row__key">{t(section.nom)}</span>
-            <span className="section-row__value">
-              {lang === 'fr' ? section.texteFR : section.texteEN}
-            </span>
-            {section.lien && section.nom === "format" && (
-              <button 
-                onClick={() => navigate(section.lien.url)}
-                className="section-row__link"
-                style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
-              >
-                {lang === 'fr' ? section.lien.texteFR : section.lien.texteEN} →
-              </button>
-            )}
+              <span className="section-row__key">{t(section.nom)}</span>
+              <span className="section-row__value">
+                {lang === "fr" ? section.texteFR : section.texteEN}
+              </span>
+              {section.lien && section.nom === "format" && (
+                <button
+                  onClick={() => navigate(section.lien.url)}
+                  className="section-row__link"
+                  style={{
+                    background: "none",
+                    border: "none",
+                    cursor: "pointer",
+                    padding: 0,
+                  }}
+                >
+                  {lang === "fr" ? section.lien.texteFR : section.lien.texteEN}{" "}
+                  →
+                </button>
+              )}
             </div>
           ))}
         </div>
       )}
 
       {/* ── Teams ── */}
-      {info.equipes && info.equipes.length > 0 && (
-        <div className="details-card">
-          <p className="details-card__label">{t("equipesInscrites")}</p>
-          {info.equipes.map((eq, i) => (
-            <div key={i} className="team-row">
-              <span className="team-row__name">{eq.nom}</span>
-              <a
-                href={eq.lienForm}
-                target="_blank"
-                rel="noreferrer"
-                className="team-row__link"
-              >
-                {t("listeJoueurs")} →
-              </a>
-            </div>
-          ))}
+      <div className="details-card">
+        <p className="details-card__label">{t("equipesInscrites")}</p>
+        <div className="teams-list">
+          {loading ? (
+            <p className="team-row__loading">
+              {lang === "fr" ? "Chargement des équipes..." : "Loading teams..."}
+            </p>
+          ) : equipes && equipes.length > 0 ? (
+            equipes.map((eq, i) => (
+              <div key={i} className="team-row">
+                <span className="team-row__name">{eq.nom}</span>
+                {eq.ville && <span className="team-row__city">{eq.ville}</span>}
+                {eq.lienForm && (
+                  <a
+                    href={eq.lienForm}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="team-row__link"
+                  >
+                    {t("listeJoueurs")} →
+                  </a>
+                )}
+              </div>
+            ))
+          ) : (
+            <p className="team-row__empty">
+              {lang === "fr"
+                ? "Aucune équipe inscrite pour le moment."
+                : "No teams registered yet."}
+            </p>
+          )}
         </div>
-      )}
+      </div>
     </div>
   );
 }
