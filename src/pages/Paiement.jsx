@@ -13,25 +13,37 @@ export default function Paiement() {
         <tr>
           <td>
             <select name="os0">
-              <option value="Caution Equipe Adulte (Basket/Soccer/Volley) ">
-                Caution Equipe Adulte (Basket/Soccer/Volley)  $CAD 100.00 (+3.30)
-              </option>
-              <option value="Caution Equipe (SoccerMixte/BasketJunior/Petanque)">
-                Caution Equipe (SoccerMixte/BasketJunior/Petanque) $CAD 50.00 (+1.80)
-              </option>
-              <option value="Inscription Individuelle Adulte (Basket/Soccer/Volley)">
-                Inscription Individuelle Adulte (Basket/Soccer/Volley) $CAD 50.00 (+1.80)
-              </option>
-              <option value="Inscription Individuelle (Soccer Mixte, BasketJunior) ">
-                Inscription Individuelle (Soccer Mixte, BasketJunior)  $CAD 30.00 (+1.20)
-              </option>
-              <option value="Inscription Individuelle (Petanque/TennisSimple) ">
-                Inscription Individuelle (Petanque/TennisSimple)  $CAD 40.00 (+1.50)
-              </option>
-              <option value="Insciption (TennisDouble)">
-                Insciption (TennisDouble) $CAD 60.00 (+2.10)
-              </option>
-            </select>
+                <option value="Caution Equipe Adulte (Basket/Soccer/Volley)">
+                    ${lang === 'fr' 
+                        ? "Caution Equipe Adulte (Basket/Soccer/Volley) $CAD 100.00 (+3.30)" 
+                        : "Adult Team Deposit (Basket/Soccer/Volley) $CAD 100.00 (+3.30)"}
+                </option>
+                <option value="Caution Equipe (SoccerMixte/BasketJunior/Petanque)">
+                    ${lang === 'fr' 
+                        ? "Caution Equipe (SoccerMixte/BasketJunior/Petanque) $CAD 50.00 (+1.80)" 
+                        : "Team Deposit (Co-ed Soccer/BasketJunior/Petanque) $CAD 50.00 (+1.80)"}
+                </option>
+                <option value="Inscription Individuelle Adulte (Basket/Soccer/Volley)">
+                    ${lang === 'fr' 
+                        ? "Inscription Individuelle Adulte (Basket/Soccer/Volley) $CAD 50.00 (+1.80)" 
+                        : "Individual Adult Registration (Basket/Soccer/Volley) $CAD 50.00 (+1.80)"}
+                </option>
+                <option value="Inscription Individuelle (Soccer Mixte, BasketJunior)">
+                    ${lang === 'fr' 
+                        ? "Inscription Individuelle (Soccer Mixte, BasketJunior) $CAD 30.00 (+1.20)" 
+                        : "Individual Registration (Co-ed Soccer, BasketJunior) $CAD 30.00 (+1.20)"}
+                </option>
+                <option value="Inscription Individuelle (Petanque/TennisSimple)">
+                    ${lang === 'fr' 
+                        ? "Inscription Individuelle (Petanque/TennisSimple) $CAD 40.00 (+1.50)" 
+                        : "Individual Registration (Petanque/TennisSingle) $CAD 40.00 (+1.50)"}
+                </option>
+                <option value="Insciption (TennisDouble)">
+                    ${lang === 'fr' 
+                        ? "Insciption (TennisDouble) $CAD 60.00 (+2.10)" 
+                        : "Registration (TennisDouble) $CAD 60.00 (+2.10)"}
+                </option>
+            </select> 
           </td>
         </tr>
         </table>

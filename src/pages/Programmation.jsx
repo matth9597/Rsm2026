@@ -10,7 +10,7 @@ export default function Programmation() {
     { nom: "Cégep de l'Outaouais (! Parking Payant)", adresse: "333 Boulevard de la Cité-des-Jeunes, Gatineau, Québec J8Y 6L5" },
     { nom: "Cégep Heritage", adresse: "325 Boulevard de la Cité-des-Jeunes, Gatineau, Québec J8Y 6T3" },
     { nom: "Collège Nouvelles Frontières", adresse: "250 Rue Gamelin, Gatineau, QC J8Y 1W9" },
-    { nom: "Parc Bisson (Tennis)", adresse: "Rue Froment, Gatineau, QC J8Y 6G2" }
+    { nom: "Parc Bisson (Tennis)", adresse: "36 Thérien Street, Gatineau, QC, J8Y 1H8" }
   ];
 
   return (
@@ -18,7 +18,7 @@ export default function Programmation() {
       <p style={{ color: '#9f1617', fontSize: '20px', fontWeight: 'bold' }}>{t("programmationMessage")}</p>
       <p>
       {lang === 'fr' 
-        ? 'La RSM 2026 se fera à ces endroits ci-dessous. Certaines disciplines peuvent commencer le Vendredi 3 juillet dès 14h, dont le Soccer Adulte, Basketball Adulte Homme et Femmes, Volley Ball Adulte Homme et Femmes.' 
+        ? 'La RSM 2026 se fera à ces endroits ci-dessous. Certaines disciplines peuvent commencer le Vendredi 3 juillet dès 14h, dont le Soccer Adulte, Basketball Adulte Homme et Femme, Volley Ball Adulte Homme et Femme.' 
         : "The RSM 2026 will take place at the locations listed below. Some disciplines may begin on Friday, July 3rd at 2 PM, including Adult Soccer, Adult Men's and Women's Basketball, and Adult Men's and Women's Volleyball."}
       </p>
       {sites.map((site, index) => (
