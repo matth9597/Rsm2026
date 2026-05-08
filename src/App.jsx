@@ -208,6 +208,10 @@ export default function App() {
             element={<ReglementBasketballFemme />}
           />
           <Route
+            path="/basketball-junior/reglement"
+            element={<ReglementBasketballHomme />}
+          />
+          <Route
             path="/basketball-homme/reglement"
             element={<ReglementBasketballHomme />}
           />

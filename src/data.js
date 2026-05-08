@@ -40,8 +40,8 @@ export const sportsData = {
       },
       {
         nom: "coordinateur",
-        texteFR: "Samurey (samureyr@gmail.com)",
-        texteEN: "Samurey (samureyr@gmail.com)",
+        texteFR: "Herizo (herizo@gmail.com)",
+        texteEN: "Herizo (herizo@gmail.com)",
       },
     ],
     equipes: [{ nom: "ASC Zato", lienForm: "https://google.com" }],
@@ -136,8 +136,8 @@ export const sportsData = {
       },
       {
         nom: "coordinateur",
-        texteFR: "Riantsoa (riantsoa07.andria@gmail.com)",
-        texteEN: "Riantsoa (riantsoa07.andria@gmail.com)",
+        texteFR: "Mirantsoa (Mirantsoa13@gmail.com)",
+        texteEN: "Mirantsoa (Mirantsoa13@gmail.com)",
       },
     ],
     equipes: [{ nom: "ASC Zato", lienForm: "https://google.com" }],
@@ -184,8 +184,8 @@ export const sportsData = {
       },
       {
         nom: "coordinateur",
-        texteFR: "Mirantsoa (Mirantsoa13@gmail.com)",
-        texteEN: "Mirantsoa (Mirantsoa13@gmail.com)",
+        texteFR: "Riantsoa (riantsoa07.andria@gmail.com)",
+        texteEN: "Riantsoa (riantsoa07.andria@gmail.com)",
       },
     ],
     equipes: [{ nom: "ASC Zato", lienForm: "https://google.com" }],
@@ -281,9 +281,9 @@ export const sportsData = {
       {
         nom: "coordinateur",
         texteFR:
-          "Herizo (herizo@gmail.com), Lalaina (ramarotafika.lalaina@gmail.com)",
+          "Lalaina (ramarotafika.lalaina@gmail.com)",
         texteEN:
-          "Herizo (herizo@gmail.com), Lalaina (ramarotafika.lalaina@gmail.com)",
+          "Lalaina (ramarotafika.lalaina@gmail.com)",
       },
     ],
     equipes: [{ nom: "ASC Zato", lienForm: "https://google.com" }],
@@ -369,7 +369,7 @@ export const sportsData = {
       {
         nom: "conditions",
         texteFR: "Mixte",
-        texteEN: "Mixt",
+        texteEN: "Mixed",
       },
       {
         nom: "terrain",
