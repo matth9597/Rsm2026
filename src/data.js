@@ -330,8 +330,8 @@ export const sportsData = {
       },
       {
         nom: "coordinateur",
-        texteFR: "",
-        texteEN: "",
+        texteFR: "Jonathan (chapinjonathan8@icloud.com)",
+        texteEN: "Jonathan (chapinjonathan8@icloud.com)",
       },
     ],
     equipes: [{ nom: "ASC Zato", lienForm: "https://google.com" }],
@@ -378,8 +378,8 @@ export const sportsData = {
       },
       {
         nom: "coordinateur",
-        texteFR: "",
-        texteEN: "",
+        texteFR: "Hantsa (hralaimalala@gmail.com)",
+        texteEN: "Hantsa (hralaimalala@gmail.com)",
       },
     ],
     equipes: [{ nom: "ASC Zato", lienForm: "https://google.com" }],
