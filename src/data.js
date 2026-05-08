@@ -175,7 +175,7 @@ export const sportsData = {
       {
         nom: "conditions",
         texteFR: "Mixte et minimum de 2 filles sur le terrain en tout temps.",
-        texteEN: "Mixed and a minimum of 2 girls on the field at all times.",
+        texteEN: "Co-ed and a minimum of 2 girls on the field at all times.",
       },
       {
         nom: "terrain",
@@ -369,7 +369,7 @@ export const sportsData = {
       {
         nom: "conditions",
         texteFR: "Mixte",
-        texteEN: "Mixed",
+        texteEN: "Co-ed",
       },
       {
         nom: "terrain",
@@ -559,7 +559,7 @@ export const sportsData = {
       {
         nom: "conditions",
         texteFR: "Mixte",
-        texteEN: "Mixed",
+        texteEN: "Co-ed",
       },
       {
         nom: "terrain",
