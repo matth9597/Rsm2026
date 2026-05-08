@@ -25,7 +25,7 @@ import ReglementBasketballFemme from "./pages/reglementsSports/Basketball/Reglem
 import ReglementVolleyballFemme from "./pages/reglementsSports/Volleyball/ReglementVolleyballFemme";
 import ReglementVolleyballHomme from "./pages/reglementsSports/Volleyball/ReglementVolleyballHomme";
 import ReglementPetanque from "./pages/reglementsSports/Other/ReglementPetanque";
-import ReglementTennis from "./pages/reglementsSports/Other/ReglementTennis";
+import ReglementTennis from "./pages/reglementsSports/Tennis/ReglementTennis";
 import TeamPlayers from "./pages/TeamPlayers";
 
 export default function App() {
