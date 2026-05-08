@@ -6,8 +6,6 @@ export default function ReglementVolleyballFemmeEN() {
       <h1 style={{ textAlign: 'center' }}>Volleyball — OFFICIAL REGULATIONS RSM 2026</h1>
       
       <p><em>Disclaimer: Translation Accuracy — This document is an English translation of the official French tournament rules and is provided for informational purposes only. While every effort has been made to ensure the accuracy of this translation, the French version remains the sole official and legally binding reference. In the event of any discrepancy, ambiguity, or conflict between the English and French versions, the French text shall prevail.</em></p>
-
-      <h3>RSM Ottawa 2026 Volleyball - Men</h3>
       
       <p><strong>a) Regulations:</strong></p>
       <ul>
