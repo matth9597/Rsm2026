@@ -28,11 +28,13 @@ export function usePlayers() {
           const team = row.c[1]?.v || "";
           const fullName = row.c[2]?.v || "";
           const jomStatus = row.c[3]?.v || "";
+          const level = row.c[4]?.v || "";
+          const sex = row.c[5]?.v || "";
 
           if (!sportKey || !team || !fullName) return;
           if (!data[sportKey]) data[sportKey] = {};
           if (!data[sportKey][team]) data[sportKey][team] = [];
-          data[sportKey][team].push({ fullName, jomStatus });
+          data[sportKey][team].push({ fullName, jomStatus, level, sex });
         });
 
         setPlayers(data);

@@ -92,6 +92,21 @@ export default function Details() {
               <span className="section-row__value">
                 {lang === "fr" ? section.texteFR : section.texteEN}
               </span>
+              {section.lien && section.nom === "format" && (
+                <button
+                  onClick={() => navigate(section.lien.url)}
+                  className="section-row__link"
+                  style={{
+                    background: "none",
+                    border: "none",
+                    cursor: "pointer",
+                    padding: 0,
+                  }}
+                >
+                  {lang === "fr" ? section.lien.texteFR : section.lien.texteEN}{" "}
+                  →
+                </button>
+              )}
             </div>
           ))}
         </div>
@@ -117,9 +132,21 @@ export default function Details() {
               registeredPlayers.map((p, i) => (
                 <div key={i} className="team-row">
                   <span className="team-row__name">{p.fullName}</span>
-                  {p.jomStatus && (
-                    <span className="team-row__jom">{p.jomStatus}</span>
-                  )}
+                  <div
+                    style={{
+                      display: "flex",
+                      gap: "8px",
+                      alignItems: "center",
+                    }}
+                  >
+                    {p.sex && <span className="team-row__badge">{p.sex}</span>}
+                    {p.level && (
+                      <span className="team-row__badge">{p.level}</span>
+                    )}
+                    {p.jomStatus && (
+                      <span className="team-row__jom">{p.jomStatus}</span>
+                    )}
+                  </div>
                 </div>
               ))
             ) : (
