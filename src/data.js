@@ -232,8 +232,8 @@ export const sportsData = {
       },
       {
         nom: "coordinateur",
-        texteFR: "Rayold (rrayol96@gmail.com), Hantsa (hralaimalala@gmail.com)",
-        texteEN: "Rayold (rrayol96@gmail.com), Hantsa (hralaimalala@gmail.com)",
+        texteFR: "Rayold (rrayold96@gmail.com), Hantsa (hralaimalala@gmail.com)",
+        texteEN: "Rayold (rrayold96@gmail.com), Hantsa (hralaimalala@gmail.com)",
       },
     ],
     equipes: [{ nom: "ASC Zato", lienForm: "https://google.com" }],
