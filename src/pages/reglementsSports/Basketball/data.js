@@ -14,8 +14,8 @@ export const sportsData = {
         texteEN: "11 vs 11",
         lien: {
           url: "reglement",
-          texteFR: "Règlements",
-          texteEN: "Regulations",
+          texteFR: "reglements",
+          texteEN: "regulations",
         },
       },
       {
@@ -62,8 +62,8 @@ export const sportsData = {
         texteEN: "9v9, no offsides",
         lien: {
           url: "reglement",
-          texteFR: "Règlements",
-          texteEN: "Regulations",
+          texteFR: "reglements",
+          texteEN: "regulations",
         },
       },
       {
@@ -110,8 +110,8 @@ export const sportsData = {
         texteEN: "9v9, no offsides",
         lien: {
           url: "reglement",
-          texteFR: "Règlements",
-          texteEN: "Regulations",
+          texteFR: "reglements",
+          texteEN: "regulations",
         },
       },
       {
@@ -158,8 +158,8 @@ export const sportsData = {
         texteEN: "7v7, no offsides",
         lien: {
           url: "reglement",
-          texteFR: "Règlements",
-          texteEN: "Regulations",
+          texteFR: "reglements",
+          texteEN: "regulations",
         },
       },
       {
@@ -206,8 +206,8 @@ export const sportsData = {
         texteEN: "5 vs 5",
         lien: {
           url: "reglement",
-          texteFR: "Règlements",
-          texteEN: "Regulations",
+          texteFR: "reglements",
+          texteEN: "regulations",
         },
       },
       {
@@ -254,8 +254,8 @@ export const sportsData = {
         texteEN: "5 vs 5",
         lien: {
           url: "reglement",
-          texteFR: "Règlements",
-          texteEN: "Regulations",
+          texteFR: "reglements",
+          texteEN: "regulations",
         },
       },
       {
@@ -280,8 +280,10 @@ export const sportsData = {
       },
       {
         nom: "coordinateur",
-        texteFR: "Lalaina (ramarotafika.lalaina@gmail.com)",
-        texteEN: "Lalaina (ramarotafika.lalaina@gmail.com)",
+        texteFR:
+          "Lalaina (ramarotafika.lalaina@gmail.com)",
+        texteEN:
+          "Lalaina (ramarotafika.lalaina@gmail.com)",
       },
     ],
     equipes: [{ nom: "ASC Zato", lienForm: "https://google.com" }],
@@ -302,8 +304,8 @@ export const sportsData = {
         texteEN: "5 vs 5",
         lien: {
           url: "reglement",
-          texteFR: "Règlements",
-          texteEN: "Regulations",
+          texteFR: "reglements",
+          texteEN: "regulations",
         },
       },
       {
@@ -350,8 +352,8 @@ export const sportsData = {
         texteEN: "5 vs 5",
         lien: {
           url: "reglement",
-          texteFR: "Règlements",
-          texteEN: "Regulations",
+          texteFR: "reglements",
+          texteEN: "regulations",
         },
       },
       {
@@ -398,8 +400,8 @@ export const sportsData = {
         texteEN: "6 vs 6",
         lien: {
           url: "reglement",
-          texteFR: "Règlements",
-          texteEN: "Regulations",
+          texteFR: "reglements",
+          texteEN: "regulations",
         },
       },
       {
@@ -446,8 +448,8 @@ export const sportsData = {
         texteEN: "6 vs 6",
         lien: {
           url: "reglement",
-          texteFR: "Règlements",
-          texteEN: "Regulations",
+          texteFR: "reglements",
+          texteEN: "regulations",
         },
       },
       {
@@ -492,8 +494,8 @@ export const sportsData = {
         texteEN: "1 vs 1",
         lien: {
           url: "reglement",
-          texteFR: "Règlements",
-          texteEN: "Regulations",
+          texteFR: "reglements",
+          texteEN: "regulations",
         },
       },
       {
@@ -540,8 +542,8 @@ export const sportsData = {
         texteEN: "2 vs 2",
         lien: {
           url: "reglement",
-          texteFR: "Règlements",
-          texteEN: "Regulations",
+          texteFR: "reglements",
+          texteEN: "regulations",
         },
       },
       {
@@ -588,8 +590,8 @@ export const sportsData = {
         texteEN: "Triplet",
         lien: {
           url: "reglement",
-          texteFR: "Règlements",
-          texteEN: "Regulations",
+          texteFR: "reglements",
+          texteEN: "regulations",
         },
       },
       {
@@ -605,7 +607,7 @@ export const sportsData = {
       {
         nom: "conditions",
         texteFR:
-          "Maximum 4 joueurs dans l'équipe (Minimum 2 joueurs pendant le jeu mais avec penalite - voir Règlements)",
+          "Maximum 4 joueurs dans l'équipe (Minimum 2 joueurs pendant le jeu mais avec penalite - voir reglements)",
         texteEN:
           "Maximum 4 players in the team (Minimum 2 players during the game but with a penalty - see rules)",
       },
@@ -629,19 +631,24 @@ export const sportsData = {
     sections: [
       {
         nom: "format",
-        texteFR: "Concours",
-        texteEN: "Contest",
+        texteFR: "",
+        texteEN: "",
+        lien: {
+          url: "reglement",
+          texteFR: "reglements",
+          texteEN: "regulations",
+        },
       },
       {
         nom: "frais",
-        texteFR: "Gratuit",
-        texteEN: "Free",
+        texteFR: "",
+        texteEN: "",
       },
       {
         nom: "conditions",
-        texteFR: `1. Vakiana indray mandeha hatramin' ny farany ny lahatsoratra \n2. Avy eo alefa miadana. \n3. Rehefa vita dia ampifamadihana @ olona eo akaiky ny lahatsoratra dia ny tsirairay mitsara izay voarainy eo.`,
-        texteEN: `1. Vakiana indray mandeha hatramin' ny farany ny lahatsoratra \n2. Avy eo alefa miadana. \n3. Rehefa vita dia ampifamadihana @ olona eo akaiky ny lahatsoratra dia ny tsirairay mitsara izay voarainy eo.`
-      }
+        texteFR: "",
+        texteEN: "",
+      },
     ],
     equipes: [{ nom: "ASC Zato", lienForm: "https://google.com" }],
   },

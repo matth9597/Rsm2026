@@ -417,6 +417,11 @@ body {
   min-width: 0;
 }
 
+.section-row__value {
+  white-space: pre-line; /* <--- C'est cette ligne qui active les \n */
+}
+
+
 /* Info + Teams shared card */
 .details-card {
   background: #ffffff;
