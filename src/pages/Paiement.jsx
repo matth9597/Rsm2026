@@ -37,9 +37,15 @@ export default function Paiement() {
         </table>
           <td>
             <input type="hidden" name="on1" value="Equipe et/ou Personne / Team and/or Person"/>
-                      2 Inscrivez la Discipline/Equipe/Personne / Register Discipline/Team/Person<br/>
-                      (e.g. si "caution" le contenu serait "ASC ZATO")<br/>
-                      (e.g. si "inscription individuelle", le contenu serait "VolleyHommes ASC ZATO/Rakoto Rabe")
+            ${lang === 'fr' 
+              ? `2. Inscrivez la Discipline/Equipe/Personne <br/>
+                (e.g. si "caution" le contenu serait "ASC ZATO") <br/>
+                (e.g. si "inscription individuelle", le contenu serait "VolleyHommes ASC ZATO/Rakoto Rabe")`
+              : `2. Register Discipline/Team/Person <br/>
+                (e.g. if "deposit" the content would be "ASC ZATO") <br/>
+                (e.g. if "individual registration", the content would be "VolleyMen ASC ZATO/Rakoto Rabe")`
+            }
+    </div>
           </td>
         </tr>
         <tr>
@@ -71,7 +77,7 @@ export default function Paiement() {
             {lang === 'fr' ? 'Mais vous pouvez effectuer vos paiements ici aussi (avec frais)' : 'But you can also make payments here. (with fees)'}
         </h2>
       <div className="paypal-container" style={{ marginTop: '40px' }}>
-        <p>{lang === 'fr' ? "1 Choisissez l'option :" : "1 Choose the discipline"}</p>
+        <p>{lang === 'fr' ? "1 Choisissez l'option" : "1 Choose the discipline"}</p>
         <div className="paypal-wrapper">
           <div dangerouslySetInnerHTML={{ __html: paypalFormCode }} />
         </div>

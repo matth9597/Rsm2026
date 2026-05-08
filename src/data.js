@@ -639,8 +639,8 @@ export const sportsData = {
       },
       {
         nom: "conditions",
-        texteFR: `1. Vakiana indray mandeha hatramin' ny farany ny lahatsoratra \n2. Avy eo alefa miadana. \n3. Rehefa vita dia ampifamadihana @ olona eo akaiky ny lahatsoratra dia ny tsirairay mitsara izay voarainy eo.`,
-        texteEN: `1. Vakiana indray mandeha hatramin' ny farany ny lahatsoratra \n2. Avy eo alefa miadana. \n3. Rehefa vita dia ampifamadihana @ olona eo akaiky ny lahatsoratra dia ny tsirairay mitsara izay voarainy eo.`
+        texteFR: `1. Vakiana indray mandeha hatramin' ny farany ny lahatsoratra \n2. Avy eo alefa miadana. \n3. Rehefa vita dia ampifamadihana @ olona eo akaiky ny lahatsoratra dia ny tsirairay mitsara izay voarainy eo. \nHo Aseho eo @ ecran ny valiny tena marina dia avy eo no hitsaran'ny tsirairay azy. Izay tsy mandiso betsaka no mahazo ny naoty ambony sy ny loka avy eo.`,
+        texteEN: `1. Vakiana indray mandeha hatramin' ny farany ny lahatsoratra \n2. Avy eo alefa miadana. \n3. Rehefa vita dia ampifamadihana @ olona eo akaiky ny lahatsoratra dia ny tsirairay mitsara izay voarainy eo. \nHo Aseho eo @ ecran ny valiny tena marina dia avy eo no hitsaran'ny tsirairay azy. Izay tsy mandiso betsaka no mahazo ny naoty ambony sy ny loka avy eo.`
       }
     ],
     equipes: [{ nom: "ASC Zato", lienForm: "https://google.com" }],

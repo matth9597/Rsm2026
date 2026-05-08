@@ -9,7 +9,8 @@ export default function Programmation() {
     { nom: "École Secondaire Mont-Bleu", adresse: "389 Boulevard de la Cité-des-Jeunes, Gatineau, Québec J8Z 1W6" },
     { nom: "Cégep de l'Outaouais (! Parking Payant)", adresse: "333 Boulevard de la Cité-des-Jeunes, Gatineau, Québec J8Y 6L5" },
     { nom: "Cégep Heritage", adresse: "325 Boulevard de la Cité-des-Jeunes, Gatineau, Québec J8Y 6T3" },
-    { nom: "Collège Nouvelles Frontières", adresse: "250 Rue Gamelin, Gatineau, QC J8Y 1W9" }
+    { nom: "Collège Nouvelles Frontières", adresse: "250 Rue Gamelin, Gatineau, QC J8Y 1W9" },
+    { nom: "Parc Bisson (Tennis)", adresse: "Rue Froment, Gatineau, QC J8Y 6G2" }
   ];
 
   return (
@@ -29,6 +30,13 @@ export default function Programmation() {
           </div>
         </div>
       ))}
+      <div style={{ marginBottom: '30px', width: '100%', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}>
+        <img 
+          src="/mapRsm1.png" 
+          alt="map" 
+          style={{ width: '100%', height: 'auto', display: 'block' }} 
+        />
+      </div>
     </div>
   );
 }
