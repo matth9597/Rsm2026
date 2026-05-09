@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin } from '@phosphor-icons/react'
+import { MapPin, Warning } from '@phosphor-icons/react'
 import { useLanguage } from '../LanguageContext';
 
 export default function Programmation() {
@@ -7,7 +7,7 @@ export default function Programmation() {
   const { lang, toggleLang, t } = useLanguage();
     const sites = [
     { nom: "École Secondaire Mont-Bleu", adresse: "389 Boulevard de la Cité-des-Jeunes, Gatineau, Québec J8Z 1W6" },
-    { nom: "Cégep de l'Outaouais (! Parking Payant)", adresse: "333 Boulevard de la Cité-des-Jeunes, Gatineau, Québec J8Y 6L5" },
+    { nom: "Cégep de l'Outaouais", adresse: "333 Boulevard de la Cité-des-Jeunes, Gatineau, Québec J8Y 6L5", parkingWaring: true },
     { nom: "Cégep Heritage", adresse: "325 Boulevard de la Cité-des-Jeunes, Gatineau, Québec J8Y 6T3" },
     { nom: "Collège Nouvelles Frontières", adresse: "250 Rue Gamelin, Gatineau, QC J8Y 1W9" },
     { nom: "Parc Bisson (Tennis)", adresse: "36 Thérien Street, Gatineau, QC, J8Y 1H8" }
@@ -26,7 +26,15 @@ export default function Programmation() {
           <MapPin size={22} style={{ marginRight: '10px', marginTop: '3px' }} weight="bold" />
           <div>
             <div style={{ fontWeight: 'bold' }}>{site.nom}</div>
-            <div>{site.adresse}</div>
+            <div>
+            {site.adresse}
+            {site.parkingWaring && (
+              <span style={{ display: 'inline-flex', alignItems: 'center', marginLeft: '8px', color: '#eab308', fontWeight: 'bold' }}>
+                <Warning size={18} weight="fill" style={{ marginRight: '4px' }} />
+                Parking Payant
+              </span>
+            )}
+          </div>
           </div>
         </div>
       ))}
