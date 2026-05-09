@@ -3,13 +3,11 @@ import { useLanguage } from '../LanguageContext'; // Ton système de langue
 
 export default function Paiement() {
   const { t, lang } = useLanguage();
-  const paypalFormCode = `
+  const paypalFormCodeFR = `
     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
       <input type="hidden" name="cmd" value="_s-xclick" />
       <input type="hidden" name="hosted_button_id" value="PF55G4FMKDWMQ" />
       <table>
-        <tr>
-        </tr>
         <tr>
           <td>
             <select name="os0">
@@ -37,15 +35,10 @@ export default function Paiement() {
         </table>
           <td>
             <input type="hidden" name="on1" value="Equipe et/ou Personne / Team and/or Person"/>
-            ${lang === 'fr' 
-              ? `2. Inscrivez la Discipline/Equipe/Personne <br/>
+                2. Inscrivez la Discipline/Equipe/Personne <br/>
                 (e.g. si "caution" le contenu serait "ASC ZATO") <br/>
-                (e.g. si "inscription individuelle", le contenu serait "VolleyHommes ASC ZATO/Rakoto Rabe")`
-              : `2. Register Discipline/Team/Person <br/>
-                (e.g. if "deposit" the content would be "ASC ZATO") <br/>
-                (e.g. if "individual registration", the content would be "VolleyMen ASC ZATO/Rakoto Rabe")`
+                (e.g. si "inscription individuelle", le contenu serait "VolleyHommes ASC ZATO/Rakoto Rabe")
             }
-    </div>
           </td>
         </tr>
         <tr>
@@ -57,6 +50,54 @@ export default function Paiement() {
     </form>
   `;
 
+  const paypalFormCodeEN = `
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+      <input type="hidden" name="cmd" value="_s-xclick" />
+      <input type="hidden" name="hosted_button_id" value="FF7UWGYZ8LUT4" />
+      <table>
+        <tr>
+          <td>
+            <select name="os0">
+              <option value="Adult Team Deposit (Basket/Soccer/Volley)">
+                Adult Team Deposit (Basket/Soccer/Volley) $CAD 100.00 (+3.30)
+              </option>
+              <option value="Team Deposit (Co-ed Soccer/BasketJunior/Petanque)">
+                Team Deposit (Co-ed Soccer/BasketJunior/Petanque) $CAD 50.00 (+1.80)
+              </option>
+              <option value="Individual Adult Registration (Basket/Soccer/Volley)">
+                Individual Adult Registration (Basket/Soccer/Volley) $CAD 50.00 (+1.80)
+              </option>
+              <option value="Individual Registration (Co-ed Soccer, BasketJunior)">
+                Individual Registration (Co-ed Soccer, BasketJunior) $CAD 30.00 (+1.20)
+              </option>
+              <option value="Individual Registration (Petanque/TennisSingle)">
+                Individual Registration (Petanque/TennisSingle) $CAD 40.00 (+1.50)
+              </option>
+              <option value="Insciption (TennisDouble)">
+                Registration (TennisDouble) $CAD 60.00 (+2.10)
+              </option>
+            </select>
+          </td>
+        </tr>
+        </table>
+        <tr>
+          <td>
+            <input type="hidden" name="on1" value="Equipe et/ou Personne / Team and/or Person"/>
+              2. Register Discipline/Team/Person <br/>
+              (e.g. if "deposit" the content would be "ASC ZATO") <br/>
+              (e.g. if "individual registration", the content would be "VolleyMen ASC ZATO/Rakoto Rabe")
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" name="os1" maxLength="500" required />
+          </td>
+        </tr>
+      <input type="hidden" name="currency_code" value="CAD" />
+      <input type="image" src="https://www.paypalobjects.com/fr_CA/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
+    </form>
+  `;
+  const paypalFormCode = lang === 'fr' ? paypalFormCodeFR : paypalFormCodeEN;
   return (
     <div style={{ padding: '40px 20px', maxWidth: '800px', margin: '0 auto', textAlign: 'center', fontFamily: 'sans-serif' }}>
       
