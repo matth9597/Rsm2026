@@ -30,7 +30,7 @@ export default function Programmation() {
               {site.parkingWaring && (
                 <span style={{ display: 'inline-flex', alignItems: 'center', marginLeft: '8px', color: '#eab308', fontWeight: 'bold' }}>
                   <Warning size={18} weight="fill" style={{ marginRight: '4px' }} />
-                  Parking Payant
+                  {t("parkingPayant")}
                 </span>
               )}
             </div>
