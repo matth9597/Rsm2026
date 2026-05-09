@@ -25,16 +25,16 @@ export default function Programmation() {
         <div key={index} style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '15px' }}>
           <MapPin size={22} style={{ marginRight: '10px', marginTop: '3px' }} weight="bold" />
           <div>
-            <div style={{ fontWeight: 'bold' }}>{site.nom}</div>
-            <div>
-            {site.adresse}
-            {site.parkingWaring && (
-              <span style={{ display: 'inline-flex', alignItems: 'center', marginLeft: '8px', color: '#eab308', fontWeight: 'bold' }}>
-                <Warning size={18} weight="fill" style={{ marginRight: '4px' }} />
-                Parking Payant
-              </span>
-            )}
-          </div>
+            <div style={{ fontWeight: 'bold' }}>
+              {site.nom}
+              {site.parkingWaring && (
+                <span style={{ display: 'inline-flex', alignItems: 'center', marginLeft: '8px', color: '#eab308', fontWeight: 'bold' }}>
+                  <Warning size={18} weight="fill" style={{ marginRight: '4px' }} />
+                  Parking Payant
+                </span>
+              )}
+            </div>
+            <div>{site.adresse}</div>
           </div>
         </div>
       ))}
