@@ -56,7 +56,7 @@ export default function ReglementSoccerVeteranEN() {
       <p>All matches will start at the exact time assigned in the schedule.</p>
 
       <h3>Law VII: Standings and Series</h3>
-      <p>The RSM guarantees a minimum of 2 matches for each team participating in the tournament.</p>
+      <p>The RSM guarantees (2) matches for each team participating in the tournament.</p>
       <ul>
         <li>Match won: 3 points</li>
         <li>Match tied: 1 point</li>
