@@ -41,7 +41,7 @@ export default function ReglementVolleyballFemmeFR() {
           <tr>
             <td style={{ border: '1px solid #ddd', padding: '8px' }}>b.2</td>
             <td style={{ border: '1px solid #ddd', padding: '8px' }}>Nombre de joueur + staff</td>
-            <td style={{ border: '1px solid #ddd', padding: '8px' }}>14 joueurs par équipes + 2 membres de staff. Un joueur ne peut être inscrit que dans une seule équipe pour toute la durée du tournoi. Toute infraction entraînera un forfait automatique de l’équipe fautive.</td>
+            <td style={{ border: '1px solid #ddd', padding: '8px' }}>12 joueurs par équipes + 2 membres de staff. Un joueur ne peut être inscrit que dans une seule équipe pour toute la durée du tournoi. Toute infraction entraînera un forfait automatique de l’équipe fautive.</td>
           </tr>
           <tr>
             <td style={{ border: '1px solid #ddd', padding: '8px' }}>b.3</td>
@@ -51,11 +51,6 @@ export default function ReglementVolleyballFemmeFR() {
           <tr>
             <td style={{ border: '1px solid #ddd', padding: '8px' }}>b.5</td>
             <td style={{ border: '1px solid #ddd', padding: '8px' }}>Inscription et paiement</td>
-            <td style={{ border: '1px solid #ddd', padding: '8px' }}>La date limite d’inscription est le 31 mai 2026 à minuit. Les frais d’inscription par équipe sont fixés à….dollars. doivent être acquittés avant ……….. Une caution de 100$ remboursable à la fin du tournoi, sous respect du règlement, est demandée à chaque équipe. La date limite pour le paiement de la caution est le 31 mai 2026 à minuit.</td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #ddd', padding: '8px' }}>b.6</td>
-            <td style={{ border: '1px solid #ddd', padding: '8px' }}>Contrôle de joueur(se)</td>
             <td style={{ border: '1px solid #ddd', padding: '8px' }}>
               Les inscriptions se deroulent en 2 etapes:<br/>Étape 1 : Inscription de l’équipe<br/>
               Inscrivez votre équipe et payez la caution. Date limite : 31 mai 2026<br/>
@@ -63,6 +58,11 @@ export default function ReglementVolleyballFemmeFR() {
               Chaque participant devra ensuite s’inscrire individuellement afin de rejoindre son équipe, puis payer les frais d’inscription. Date limite : 14 juin 2026<br/>
               L’inscription du participant sera validée uniquement après le paiement des frais d’inscription.
             </td>
+          </tr>
+          <tr>
+            <td style={{ border: '1px solid #ddd', padding: '8px' }}>b.6</td>
+            <td style={{ border: '1px solid #ddd', padding: '8px' }}>Contrôle de joueur(se)</td>
+            <td style={{ border: '1px solid #ddd', padding: '8px' }}>Les joueuses non-inscrites dans une équipe ne seront pas autorisées à jouer.</td>
           </tr>
           <tr>
             <td style={{ border: '1px solid #ddd', padding: '8px' }}>b.7</td>

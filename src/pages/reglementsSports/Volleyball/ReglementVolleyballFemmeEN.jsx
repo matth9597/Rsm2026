@@ -43,7 +43,7 @@ export default function ReglementVolleyballFemmeEN() {
           <tr>
             <td style={{ border: '1px solid #ddd', padding: '8px' }}>b.2</td>
             <td style={{ border: '1px solid #ddd', padding: '8px' }}>Number of players + staff</td>
-            <td style={{ border: '1px solid #ddd', padding: '8px' }}>14 players per team + 2 staff members. A player can only be registered with one team for the duration of the tournament. Any infraction will result in an automatic forfeit for the offending team.</td>
+            <td style={{ border: '1px solid #ddd', padding: '8px' }}>12 players per team + 2 staff members. A player can only be registered with one team for the duration of the tournament. Any infraction will result in an automatic forfeit for the offending team.</td>
           </tr>
           <tr>
             <td style={{ border: '1px solid #ddd', padding: '8px' }}>b.3</td>

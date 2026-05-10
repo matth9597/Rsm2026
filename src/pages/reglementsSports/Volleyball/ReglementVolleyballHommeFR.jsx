@@ -41,7 +41,7 @@ export default function ReglementVolleyballHommeFR() {
           <tr>
             <td style={{ border: '1px solid #ddd', padding: '8px' }}>b.2</td>
             <td style={{ border: '1px solid #ddd', padding: '8px' }}>Nombre de joueur + staff</td>
-            <td style={{ border: '1px solid #ddd', padding: '8px' }}>14 joueurs par équipes + 2 membres de staff. Un joueur ne peut être inscrit que dans une seule équipe pour toute la durée du tournoi. Toute infraction entraînera un forfait automatique de l’équipe fautive.</td>
+            <td style={{ border: '1px solid #ddd', padding: '8px' }}>12 joueurs par équipes + 2 membres de staff. Un joueur ne peut être inscrit que dans une seule équipe pour toute la durée du tournoi. Toute infraction entraînera un forfait automatique de l’équipe fautive.</td>
           </tr>
           <tr>
             <td style={{ border: '1px solid #ddd', padding: '8px' }}>b.3</td>
