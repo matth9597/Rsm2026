@@ -56,7 +56,13 @@ export default function ReglementVolleyballFemmeFR() {
           <tr>
             <td style={{ border: '1px solid #ddd', padding: '8px' }}>b.6</td>
             <td style={{ border: '1px solid #ddd', padding: '8px' }}>Contrôle de joueur(se)</td>
-            <td style={{ border: '1px solid #ddd', padding: '8px' }}>Les joueuses non-inscrites dans une équipe ne seront pas autorisées à jouer.</td>
+            <td style={{ border: '1px solid #ddd', padding: '8px' }}>
+              Les inscriptions se deroulent en 2 etapes:<br/>Étape 1 : Inscription de l’équipe<br/>
+              Inscrivez votre équipe et payez la caution. Date limite : 31 mai 2026<br/>
+              L’inscription de l’équipe sera validée uniquement après le paiement de la caution.<br/>Étape 2 : Inscription des participants<br/>
+              Chaque participant devra ensuite s’inscrire individuellement afin de rejoindre son équipe, puis payer les frais d’inscription. Date limite : 14 juin 2026<br/>
+              L’inscription du participant sera validée uniquement après le paiement des frais d’inscription.
+            </td>
           </tr>
           <tr>
             <td style={{ border: '1px solid #ddd', padding: '8px' }}>b.7</td>
