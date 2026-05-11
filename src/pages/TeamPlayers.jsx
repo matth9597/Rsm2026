@@ -19,7 +19,6 @@ export default function TeamPlayers() {
 
   return (
     <div className="details-wrapper">
-      {/* ── Team header ── */}
       <div className="details-card">
         <p className="details-card__label">{decodedTeam}</p>
         <div className="teams-list">
@@ -33,9 +32,16 @@ export default function TeamPlayers() {
             teamPlayers.map((player, i) => (
               <div key={i} className="team-row">
                 <span className="team-row__name">{player.fullName}</span>
-                {player.jomStatus && (
-                  <span className="team-row__jom">{player.jomStatus}</span>
-                )}
+                <div
+                  style={{ display: "flex", gap: "8px", alignItems: "center" }}
+                >
+                  {player.sex && (
+                    <span className="team-row__badge">{player.sex}</span>
+                  )}
+                  {player.jomStatus && (
+                    <span className="team-row__jom">{player.jomStatus}</span>
+                  )}
+                </div>
               </div>
             ))
           ) : (
