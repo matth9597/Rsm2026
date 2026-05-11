@@ -558,8 +558,8 @@ export const sportsData = {
       },
       {
         nom: "conditions",
-        texteFR: "Mixte",
-        texteEN: "Co-ed",
+        texteFR: "Catégorie unique / ouverte à tous ",
+        texteEN: "Unique / open to all category",
       },
       {
         nom: "terrain",
