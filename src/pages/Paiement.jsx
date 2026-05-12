@@ -1,5 +1,6 @@
 import React from 'react';
-import { useLanguage } from '../LanguageContext'; // Ton système de langue
+import { Warning } from '@phosphor-icons/react'
+import { useLanguage } from '../LanguageContext';
 
 export default function Paiement() {
   const { t, lang } = useLanguage();
@@ -100,7 +101,14 @@ export default function Paiement() {
   const paypalFormCode = lang === 'fr' ? paypalFormCodeFR : paypalFormCodeEN;
   return (
     <div style={{ padding: '40px 20px', maxWidth: '800px', margin: '0 auto', textAlign: 'center', fontFamily: 'sans-serif' }}>
-      
+      <div className="payment-warning">
+        <Warning size={32} weight="fill" className="warning-icon" />
+        <div className="warning-text">
+          {lang === 'fr' 
+            ? "ATTENTION : Veuillez d'abord remplir le formulaire d'inscription situé dans la section Disciplines avant d'effectuer un paiement." 
+            : "ATTENTION: Please fill out the registration form located in the Disciplines section before making a payment."}
+        </div>
+      </div>
       <div style={{ background: '#f8fafc', padding: '30px', borderRadius: '12px', border: '1px solid #e2e8f0', marginTop: '30px' }}>
         <h2 style={{ color: '#9f1617', fontSize: '20px', fontWeight: 'bold' }}>
             {lang === 'fr' ? 'Le paiement e-Interac est notre mode de paiement recommandé.' : 'Interac e-Pay is our suggested payment method.'}<br/>
