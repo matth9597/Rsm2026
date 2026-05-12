@@ -105,8 +105,8 @@ export default function Paiement() {
         <Warning size={32} weight="fill" className="warning-icon" />
         <div className="warning-text">
           {lang === 'fr' 
-            ? "ATTENTION : Veuillez d'abord remplir le formulaire d'inscription situé dans la section Disciplines avant d'effectuer un paiement." 
-            : "ATTENTION: Please fill out the registration form located in the Disciplines section before making a payment."}
+            ? ( <> ATTENTION: Veuillez d'abord vous assurer d'avoir rempli le <u>formulaire d'inscription</u> situé dans la section Disciplines avant d'effectuer tout paiement. </>)
+            : ( <> ATTENTION: Please ensure you have completed the <u>registration form</u> located in the Disciplines section before making any payment.</> )}
         </div>
       </div>
       <div style={{ background: '#f8fafc', padding: '30px', borderRadius: '12px', border: '1px solid #e2e8f0', marginTop: '30px' }}>
