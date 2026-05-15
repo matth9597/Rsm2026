@@ -900,10 +900,15 @@ body {
   text-transform: uppercase;
 }
 
-.warning-text u {
+.warning-link {
+  color: #991b1b;
+  text-decoration: underline;
   text-decoration-color: #dc2626;
   text-underline-offset: 3px;
   text-decoration-thickness: 2px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 @keyframes pulse-border {

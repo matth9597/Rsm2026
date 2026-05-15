@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Warning } from '@phosphor-icons/react'
 import { useLanguage } from '../LanguageContext';
 
@@ -105,8 +106,8 @@ export default function Paiement() {
         <Warning size={32} weight="fill" className="warning-icon" />
         <div className="warning-text">
           {lang === 'fr' 
-            ? ( <> ATTENTION: Veuillez d'abord vous assurer d'avoir rempli le <u>formulaire d'inscription</u> situé dans la section Disciplines avant d'effectuer tout paiement. </>)
-            : ( <> ATTENTION: Please ensure you have completed the <u>registration form</u> located in the Disciplines section before making any payment.</> )}
+            ? ( <> ATTENTION: Veuillez d'abord vous assurer d'avoir rempli le <Link to="/" className="warning-link">formulaire d'inscription</Link> situé dans la section Disciplines avant d'effectuer tout paiement. </>)
+            : ( <> ATTENTION: Please ensure you have completed the <Link to="/" className="warning-link">registration form</Link> located in the Disciplines section before making any payment.</> )}
         </div>
       </div>
       <div style={{ background: '#f8fafc', padding: '30px', borderRadius: '12px', border: '1px solid #e2e8f0', marginTop: '30px' }}>
