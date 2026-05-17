@@ -16,6 +16,7 @@ import Programmation from "./pages/Programmation";
 import { useLanguage } from "./LanguageContext";
 import Contact from "./pages/Contact";
 import Paiement from "./pages/Paiement";
+import Stand from "./pages/Stand";
 import ReglementSoccerHomme from "./pages/reglementsSports/Soccer/ReglementSoccerHomme";
 import ReglementSoccerVeteran from "./pages/reglementsSports/Soccer/ReglementSoccerVeteran";
 import ReglementSoccerMixed from "./pages/reglementsSports/Soccer/ReglementSoccerMixed";
@@ -99,9 +100,11 @@ export default function App() {
                       ? t("programmation")
                       : location.pathname === "/paiement"
                         ? t("paiement")
-                        : location.pathname === "/contact"
-                          ? t("contact")
-                          : t("disciplines")}
+                          : location.pathname === "/stand"
+                          ? t("stand")
+                              : location.pathname === "/contact"
+                              ? t("contact")
+                              : t("disciplines")}
           </span>
           <nav className={`bande-nav ${isMenuOpen ? "open" : ""}`}>
             <NavLink
@@ -157,6 +160,16 @@ export default function App() {
             >
               {t("paiement")}
             </NavLink>
+
+            <NavLink
+              to="/stand"
+              onClick={() => setIsMenuOpen(false)}
+              className={({ isActive }) =>
+                isActive ? "nav-item active" : "nav-item"
+              }
+            >
+              {t("stand")}
+            </NavLink>
           </nav>
         </div>
       </div>
@@ -188,6 +201,7 @@ export default function App() {
           <Route path="/:slug" element={<Details />} />
           <Route path="/paiement" element={<Paiement />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/stand" element={<Stand />} />.
           <Route
             path="/soccer-homme/reglement"
             element={<ReglementSoccerHomme />}

@@ -54,7 +54,8 @@ export const translations = {
     contact: "Contact",
     contactezNous: "Contactez-nous",
     programmationMessage: "Vous trouverez ici le programme et les lieux des activités une fois les inscriptions closes et le programme finalisé.",
-    parkingPayant: "Parking Payant"
+    parkingPayant: "Parking Payant",
+    stand: "stand"
   },
   en: {
     disciplines: "Disciplines",
@@ -111,7 +112,8 @@ export const translations = {
     contact: "Contact",
     contactezNous: "Contact Us",
     programmationMessage: "Here you will find the schedule and locations of activities once registration is closed and the schedule is finalized.",
-    parkingPayant: "Paid parking"
+    parkingPayant: "Paid parking",
+    stand: "stand"
   },
 };
 
