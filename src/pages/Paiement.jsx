@@ -40,7 +40,6 @@ export default function Paiement() {
                 2. Inscrivez la Discipline/Equipe/Personne <br/>
                 (e.g. si "caution" le contenu serait "ASC ZATO") <br/>
                 (e.g. si "inscription individuelle", le contenu serait "VolleyHommes ASC ZATO/Rakoto Rabe")
-            }
           </td>
         </tr>
         <tr>
