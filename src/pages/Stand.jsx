@@ -23,24 +23,9 @@ export default function Stand() {
         texteEN: "Stand equipped with one white table (30” x 72”) and two folding chairs"
       },
       {
-        nom: "frais",
-        texteFR: "Extérieur : 50$/jour (100$ pour 2 jours) + 10% du CA. Intérieur : 100$ au total.",
-        texteEN: "Outdoor: $50/day ($100 for 2 days) + 10% of turnover. Indoor: $100 total."
-      },
-      {
-        nom: "caution",
-        texteFR: "50$ par stand (remboursable sous 3 jours après inspection)",
-        texteEN: "$50 per stand (refundable within 3 days after inspection)"
-      },
-      {
-        nom: "conditions",
-        texteFR: "Extérieur : Extincteur requis si barbecue/générateur (min 3m des bâtiments). Intérieur : Cuisson interdite.",
-        texteEN: "Outdoor: Extinguisher required if barbecue/generator (min 3m from buildings). Indoor: Cooking forbidden."
-      },
-      {
         nom: "lieux",
-        texteFR: "Collège Mont-Bleu — Zone Extérieure (Restauration) ou Zone Intérieure (Services/Produits)",
-        texteEN: "Mont-Bleu College — Outdoor Zone (Catering) or Indoor Zone (Services/Products)"
+        texteFR: "Collège Mont-Bleu et Collège Heritage — Zone Extérieure (Restauration) ou Zone Intérieure (Services/Produits)",
+        texteEN: "Mont-Bleu College and Heritage College — Outdoor Zone (Catering) or Indoor Zone (Services/Products)"
       },
       {
         nom: "contact",
