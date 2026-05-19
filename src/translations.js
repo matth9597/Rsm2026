@@ -55,7 +55,10 @@ export const translations = {
     contactezNous: "Contactez-nous",
     programmationMessage: "Vous trouverez ici le programme et les lieux des activités une fois les inscriptions closes et le programme finalisé.",
     parkingPayant: "Parking Payant",
-    stand: "stand"
+    stand: "stand",
+    caution: "Caution",
+    equipement: "Equipement",
+    lieux : "Lieux"
   },
   en: {
     disciplines: "Disciplines",
@@ -113,7 +116,10 @@ export const translations = {
     contactezNous: "Contact Us",
     programmationMessage: "Here you will find the schedule and locations of activities once registration is closed and the schedule is finalized.",
     parkingPayant: "Paid parking",
-    stand: "stand"
+    stand: "stand",
+    caution: "Deposit",
+    equipement: "Equipment",
+    lieux : "Place(s)"
   },
 };
 

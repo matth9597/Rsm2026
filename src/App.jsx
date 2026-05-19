@@ -44,7 +44,8 @@ export default function App() {
     location.pathname !== "/jom" &&
     location.pathname !== "/programmation" &&
     location.pathname !== "/contact" &&
-    location.pathname !== "/paiement";
+    location.pathname !== "/paiement" && 
+    location.pathname !== "/stand";
 
   return (
     <div className="site-wrapper">

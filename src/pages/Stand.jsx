@@ -1,133 +1,148 @@
 import React from 'react';
-import { Storefront, CheckCircle, MapPin, Envelope } from "@phosphor-icons/react";
+import { useParams, useNavigate } from "react-router-dom";
+import { Storefront} from "@phosphor-icons/react";
 import { useLanguage } from '../LanguageContext';
+import { useTeams } from "../hooks/useTeams";
+import { usePlayers } from "../hooks/usePlayers";
 
 export default function Stand() {
-  const { t, lang } = useLanguage();
+  const navigate = useNavigate();
+  const { lang, t } = useLanguage();
 
-  // Données adaptées pour les cuisiniers et la gestion des stands
   const standInfo = {
-    type: lang === 'fr' ? 'Restauration / Food Court' : 'Catering / Food Court',
-    format: lang === 'fr' ? 'Stand individuel' : 'Individual Booth',
-    dispo: lang === 'fr' ? 'Limité (Sur sélection)' : 'Limited (Selection based)',
-    frais: lang === 'fr' ? '40$ par emplacement' : '$40 per space',
-    terrain: lang === 'fr' ? 'Zone Extérieure / Parking' : 'Outdoor Zone / Parking',
-    coordonnateur: 'Mirado (mirado.ralijaona@gmail.com)',
-    exposants: [
+    lienInscription: 'https://docs.google.com/forms/d/e/1FAIpQLSdIcsA7MKVgq3UJKtBXR8U49jEEkwKe7bFYS2ncDXsGLonLYQ/viewform?usp=sharing&ouid=110488258691309592409',
+    sections: [
       {
-        nom: 'Matthieu Rafetison',
-        specialite:'Cuisine Malgache',
+        nom: "type",
+        texteFR: "Stand Extérieur (Restauration) ou Stand Intérieur (Services/Produits non alimentaires)",
+        texteEN: "Outdoor Booth (Catering) or Indoor Booth (Non-food services/products)"
+      },
+      {
+        nom: "equipement",
+        texteFR: "Stand équipé d'une table blanche (30” x 72”) et deux chaises pliantes",
+        texteEN: "Stand equipped with one white table (30” x 72”) and two folding chairs"
+      },
+      {
+        nom: "frais",
+        texteFR: "Extérieur : 50$/jour (100$ pour 2 jours) + 10% du CA. Intérieur : 100$ au total.",
+        texteEN: "Outdoor: $50/day ($100 for 2 days) + 10% of turnover. Indoor: $100 total."
+      },
+      {
+        nom: "caution",
+        texteFR: "50$ par stand (remboursable sous 3 jours après inspection)",
+        texteEN: "$50 per stand (refundable within 3 days after inspection)"
+      },
+      {
+        nom: "conditions",
+        texteFR: "Extérieur : Extincteur requis si barbecue/générateur (min 3m des bâtiments). Intérieur : Cuisson interdite.",
+        texteEN: "Outdoor: Extinguisher required if barbecue/generator (min 3m from buildings). Indoor: Cooking forbidden."
+      },
+      {
+        nom: "lieux",
+        texteFR: "Collège Mont-Bleu — Zone Extérieure (Restauration) ou Zone Intérieure (Services/Produits)",
+        texteEN: "Mont-Bleu College — Outdoor Zone (Catering) or Indoor Zone (Services/Products)"
+      },
+      {
+        nom: "contact",
+        texteFR: "Comité organisateur (rsmottawagatineau@gmail.com)",
+        texteEN: "Organizing Committee (rsmottawagatineau@gmail.com)"
+      },
+      {
+        nom: "paiement",
+        texteFR: "Virement Interac : rsmottawagatineau@gmail.com (Mot de passe si requis : RSM2026$)",
+        texteEN: "Interac e-Transfer: rsmottawagatineau@gmail.com (Password if required: RSM2026$)"
       }
     ]
   };
 
+  const isLoading = false;
+  const registeredSellers = []
+
   return (
-    <div className="app-container" style={{ padding: '20px', maxWidth: '1000px', margin: '0 auto', fontFamily: 'sans-serif' }}>
-      
-      {/* 1. LE BOUTON D'INSCRIPTION EN HAUT POUR LES CUISINIERS */}
-      <button style={{
-        width: '100%',
-        backgroundColor: '#548cb4',
-        color: 'white',
-        border: 'none',
-        padding: '15px',
-        borderRadius: '8px',
-        fontSize: '1.1rem',
-        fontWeight: 'bold',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: '10px',
-        cursor: 'pointer',
-        marginBottom: '20px'
-      }}>
-        <Storefront size={22} weight="bold" />
-        {lang === 'fr' ? "Réserver un Stand — Cuisinier" : 'Book a Booth — Caterer'}
-      </button>
-
-      {/* 2. LE BLOC DES INFORMATIONS TECHNIQUES */}
-      <div style={{
-        background: 'white',
-        borderRadius: '12px',
-        padding: '25px',
-        border: '1px solid #e2e8f0',
-        marginBottom: '20px',
-        boxShadow: '0 1px 3px rgba(0,0,0,0.05)'
-      }}>
-        <div style={{ color: '#94a3b8', fontSize: '0.8rem', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '15px' }}>
-          {lang === 'fr' ? 'INFORMATIONS SUR LES STANDS' : 'BOOTH INFORMATION'}
-        </div>
-
-        <div className="info-table" style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
-          
-          <div style={{ display: 'flex', borderBottom: '1px solid #f1f5f9', paddingBottom: '12px' }}>
-            <span style={{ width: '250px', fontWeight: 'bold', color: '#1e293b' }}>Type</span>
-            <span style={{ color: '#475569' }}>{standInfo.type}</span>
-          </div>
-
-          <div style={{ display: 'flex', borderBottom: '1px solid #f1f5f9', paddingBottom: '12px', justifyContent: 'space-between', alignItems: 'center' }}>
-            <div style={{ display: 'flex' }}>
-              <span style={{ width: '250px', fontWeight: 'bold', color: '#1e293b' }}>Format</span>
-              <span style={{ color: '#475569' }}>{standInfo.format}</span>
-            </div>
-            <a href="/reglements" style={{ color: '#dc2626', textDecoration: 'none', fontSize: '0.9rem', display: 'flex', alignItems: 'center', gap: '4px' }}>
-              {lang === 'fr' ? 'Charte Exposants →' : 'Exhibitor Rules →'}
-            </a>
-          </div>
-
-          <div style={{ display: 'flex', borderBottom: '1px solid #f1f5f9', paddingBottom: '12px' }}>
-            <span style={{ width: '250px', fontWeight: 'bold', color: '#1e293b' }}>{lang === 'fr' ? 'Disponibilité' : 'Availability'}</span>
-            <span style={{ color: '#475569' }}>{standInfo.dispo}</span>
-          </div>
-
-          <div style={{ display: 'flex', borderBottom: '1px solid #f1f5f9', paddingBottom: '12px' }}>
-            <span style={{ width: '250px', fontWeight: 'bold', color: '#1e293b' }}>{lang === 'fr' ? 'Frais d\'emplacement' : 'Space Fees'}</span>
-            <span style={{ color: '#475569' }}>{standInfo.frais}</span>
-          </div>
-
-          <div style={{ display: 'flex', borderBottom: '1px solid #f1f5f9', paddingBottom: '12px' }}>
-            <span style={{ width: '250px', fontWeight: 'bold', color: '#1e293b' }}>{lang === 'fr' ? 'Électricité / Logistique' : 'Power / Logistics'}</span>
-            <span style={{ color: '#475569' }}>{lang === 'fr' ? 'Disponible sur demande' : 'Available on demand'}</span>
-          </div>
-
-          <div style={{ display: 'flex', borderBottom: '1px solid #f1f5f9', paddingBottom: '12px' }}>
-            <span style={{ width: '250px', fontWeight: 'bold', color: '#1e293b' }}>{lang === 'fr' ? 'Zone / Emplacement' : 'Zone / Location'}</span>
-            <span style={{ color: '#475569' }}>{standInfo.terrain}</span>
-          </div>
-
-          <div style={{ display: 'flex', paddingBottom: '5px' }}>
-            <span style={{ width: '250px', fontWeight: 'bold', color: '#1e293b' }}>{lang === 'fr' ? 'Responsable Restauration' : 'Food Coordinator'}</span>
-            <span style={{ color: '#475569' }}>{standInfo.coordonnateur}</span>
-          </div>
-
-        </div>
+    <div className="details-wrapper">
+      {/* ── Action buttons ── */}
+      <div className="details-actions">
+        <button
+          className="btn-inscription individuelle"
+          onClick={() =>
+            window.open(standInfo.lienInscription, "_blank")
+          }
+        >
+          <Storefront size={21} color="#ffffff" weight="duotone" />
+          {t("sInscrire")}
+        </button>
       </div>
 
-      {/* 3. LE BLOC DES CUISINIERS / STANDS INSCRITS */}
-      <div style={{
-        background: 'white',
-        borderRadius: '12px',
-        padding: '25px',
-        border: '1px solid #e2e8f0',
-        boxShadow: '0 1px 3px rgba(0,0,0,0.05)'
-      }}>
-        <div style={{ color: '#94a3b8', fontSize: '0.8rem', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '20px' }}>
-          {lang === 'fr' ? 'STANDS ET TRAITEURS ENREGISTRÉS' : 'REGISTERED BOOTHS & CATERERS'}
-        </div>
-
-        {standInfo.exposants.map((exposant, idx) => (
-          <div key={idx} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 0', borderBottom: idx !== standInfo.exposants.length - 1 ? '1px solid #f1f5f9' : 'none' }}>
-            <span style={{ fontWeight: '600', color: '#1e293b', fontSize: '1.05rem' }}>{exposant.nom}</span>
-            
-            <div style={{ display: 'flex', gap: '8px' }}>
-              <span style={{ backgroundColor: '#eff6ff', color: '#1e40af', padding: '6px 12px', borderRadius: '4px', fontSize: '0.85rem', fontWeight: '500' }}>
-                {exposant.specialite}
+      {/* ── Info sections ── */}
+      {standInfo.sections && standInfo.sections.length > 0 && (
+        <div className="details-card">
+          <p className="details-card__label">{t("informations")}</p>
+          {standInfo.sections.map((section, index) => (
+            <div key={index} className="section-row">
+              <span className="section-row__key">{t(section.nom)}</span>
+              <span className="section-row__value">
+                {lang === "fr" ? section.texteFR : section.texteEN}
               </span>
+              {section.lien && section.nom === "format" && (
+                <button
+                  onClick={() => navigate(section.lien.url)}
+                  className="section-row__link"
+                  style={{
+                    background: "none",
+                    border: "none",
+                    cursor: "pointer",
+                    padding: 0,
+                  }}
+                >
+                  {lang === "fr" ? section.lien.texteFR : section.lien.texteEN}{" "}
+                  →
+                </button>
+              )}
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
 
+      {/* ── Registered List ── */}
+      <div className="details-card">
+        <p className="details-card__label">
+          {
+            lang === "fr"
+              ? "Vendeurs inscrits"
+              : "Registered sellers"
+          }
+        </p>
+        <div className="teams-list">
+          {isLoading ? (
+            <p className="team-row__loading">
+              {lang === "fr" ? "Chargement..." : "Loading..."}
+            </p>
+          ) : (
+            /* LIST SELLERS DIRECTLY */
+            registeredSellers.length > 0 ? (
+              registeredSellers.map((p, i) => (
+                <div key={i} className="team-row">
+                  <span className="team-row__name">{p.fullName}</span>
+                  <div
+                    style={{
+                      display: "flex",
+                      gap: "8px",
+                      alignItems: "center",
+                    }}
+                  >
+                  </div>
+                </div>
+              ))
+            ): (
+              <p className="team-row__empty">
+                {lang === "fr"
+                  ? "Aucun vendeur inscrit."
+                  : "No sellers registered."}
+              </p>
+            )
+          )}
+        </div>
+      </div>
     </div>
   );
 }
