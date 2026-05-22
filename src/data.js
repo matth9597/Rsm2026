@@ -628,6 +628,8 @@ export const sportsData = {
   soraTononina: {
     categorie: "soraTononina",
     slug: "sora-tononina",
+    lienInscriptionIndividuelle:
+      "https://docs.google.com/forms/d/e/1FAIpQLScgIRlLERPTxdumIqp_BT0PAfcTeifHWkjIpztmym4pS7KgcQ/viewform",
     sections: [
       {
         nom: "format",
