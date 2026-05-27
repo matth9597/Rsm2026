@@ -15,7 +15,7 @@ export default function RegSoccerEN() {
 
       <h3>Law II: Number of Players</h3>
       <p>The match will be played by two teams, each comprising a maximum of 11 players, one of whom will be the goalkeeper.</p>
-      <p>The maximum number of players dressed per match per team is set at 22.</p>
+      <p>The maximum number of players dressed per match per team is set at 23.</p>
       <p>Regarding the minimum number of players per match, it is set at 8. In case of failure to meet the minimum number of players at match time, the team will be declared forfeited.</p>
       <p>The number of substitutions is unlimited, with the referee's agreement, on any of the following game stoppages: At halftime, after a goal, offensive throw-in (the opposing team can also change if requested by the offensive team), goal kick, and for an injury (injured player only).</p>
       <p>Changes are made at the center line. The player entering the field must wait for the player leaving to have left the playing surface before entering.</p>

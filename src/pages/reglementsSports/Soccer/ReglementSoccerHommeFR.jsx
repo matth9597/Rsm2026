@@ -14,7 +14,7 @@ export default function RegSoccerFr() {
 
       <h3>Loi II : Nombres de joueurs</h3>
       <p>Le match sera joué par deux équipes comprenant chacune au maximum 11 joueurs, dont l’un sera le gardien de but.</p>
-      <p>Le nombre maximum de joueurs habillés par match par équipe est fixé à 22.</p>
+      <p>Le nombre maximum de joueurs habillés par match par équipe est fixé à 23.</p>
       <p>En ce qui concerne le nombre minimum de joueurs par match est fixé à 8. En cas de manque de nombre minimum de joueurs à l’heure de match, l’équipe va être déclarée forfait.</p>
       <p>Le nombre de remplacements est illimité, avec l’accord de l’arbitre, sur tout arrêt de jeu suivant : À la mi-temps, après un but, touche offensive (l’équipe adverse peut changer aussi si l’équipe offensive en fait la demande), coup de pied de but et pour une blessure (joueur blessé seulement).</p>
       <p>Les changements se font à la ligne centrale. Le joueur entrant sur le terrain doit attendre que le joueur sortant ait quitté la surface de jeu pour y pénétrer à son tour.</p>

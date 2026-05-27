@@ -30,8 +30,8 @@ export const sportsData = {
       },
       {
         nom: "conditions",
-        texteFR: "Minimum 14 joueurs - Maximum 22 joueurs dans l'équipe",
-        texteEN: "Minimum 14 players - Maximum 22 players on the team",
+        texteFR: "Minimum 14 joueurs - Maximum 23 joueurs dans l'équipe",
+        texteEN: "Minimum 14 players - Maximum 23 players on the team",
       },
       {
         nom: "terrain",
