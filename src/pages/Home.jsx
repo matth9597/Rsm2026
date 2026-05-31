@@ -62,6 +62,7 @@ const sportCategories = [
     variants: [
       { id: "tennis_s", label: "tennisSimple" },
       { id: "tennis_d", label: "tennisDouble" },
+      { id: "tableTennis", label: "tennisDeTable" }
     ]
   },
   {
@@ -75,7 +76,6 @@ const sportCategories = [
       { id: "petanque", label: "petanque" },
       { id: "soraTononina", label: "soraTononina" },
       { id: "fanorona", label: "fanorona" },
-      { id: "tableTennis", label: "tennisDeTable" },
       { id: "marche", label: "marche5Km" },
       { id: "zumba", label: "zumba" },
     ],

@@ -575,6 +575,54 @@ export const sportsData = {
     equipes: [{ nom: "ASC Zato", lienForm: "https://google.com" }],
   },
 
+  tableTennis: {
+    categorie: "tennisDeTable",
+    slug: "tennis-de-table",
+    lienInscriptionIndividuelle:
+      "https://docs.google.com/",//a changer
+    sections: [
+      { nom: "type", texteFR: "Compétition", texteEN: "Competition" },
+      {
+        nom: "format",
+        texteFR: "1 vs 1",
+        texteEN: "1 vs 1",
+        lien: {
+          url: "reglement",
+          texteFR: "Règlements",
+          texteEN: "Regulations",
+        },
+      },
+      {
+        nom: "anneeNaissance",
+        texteFR: "Minimum 2016",
+        texteEN: "Minimum 2016",
+      },
+      {
+        nom: "frais",
+        texteFR: "40$/joueur",
+        texteEN: "$40/player",
+      },
+      {
+        nom: "conditions",
+        texteFR:
+          "2 categories (homme 10+ans  et femme 10+ans)",
+        texteEN:
+          "2 categories (man 10+years old  et woman 10+years old)",
+      },
+      {
+        nom: "terrain",
+        texteFR: " Table standard",
+        texteEN: "Standard table",
+      },
+      {
+        nom: "coordinateur",
+        texteFR: "",
+        texteEN: "",
+      },
+    ],
+    equipes: [{ nom: "ASC Zato", lienForm: "https://google.com" }],
+  },
+
   petanque: {
     categorie: "petanque",
     slug: "petanque",
