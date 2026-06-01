@@ -580,7 +580,7 @@ export const sportsData = {
     categorie: "tennisDeTable",
     slug: "tennis-de-table",
     lienInscriptionIndividuelle:
-      "https://docs.google.com/",//a changer
+      "https://docs.google.com/forms/d/e/1FAIpQLScDfpAb6lQhNbj4bjrYL8k-dGLs8s6pOrfavncAVYbufzXyWQ/viewform",
     sections: [
       { nom: "type", texteFR: "Compétition", texteEN: "Competition" },
       {
@@ -605,10 +605,8 @@ export const sportsData = {
       },
       {
         nom: "conditions",
-        texteFR:
-          "2 categories (homme 10+ans  et femme 10+ans)",
-        texteEN:
-          "2 categories (man 10+years old  et woman 10+years old)",
+        texteFR: "2 categories (homme 10+ans  et femme 10+ans)",
+        texteEN: "2 categories (man 10+years old  et woman 10+years old)",
       },
       {
         nom: "terrain",
