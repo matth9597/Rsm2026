@@ -244,6 +244,7 @@ export const sportsData = {
   basketball_h: {
     categorie: "basketballHommes",
     slug: "basketball-homme",
+    inscriptionFermee: true,
     lienInscriptionEquipe:
       "https://docs.google.com/forms/d/e/1FAIpQLSfy7Foco9iKZ2BSpc4uVy2opINXoKmt6mg_F9pIIiL7H3t10A/viewform",
     lienInscriptionIndividuelle:

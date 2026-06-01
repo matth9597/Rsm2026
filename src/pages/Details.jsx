@@ -48,6 +48,15 @@ export default function Details() {
         {hasSpecificLinks ? (
           <>
             {info.lienInscriptionEquipe && (
+              info.inscriptionFermee ? 
+                <button
+                  disabled={true} 
+                  className="btn-inscription btn-inscription-ferme"
+                >
+                <UsersIcon size={22} weight="bold" style={{ marginRight: '8px' }} />
+                {lang === 'fr' ? 'Inscription fermée' : 'Registration closed'}
+                </button>
+              :
               <button
                 className="btn-inscription"
                 onClick={() =>
