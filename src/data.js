@@ -2,6 +2,7 @@ export const sportsData = {
   soccer_h: {
     categorie: "soccerHommes",
     slug: "soccer-homme",
+    inscriptionEquipeFermee: true,
     lienInscriptionEquipe:
       "https://docs.google.com/forms/d/e/1FAIpQLSeKssMyz6YTZtaXliDHH1vGWpy-VNpkxtXMZ9KYaqOIR9o8jQ/viewform",
     lienInscriptionIndividuelle:
@@ -50,6 +51,7 @@ export const sportsData = {
   soccer_v: {
     categorie: "soccerVeterans",
     slug: "soccer-veteran",
+    //inscriptionEquipeFermee: true,
     lienInscriptionEquipe:
       "https://docs.google.com/forms/d/e/1FAIpQLSf14r9P71mofDVNvdTPwZxS9vh9Xbh47x31dQ7NPXIFs85ljQ/viewform",
     lienInscriptionIndividuelle:
@@ -194,6 +196,7 @@ export const sportsData = {
   basketball_f: {
     categorie: "basketballFemmes",
     slug: "basketball-femme",
+    inscriptionEquipeFermee: true,
     lienInscriptionEquipe:
       "https://docs.google.com/forms/d/e/1FAIpQLSenaEuzHUqq4DzQ73a82B5Ydznvb1JRumrekRg50OZzz_t51Q/viewform",
     lienInscriptionIndividuelle:
@@ -244,7 +247,7 @@ export const sportsData = {
   basketball_h: {
     categorie: "basketballHommes",
     slug: "basketball-homme",
-    inscriptionFermee: true,
+    inscriptionEquipeFermee: true,
     lienInscriptionEquipe:
       "https://docs.google.com/forms/d/e/1FAIpQLSfy7Foco9iKZ2BSpc4uVy2opINXoKmt6mg_F9pIIiL7H3t10A/viewform",
     lienInscriptionIndividuelle:
@@ -389,6 +392,7 @@ export const sportsData = {
   volleyball_f: {
     categorie: "volleyballFemmes",
     slug: "volleyball-femme",
+    inscriptionEquipeFermee: true,
     lienInscriptionEquipe:
       "https://docs.google.com/forms/d/e/1FAIpQLScN65egh-Z7wn0hpw_PjhbfVj-mSYUebkFYLAHKoom2x1k29Q/viewform",
     lienInscriptionIndividuelle:
@@ -437,6 +441,7 @@ export const sportsData = {
   volleyball_h: {
     categorie: "volleyballHommes",
     slug: "volleyball-homme",
+    inscriptionEquipeFermee: true,
     lienInscriptionEquipe:
       "https://docs.google.com/forms/d/e/1FAIpQLSfT09A96ShXcNBVKH8FldchESx-f1aRDHsxFh5Vdpe4FEIaEw/viewform",
     lienInscriptionIndividuelle:
@@ -531,6 +536,7 @@ export const sportsData = {
   tennis_d: {
     categorie: "tennisDouble",
     slug: "tennis-double",
+    inscriptionEquipeFermee: true,
     lienInscriptionEquipe:
       "https://docs.google.com/forms/d/e/1FAIpQLSfDomLQIl4WC0ohNN0JvSfGb8weEdx76jTjVT9szo-FDIYCig/viewform",
     lienInscriptionIndividuelle:
@@ -625,6 +631,7 @@ export const sportsData = {
   petanque: {
     categorie: "petanque",
     slug: "petanque",
+    inscriptionEquipeFermee: true,
     lienInscriptionEquipe:
       "https://docs.google.com/forms/d/e/1FAIpQLScaT60iZcmE-dgEPVB4gyyZmFyJXx9DyLCJyIh6-xQ1KJTXUg/viewform",
     lienInscriptionIndividuelle:
