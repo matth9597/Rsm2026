@@ -334,8 +334,8 @@ export const sportsData = {
       },
       {
         nom: "coordinateur",
-        texteFR: "Jonathan (chapinjonathan8@icloud.com)",
-        texteEN: "Jonathan (chapinjonathan8@icloud.com)",
+        texteFR: "Jonathan (jonchapin135@gmail.com)",
+        texteEN: "Jonathan (jonchapin135@gmail.com)",
       },
     ],
     equipes: [{ nom: "ASC Zato", lienForm: "https://google.com" }],
@@ -704,6 +704,36 @@ export const sportsData = {
         nom: "coordinateur",
         texteFR: "Mamy (trano77@sympatico.ca)",
         texteEN: "Mamy (trano77@sympatico.ca)",
+      },
+    ],
+    equipes: [{ nom: "ASC Zato", lienForm: "https://google.com" }],
+  },
+
+    marche: {
+    categorie: "marche",
+    slug: "marche",
+    lienInscriptionIndividuelle:
+      "",
+    sections: [
+      {
+        nom: "format",
+        texteFR: "",
+        texteEN: "",
+      },
+      {
+        nom: "frais",
+        texteFR: "",
+        texteEN: "",
+      },
+      {
+        nom: "conditions",
+        texteFR: ``,
+        texteEN: ``,
+      },
+      {
+        nom: "coordinateur",
+        texteFR: "",
+        texteEN: "",
       },
     ],
     equipes: [{ nom: "ASC Zato", lienForm: "https://google.com" }],
