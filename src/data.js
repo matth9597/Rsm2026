@@ -710,7 +710,7 @@ export const sportsData = {
   },
 
     marche: {
-    categorie: "marche",
+    categorie: "marche5Km",
     slug: "marche",
     lienInscriptionIndividuelle:
       "",
