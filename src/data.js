@@ -621,8 +621,8 @@ export const sportsData = {
       },
       {
         nom: "coordinateur",
-        texteFR: "",
-        texteEN: "",
+        texteFR: "Teddy (tdiramaro@gmail.com), Erick (Erick.raelijohn@gmail.com)",
+        texteEN: "Teddy (tdiramaro@gmail.com), Erick (Erick.raelijohn@gmail.com)",
       },
     ],
     equipes: [{ nom: "ASC Zato", lienForm: "https://google.com" }],

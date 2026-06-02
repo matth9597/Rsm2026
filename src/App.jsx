@@ -28,6 +28,7 @@ import ReglementVolleyballFemme from "./pages/reglementsSports/Volleyball/Reglem
 import ReglementVolleyballHomme from "./pages/reglementsSports/Volleyball/ReglementVolleyballHomme";
 import ReglementPetanque from "./pages/reglementsSports/Other/ReglementPetanque";
 import ReglementTennis from "./pages/reglementsSports/Tennis/ReglementTennis";
+import ReglementTennisDeTable from "./pages/reglementsSports/Tennis/ReglementTennisDeTable";
 import TeamPlayers from "./pages/TeamPlayers";
 
 export default function App() {
@@ -246,6 +247,7 @@ export default function App() {
           <Route path="/petanque/reglement" element={<ReglementPetanque />} />
           <Route path="/tennis-simple/reglement" element={<ReglementTennis />} />
           <Route path="/tennis-double/reglement" element={<ReglementTennis />} />
+          <Route path="/tennis-de-table/reglement" element={<ReglementTennisDeTable />} />
           <Route path="/:slug/equipe/:teamName" element={<TeamPlayers />} />
         </Routes>
       </main>
