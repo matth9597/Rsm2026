@@ -611,8 +611,8 @@ export const sportsData = {
       },
       {
         nom: "conditions",
-        texteFR: "2 categories (homme 10+ans  et femme 10+ans)",
-        texteEN: "2 categories (man 10+years old  et woman 10+years old)",
+        texteFR: "Mixte competition et mixte intermediaire",
+        texteEN: "Mixed competition and mixed intermediate",
       },
       {
         nom: "terrain",
