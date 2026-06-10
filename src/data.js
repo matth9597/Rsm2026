@@ -621,8 +621,10 @@ export const sportsData = {
       },
       {
         nom: "coordinateur",
-        texteFR: "Teddy (tdiramaro@gmail.com), Erick (Erick.raelijohn@gmail.com)",
-        texteEN: "Teddy (tdiramaro@gmail.com), Erick (Erick.raelijohn@gmail.com)",
+        texteFR:
+          "Teddy (tdiramaro@gmail.com), Erick (Erick.raelijohn@gmail.com)",
+        texteEN:
+          "Teddy (tdiramaro@gmail.com), Erick (Erick.raelijohn@gmail.com)",
       },
     ],
     equipes: [{ nom: "ASC Zato", lienForm: "https://google.com" }],
@@ -709,11 +711,11 @@ export const sportsData = {
     equipes: [{ nom: "ASC Zato", lienForm: "https://google.com" }],
   },
 
-    marche: {
+  marche: {
     categorie: "marche5Km",
     slug: "marche",
     lienInscriptionIndividuelle:
-      "",
+      "https://docs.google.com/forms/d/e/1FAIpQLSc4JgbfPCVNxKr6vlfUFnY7U1dOfKA4v2vsh6WyMmx5LRfmVg/viewform",
     sections: [
       {
         nom: "format",
