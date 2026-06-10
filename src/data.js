@@ -718,24 +718,9 @@ export const sportsData = {
       "https://docs.google.com/forms/d/e/1FAIpQLSc4JgbfPCVNxKr6vlfUFnY7U1dOfKA4v2vsh6WyMmx5LRfmVg/viewform",
     sections: [
       {
-        nom: "format",
-        texteFR: "",
-        texteEN: "",
-      },
-      {
         nom: "frais",
-        texteFR: "",
-        texteEN: "",
-      },
-      {
-        nom: "conditions",
-        texteFR: ``,
-        texteEN: ``,
-      },
-      {
-        nom: "coordinateur",
-        texteFR: "",
-        texteEN: "",
+        texteFR: "Gratuit",
+        texteEN: "Free",
       },
     ],
     equipes: [{ nom: "ASC Zato", lienForm: "https://google.com" }],
