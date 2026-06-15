@@ -68,6 +68,15 @@ export default function Details() {
               </button>
             )}
             {info.lienInscriptionIndividuelle && (
+              info.InscriptionIndividuelleFermee ? 
+                <button
+                  disabled={true} 
+                  className="btn-inscription btn-inscription-ferme"
+                >
+                <UsersIcon size={22} weight="bold" style={{ marginRight: '8px' }} />
+                {lang === 'fr' ? 'Inscription Individuelle - Fermée' : 'Individual Registration - Closed'}
+                </button>
+              :
               <button
                 className="btn-inscription individuelle"
                 onClick={() =>

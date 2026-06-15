@@ -585,6 +585,7 @@ export const sportsData = {
   tableTennis: {
     categorie: "tennisDeTable",
     slug: "tennis-de-table",
+    InscriptionIndividuelleFermee: true,
     lienInscriptionIndividuelle:
       "https://docs.google.com/forms/d/e/1FAIpQLScDfpAb6lQhNbj4bjrYL8k-dGLs8s6pOrfavncAVYbufzXyWQ/viewform",
     sections: [
