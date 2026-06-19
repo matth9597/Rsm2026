@@ -13,6 +13,7 @@ import { ArrowLeft, List, X } from "@phosphor-icons/react";
 import { sportsData } from "./data";
 import ReglementJOM from "./pages/ReglementJOM";
 import Programmation from "./pages/Programmation";
+import Directions from "./pages/Directions";
 import { useLanguage } from "./LanguageContext";
 import Contact from "./pages/Contact";
 import Paiement from "./pages/Paiement";
@@ -44,6 +45,7 @@ export default function App() {
     location.pathname !== "/" &&
     location.pathname !== "/jom" &&
     location.pathname !== "/programmation" &&
+    location.pathname !== "/directions" &&
     location.pathname !== "/contact" &&
     location.pathname !== "/paiement" && 
     location.pathname !== "/stand";
@@ -100,13 +102,15 @@ export default function App() {
                     ? "JOM"
                     : location.pathname === "/programmation"
                       ? t("programmation")
-                      : location.pathname === "/paiement"
-                        ? t("paiement")
-                          : location.pathname === "/stand"
-                          ? t("stand")
-                              : location.pathname === "/contact"
-                              ? t("contact")
-                              : t("disciplines")}
+                      : location.pathname === "/directions"
+                        ? t("directions")
+                        : location.pathname === "/paiement"
+                          ? t("paiement")
+                            : location.pathname === "/stand"
+                            ? t("stand")
+                                : location.pathname === "/contact"
+                                ? t("contact")
+                                : t("disciplines")}
           </span>
           <nav className={`bande-nav ${isMenuOpen ? "open" : ""}`}>
             <NavLink
@@ -141,6 +145,16 @@ export default function App() {
               }
             >
               {t("programmation")}
+            </NavLink>
+
+            <NavLink
+              to="/directions"
+              onClick={() => setIsMenuOpen(false)}
+              className={({ isActive }) =>
+                isActive ? "nav-item active" : "nav-item"
+              }
+            >
+              {t("directions")}
             </NavLink>
 
             <NavLink
@@ -200,6 +214,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/jom" element={<ReglementJOM />} />
           <Route path="/programmation" element={<Programmation />} />
+          <Route path="/directions" element={<Directions />} />
           <Route path="/:slug" element={<Details />} />
           <Route path="/paiement" element={<Paiement />} />
           <Route path="/contact" element={<Contact />} />
