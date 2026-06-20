@@ -14,8 +14,8 @@ export default function Stand() {
     sections: [
       {
         nom: "type",
-        texteFR: "Stand Extérieur (Restauration) ou Stand Intérieur (Services/Produits non alimentaires)",
-        texteEN: "Outdoor Booth (Catering) or Indoor Booth (Non-food services/products)"
+        texteFR: "Stand Extérieur",
+        texteEN: "Outdoor Booth"
       },
       {
         nom: "equipement",

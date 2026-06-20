@@ -76,7 +76,7 @@ const sportCategories = [
       { id: "petanque", label: "petanque" },
       { id: "soraTononina", label: "soraTononina" },
       { id: "marche", label: "marche5Km" },
-      { id: "fanorona", label: "fanorona" },
+      //{ id: "fanorona", label: "fanorona" },
       { id: "zumba", label: "zumba" },
     ],
   },
