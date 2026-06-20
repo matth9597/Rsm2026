@@ -7,7 +7,7 @@ import { COULEURS } from './calendrierUtils';
 
 export default function Programmation() {
   const { t } = useLanguage();
-  const [sousMenuActif, setSousMenuActif] = useState('detaille'); // 'sites', 'global', 'detaille'
+  const [sousMenuActif, setSousMenuActif] = useState('sites'); 
 
   const lienCalendrierGlobal = 'https://drive.google.com/file/d/1OFEuGFabakEwtIdakySgxN_Zy6dZ7g2h/view?usp=drive_link';
 

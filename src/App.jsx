@@ -45,7 +45,7 @@ export default function App() {
     location.pathname !== "/" &&
     location.pathname !== "/jom" &&
     location.pathname !== "/programmation" &&
-    location.pathname !== "/directions" &&
+    //location.pathname !== "/directions" &&
     location.pathname !== "/contact" &&
     location.pathname !== "/paiement" && 
     location.pathname !== "/stand";
@@ -102,8 +102,8 @@ export default function App() {
                     ? "JOM"
                     : location.pathname === "/programmation"
                       ? t("programmation")
-                      : location.pathname === "/directions"
-                        ? t("directions")
+                      // : location.pathname === "/directions"
+                      //   ? t("directions")
                         : location.pathname === "/paiement"
                           ? t("paiement")
                             : location.pathname === "/stand"
@@ -147,7 +147,7 @@ export default function App() {
               {t("programmation")}
             </NavLink>
 
-            <NavLink
+            {/* <NavLink
               to="/directions"
               onClick={() => setIsMenuOpen(false)}
               className={({ isActive }) =>
@@ -155,7 +155,7 @@ export default function App() {
               }
             >
               {t("directions")}
-            </NavLink>
+            </NavLink> */}
 
             <NavLink
               to="/contact"
