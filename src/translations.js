@@ -59,7 +59,7 @@ export const translations = {
     caution: "Caution",
     equipement: "Equipement",
     lieux : "Lieux",
-    directions: "Directions",
+    directions: "Plan",
     planningTitre: "Planning des Matchs",
     filtrerLieu: "Filtrer par Lieu",
     tousLesSites: "Tous les sites",
@@ -89,6 +89,9 @@ export const translations = {
     finale: "Finale",
     place3: "Match 3e place",
     consolation: "Match de Consolation",
+    culturel: "Culturel",
+    tousLesSports: "Tous les sports",
+    filtrerSport: "Filtrer par Sport",
 
   },
   en: {
@@ -151,7 +154,7 @@ export const translations = {
     caution: "Deposit",
     equipement: "Equipment",
     lieux : "Place(s)",
-    directions: "Plan",
+    directions: "Directions",
     planningTitre: "Match Schedule",
     filtrerLieu: "Filter by Location",
     tousLesSites: "All locations",
@@ -181,6 +184,9 @@ export const translations = {
     finale: "Final",
     place3: "3rd Place Match",
     consolation: "Consolation Match",
+    culturel: "Cultural",
+    tousLesSports: "All sports",
+    filtrerSport: "Filter by Sport",
   },
 };
 

@@ -20,21 +20,21 @@ export default function Calendrier() {
   const programmeDuJour = calendarData.programme[jourSelectionne] || {};
 
   const optionsSports = [
-    { id: 'all', nom: t('tousLesSports') || 'Tous les sports' },
-    { id: 'basket', nom: t('basket') || 'Basketball' },
-    { id: 'soccer', nom: t('soccer') || 'Soccer' },
-    { id: 'volley', nom: t('volleyball') || 'Volleyball' },
-    { id: 'tennis', nom: t('tennis') || 'Tennis' },
-    { id: 'petanque', nom: t('petanque') || 'Pétanque' },
-    { id: 'marche', nom: t('marche5Km') || 'Walk' },
-    { id: 'zumba', nom: t('zumba') || 'Zumba' },
-    { id: 'culturel', nom: 'Culturel' },
+    { id: 'all', nom: t('tousLesSports') },
+    { id: 'basket', nom: 'Basket' },
+    { id: 'soccer', nom: 'Soccer' },
+    { id: 'volley', nom: 'Volley' },
+    { id: 'tennis', nom: 'Tennis' },
+    { id: 'petanque', nom: 'Pétanque' },
+    { id: 'marche', nom: 'Marche' },
+    { id: 'zumba', nom: 'Zumba' },
+    { id: 'culturel', nom: t('soratononina') },
     { id: 'animation', nom: 'Animation' }
   ];
 
   const validerFiltres = (act) => {
     const coordSite = siteFiltre === 'all' || act.site === siteFiltre;
-    const disc = obtenirInfosDiscipline(act.activite, t);
+    const disc = obtenirInfosDiscipline(act.activite);
     const coordSport = sportFiltre === 'all' || disc.id === sportFiltre;
     return coordSite && coordSport;
   };
@@ -47,7 +47,7 @@ export default function Calendrier() {
       const activites = programmeDuJour[heure];
 
       activites.forEach((act) => {
-        const disc = obtenirInfosDiscipline(act.activite, t);
+        const disc = obtenirInfosDiscipline(act.activite);
         if (!validerFiltres(act)) return;
 
         const matchPrecedent = evenementsFusionnes.find(
@@ -85,6 +85,65 @@ export default function Calendrier() {
   const timelineData = obtenirTimelineFusionnee();
   const heuresDebutTriees = Object.keys(timelineData).sort();
 
+  // Formate le texte brut de manière intelligente selon le jour sélectionné
+  const obtenirFormatBrut = (activite, disciplineNom) => {
+    const cle = activite.toLowerCase();
+    
+    // 1. GESTION DES DEMIS ET QUARTS (Clés préfixées : soccerQuart, basketDemi, etc.)
+    if (cle.startsWith('soccer') || cle.startsWith('basket') || cle.startsWith('volley')) {
+      if (cle.includes('quart') || cle.includes('semi') || cle.includes('demi') || cle.includes('place') || cle.includes('vs')) {
+        
+        let sportPrefixe = "Volley";
+        if (cle.startsWith('soccer')) sportPrefixe = "Soccer";
+        if (cle.startsWith('basket')) sportPrefixe = "Basket";
+        
+        let phaseNettoyee = activite
+          .replace(/^(soccer|basket|volley)/i, '')
+          .replace(/^(veterans|kids|femmes|hommes)/i, '');
+        
+        if (phaseNettoyee === '5eVs6e') phaseNettoyee = '5e vs 6e';
+        if (phaseNettoyee === '3ePlace') phaseNettoyee = '3e place';
+        
+        return `${sportPrefixe} - ${phaseNettoyee}`;
+      }
+    }
+
+    // 2. GESTION DE LA PÉTANQUE (Samedi)
+    if (cle.startsWith('petanque')) {
+      let phaseNettoyee = activite.replace(/^petanque/i, '');
+      if (phaseNettoyee === 'Classement1') phaseNettoyee = 'classement 1';
+      if (phaseNettoyee === 'Classement2') phaseNettoyee = 'classement 2';
+      if (phaseNettoyee === 'Classement3') phaseNettoyee = 'classement 3';
+      if (phaseNettoyee === 'Quart') phaseNettoyee = 'Quart de finale';
+      if (phaseNettoyee === 'Demi') phaseNettoyee = 'Demi-finale';
+      if (phaseNettoyee === 'Finale') phaseNettoyee = 'Finale';
+      return `Pétanque - ${phaseNettoyee}`;
+    }
+
+    // 3. FINALES MAJEURES (ex: basketballFemmesFinale -> Basket Femme - Finale)
+    if (cle.includes('finale')) {
+      let precision = "";
+      if (cle.includes('femme')) precision = " Femme";
+      if (cle.includes('homme')) precision = " Homme";
+      if (cle.includes('veterans')) precision = " Vétérans";
+      if (cle.includes('kids')) precision = " Kids";
+
+      const nomSportAffiche = disciplineNom === 'Basketball' ? 'Basket' : (disciplineNom === 'Volleyball' ? 'Volley' : disciplineNom);
+      return `${nomSportAffiche}${precision} - Finale`;
+    }
+
+    // 4. CORRECTIF JUNIOR / KIDS (Affiche la mention Finale UNIQUEMENT le dimanche)
+    if (cle.includes('junior') || cle.includes('kids')) {
+      const texteDeBase = t(activite);
+      if (jourSelectionne === 'dimanche') {
+        return `${texteDeBase} - Finale`;
+      }
+      return texteDeBase; // Samedi : Renvoie uniquement "Basket U15" ou "Basket Kids"
+    }
+    
+    return t(activite);
+  };
+
   return (
     <div style={{ padding: '16px', backgroundColor: COULEURS.grisFond, minHeight: '100vh', display: 'flex', justifyContent: 'center' }}>
       <div style={{ width: '100%', maxWidth: '800px' }}>
@@ -109,7 +168,7 @@ export default function Calendrier() {
           </div>
           <div>
             <label style={{ display: 'block', fontSize: '11px', fontWeight: '700', color: '#94a3b8', textTransform: 'uppercase', marginBottom: '6px' }}>{t('filtrerSport')}</label>
-            <select value={sportFiltre} onChange={(e) => setSiteFiltre('all', setSportFiltre(e.target.value))} style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #e2e8f0', fontWeight: '600', outline: 'none', color: COULEURS.noirText }}>
+            <select value={sportFiltre} onChange={(e) => setSportFiltre(e.target.value)} style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #e2e8f0', fontWeight: '600', outline: 'none', color: COULEURS.noirText }}>
               {optionsSports.map((s) => <option key={s.id} value={s.id}>{s.nom}</option>)}
             </select>
           </div>
@@ -127,9 +186,9 @@ export default function Calendrier() {
                       <span style={{ backgroundColor: item.discipline.couleur, width: '5px', height: '5px', borderRadius: '50%' }}></span>
                       {item.heureDebut} — {item.heureFin}
                     </div>
-                    <div style={{ fontSize: '11px', fontWeight: '800', textTransform: 'uppercase', color: item.discipline.couleur, marginBottom: '2px' }}>{item.discipline.nom}</div>
-                    {/* CORRIGÉ : L'affichage direct de t(item.activite) affiche les numéros complets configurés */}
-                    <div style={{ fontWeight: '700', color: COULEURS.noirText, fontSize: '14px' }}>{t(item.activite)}</div>
+                    <div style={{ fontWeight: '700', color: COULEURS.noirText, fontSize: '14px' }}>
+                      {obtenirFormatBrut(item.activite, item.discipline.nom)}
+                    </div>
                     <div style={{ fontSize: '12px', color: '#64748b', marginTop: '4px' }}>📍 {calendarData.sites[item.site]?.nom} <span style={{ color: '#cbd5e1' }}>|</span> <b>{item.terrain}</b></div>
                   </div>
                 </div>
