@@ -15,12 +15,6 @@ export default function Directions() {
 
   return (
     <div style={{ padding: '20px', maxWidth: '1000px', margin: '0 auto', fontFamily: 'sans-serif', lineHeight: '1.6', color: '#333' }}>
-      <p style={{ color: '#9f1617', fontSize: '20px', fontWeight: 'bold' }}>{t("programmationMessage")}</p>
-      <p>
-      {lang === 'fr' 
-        ? 'La RSM 2026 se fera à ces endroits ci-dessous. Certaines disciplines peuvent commencer le Vendredi 3 juillet dès 14h, dont le Soccer Adulte, Basketball Adulte Homme et Femme, Volley Ball Adulte Homme et Femme.' 
-        : "The RSM 2026 will take place at the locations listed below. Some disciplines may begin on Friday, July 3rd at 2 PM, including Adult Soccer, Adult Men's and Women's Basketball, and Adult Men's and Women's Volleyball."}
-      </p>
       {sites.map((site, index) => (
         <div key={index} style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '15px' }}>
           <MapPin size={22} style={{ marginRight: '10px', marginTop: '3px' }} weight="bold" />

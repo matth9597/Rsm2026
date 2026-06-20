@@ -82,7 +82,8 @@ export const calendarData = {
         { site: "montBleu", terrain: "Gym 1", activite: "defileMode", fin: "17:30" },
         { site: "nouvellesFrontieres", terrain: "Gym 1", activite: "zumba", fin: "17:30" },
         { site: "cegepHeritage", terrain: "Gym\\Terrain 1", activite: "kata", fin: "17:30" },
-        { site: "montBleu", terrain: "Terrain Nat 1", activite: "soccerHommes", fin: "17:30" }
+        { site: "montBleu", terrain: "Terrain Nat 1", activite: "soccerHommes", fin: "17:30" },
+        { site: "cegepOutaouais", terrain: "Stationnement 7A", activite: "petanqueFinale", fin: "18:00" }
       ],
       "17:30": [
         { site: "montBleu", terrain: "Gym 1", activite: "volleyballFemmes", fin: "19:30" },
@@ -111,9 +112,7 @@ export const calendarData = {
         { site: "montBleu", terrain: "Terrain Nat 1", activite: "soccerQuart3", fin: "21:00" },
         { site: "montBleu", terrain: "Terrain Nat 2", activite: "soccerQuart4", fin: "21:00" }
       ]
-    }
-
-,
+    },
 
 
     "dimanche": {

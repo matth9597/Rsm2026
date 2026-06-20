@@ -16,7 +16,7 @@ export default function Programmation() {
   const [siteFiltre, setSiteFiltre] = useState('all');
   const [sportFiltre, setSportFiltre] = useState('all'); 
 
-  const lienCalendrierGlobal = 'https://drive.google.com/file/d/1OFEuGFabakEwtIdakySgxN_Zy6dZ7g2h/view?usp=drive_link';
+  const lienCalendrierGlobal = 'https://drive.google.com/file/d/1jfffGDc_gXgT_4sC2wBpUSApDmKzpH8M/view?usp=drive_link';
 
   return (
     <div style={{ padding: '16px', backgroundColor: COULEURS.grisFond, minHeight: '100vh', display: 'flex', justifyContent: 'center' }}>
