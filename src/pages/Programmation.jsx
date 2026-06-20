@@ -4,10 +4,17 @@ import { useLanguage } from '../LanguageContext';
 import Calendrier from './Calendrier';
 import Directions from './Directions';
 import { COULEURS } from './calendrierUtils';
+import { calendarData } from '../calendarData';
 
 export default function Programmation() {
   const { t } = useLanguage();
   const [sousMenuActif, setSousMenuActif] = useState('sites'); 
+
+  // Les filtres sont mémorisés ici au niveau du parent
+  const clesJours = Object.keys(calendarData.programme);
+  const [jourSelectionne, setJourSelectionne] = useState(clesJours[0] || '');
+  const [siteFiltre, setSiteFiltre] = useState('all');
+  const [sportFiltre, setSportFiltre] = useState('all'); 
 
   const lienCalendrierGlobal = 'https://drive.google.com/file/d/1OFEuGFabakEwtIdakySgxN_Zy6dZ7g2h/view?usp=drive_link';
 
@@ -57,7 +64,15 @@ export default function Programmation() {
           </div>
         )}
 
-        {sousMenuActif === 'detaille' && <Calendrier />}
+        {/* Passage des variables mémorisées au Calendrier sous forme de props */}
+        {sousMenuActif === 'detaille' && (
+          <Calendrier 
+            jourSelectionne={jourSelectionne} setJourSelectionne={setJourSelectionne}
+            siteFiltre={siteFiltre} setSiteFiltre={setSiteFiltre}
+            sportFiltre={sportFiltre} setSportFiltre={setSportFiltre}
+            clesJours={clesJours}
+          />
+        )}
 
       </div>
     </div>

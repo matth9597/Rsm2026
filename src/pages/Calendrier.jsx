@@ -1,21 +1,22 @@
 // Calendrier.jsx
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useLanguage } from '../LanguageContext'; 
 import { calendarData } from '../calendarData';
 import { COULEURS, obtenirInfosDiscipline } from './calendrierUtils';
 
-export default function Calendrier() {
+export default function Calendrier({ 
+  jourSelectionne, setJourSelectionne, 
+  siteFiltre, setSiteFiltre, 
+  sportFiltre, setSportFiltre,
+  clesJours 
+}) {
   const { t } = useLanguage(); 
-  const clesJours = Object.keys(calendarData.programme);
-  const [jourSelectionne, setJourSelectionne] = useState(clesJours[0] || '');
-  const [siteFiltre, setSiteFiltre] = useState('all');
-  const [sportFiltre, setSportFiltre] = useState('all'); 
 
   useEffect(() => {
     if (!clesJours.includes(jourSelectionne) && clesJours.length > 0) {
       setJourSelectionne(clesJours[0]);
     }
-  }, [jourSelectionne, clesJours]);
+  }, [jourSelectionne, clesJours, setJourSelectionne]);
 
   const programmeDuJour = calendarData.programme[jourSelectionne] || {};
 
