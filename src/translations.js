@@ -92,6 +92,9 @@ export const translations = {
     culturel: "Culturel",
     tousLesSports: "Tous les sports",
     filtrerSport: "Filtrer par Sport",
+    sites: "Sites",
+    calendrierGlobal: "Calendrier Global",
+    calendrierDetaille: "Calendrier Détaillé",
 
   },
   en: {
@@ -187,6 +190,9 @@ export const translations = {
     culturel: "Cultural",
     tousLesSports: "All sports",
     filtrerSport: "Filter by Sport",
+    sites: "Locations",
+    calendrierGlobal: "Global Schedule",
+    calendrierDetaille: "Detailed Schedule",
   },
 };
 
