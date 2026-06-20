@@ -89,11 +89,19 @@ export default function Calendrier({
   const obtenirFormatBrut = (activite, disciplineNom) => {
     const cle = activite.toLowerCase();
     
-    if (jourSelectionne === 'dimanche' && (cle === 'basketdemi1' || cle === 'basketdemi2')) {
-      const phaseNum = cle.slice(-1);
-      return `Basket Homme - demi${phaseNum}`;
+    // 1. RE-CALIBRAGE DES DEMIS DU DIMANCHE MATIN
+    if (jourSelectionne === 'dimanche') {
+      if (cle === 'basketdemi1' || cle === 'basketdemi2') {
+        const phaseNum = cle.slice(-1);
+        return `Basket Homme - demi${phaseNum}`;
+      }
+      if (cle === 'soccerdemi1' || cle === 'soccerdemi2') {
+        const phaseNum = cle.slice(-1);
+        return `Soccer Homme - demi${phaseNum}`;
+      }
     }
 
+    // 2. EXTRACTION ET FORMATAGE DE TOUTES LES PHASES (SAMEDI & DIMANCHE)
     let phaseTrouvee = "";
     if (cle.includes('quart')) phaseTrouvee = "quart" + (activite.match(/\d+/) || "");
     if (cle.includes('semi')) phaseTrouvee = "semi" + (activite.match(/\d+/) || "");
@@ -110,10 +118,19 @@ export default function Calendrier({
       if (cle.includes('veterans')) precision = " Vétérans";
       if (cle.includes('kids')) precision = " Kids";
 
+      // CORRECTIF PHASES DU SOCCER SENIOR : Si c'est du soccer senior sans précision, c'est d'office "Homme"
+      if (cle.startsWith('soccer') && !precision) {
+        precision = " Homme";
+      }
+      if (cle.startsWith('baskethommequart') && !precision) {
+        precision = " Homme";
+      }
+
       const nomSportAffiche = disciplineNom === 'Basketball' ? 'Basket' : (disciplineNom === 'Volleyball' ? 'Volley' : disciplineNom);
       return `${nomSportAffiche}${precision} - ${phaseTrouvee}`;
     }
 
+    // 3. GESTION DE LA PÉTANQUE (Samedi)
     if (cle.startsWith('petanque')) {
       let phaseNettoyee = activite.replace(/^petanque/i, '');
       if (phaseNettoyee === 'Classement1') phaseNettoyee = 'classement 1';
@@ -125,6 +142,7 @@ export default function Calendrier({
       return `Pétanque - ${phaseNettoyee}`;
     }
 
+    // 4. GESTION DES FINALES MAJEURES
     if (cle.includes('finale')) {
       let precision = "";
       if (cle.includes('femme')) precision = " Femme";
@@ -132,10 +150,16 @@ export default function Calendrier({
       if (cle.includes('veterans')) precision = " Vétérans";
       if (cle.includes('kids')) precision = " Kids";
 
+      // Si c'est la finale de soccer senior, on force la mention Homme
+      if (cle === 'soccerfinale') {
+        precision = " Homme";
+      }
+
       const nomSportAffiche = disciplineNom === 'Basketball' ? 'Basket' : (disciplineNom === 'Volleyball' ? 'Volley' : disciplineNom);
       return `${nomSportAffiche}${precision} - Finale`;
     }
 
+    // 5. ENFANTS JUNIOR / KIDS
     if (cle.includes('junior') || cle.includes('kids')) {
       const texteDeBase = t(activite);
       if (jourSelectionne === 'dimanche') {
