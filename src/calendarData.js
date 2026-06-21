@@ -30,12 +30,12 @@ export const calendarData = {
         { site: "montBleu", terrain: "Gym 1", activite: "ceremonieOuverture", fin: "10:00" }
       ],
       "10:00": [
-        { site: "montBleu", terrain: "Gym 1", activite: "volleyballFemmes", fin: "13:30" },
-        { site: "montBleu", terrain: "Gym 2", activite: "volleyballFemmes", fin: "13:30" },
+        { site: "cegepHeritage", terrain: "Gym\\Terrain 1", activite: "volleyballFemmes", fin: "13:30" },
+        { site: "cegepHeritage", terrain: "Gym\\Terrain 2", activite: "volleyballFemmes", fin: "13:30" },
         { site: "nouvellesFrontieres", terrain: "Gym 1", activite: "basketballFemmes", fin: "13:30" },
         { site: "nouvellesFrontieres", terrain: "Gym 2", activite: "basketballFemmes", fin: "13:30" },
-        { site: "cegepHeritage", terrain: "Gym\\Terrain 1", activite: "volleyballHommes", fin: "13:30" },
-        { site: "cegepHeritage", terrain: "Gym\\Terrain 2", activite: "volleyballHommes", fin: "13:30" },
+        { site: "montBleu", terrain: "Gym 1", activite: "volleyballHommes", fin: "13:30" },
+        { site: "montBleu", terrain: "Gym 2", activite: "volleyballHommes", fin: "13:30" },
         { site: "montBleu", terrain: "Terrain Nat 1", activite: "soccerHommes", fin: "16:30" },
         { site: "montBleu", terrain: "Terrain Nat 2", activite: "soccerHommes", fin: "16:30" },
         { site: "montBleu", terrain: "Relais Plein-air", activite: "marche5Km", fin: "14:30" },
@@ -82,16 +82,15 @@ export const calendarData = {
         { site: "montBleu", terrain: "Gym 1", activite: "defileMode", fin: "17:30" },
         { site: "nouvellesFrontieres", terrain: "Gym 1", activite: "zumba", fin: "17:30" },
         { site: "cegepHeritage", terrain: "Gym\\Terrain 1", activite: "kata", fin: "17:30" },
-        { site: "montBleu", terrain: "Terrain Nat 1", activite: "soccerHommes", fin: "17:30" },
-        { site: "cegepOutaouais", terrain: "Stationnement 7A", activite: "petanqueFinale", fin: "18:00" }
+        { site: "montBleu", terrain: "Terrain Nat 1", activite: "soccerHommes", fin: "17:30" }
       ],
       "17:30": [
-        { site: "montBleu", terrain: "Gym 1", activite: "volleyballFemmes", fin: "19:30" },
-        { site: "montBleu", terrain: "Gym 2", activite: "volleyballFemmes", fin: "19:30" },
+        { site: "cegepHeritage", terrain: "Gym\\Terrain 1", activite: "volleyballFemmes", fin: "19:30" },
+        { site: "cegepHeritage", terrain: "Gym\\Terrain 2", activite: "volleyballFemmes", fin: "19:30" },
         { site: "nouvellesFrontieres", terrain: "Gym 1", activite: "basketFemmeSemi1", fin: "19:00" },
         { site: "nouvellesFrontieres", terrain: "Gym 2", activite: "basketFemmeSemi2", fin: "19:00" },
-        { site: "cegepHeritage", terrain: "Gym\\Terrain 1", activite: "volleyHommeSemi1", fin: "19:00" },
-        { site: "cegepHeritage", terrain: "Gym\\Terrain 2", activite: "volleyHommeSemi2", fin: "19:00" }
+        { site: "montBleu", terrain: "Gym 1", activite: "volleyHommeSemi1", fin: "19:00" },
+        { site: "montBleu", terrain: "Gym 2", activite: "volleyHommeSemi2", fin: "19:00" } 
       ],
       "18:00": [
         { site: "cegepOutaouais", terrain: "Gym 1", activite: "basketHommeQuart1", fin: "19:30" },
@@ -101,14 +100,13 @@ export const calendarData = {
       ],
       "19:00": [
         { site: "nouvellesFrontieres", terrain: "Gym 1", activite: "basketFemme5eVs6e", fin: "21:00" },
-        { site: "cegepHeritage", terrain: "Gym\\Terrain 1", activite: "volleyHomme3ePlace", fin: "21:00" },
-        { site: "cegepHeritage", terrain: "Gym\\Terrain 2", activite: "volleyHomme5eVs6e", fin: "21:00" }
+        { site: "montBleu", terrain: "Gym 2", activite: "volleyHomme5eVs6e", fin: "21:00" }
       ],
       "19:30": [
         { site: "cegepOutaouais", terrain: "Gym 1", activite: "basketHommeQuart3", fin: "21:00" },
         { site: "cegepOutaouais", terrain: "Gym 2", activite: "basketHommeQuart4", fin: "21:00" },
-        { site: "montBleu", terrain: "Gym 1", activite: "volleyFemmeSemi1", fin: "21:00" },
-        { site: "montBleu", terrain: "Gym 2", activite: "volleyFemmeSemi2", fin: "21:00" },
+        { site: "cegepHeritage", terrain: "Gym\\Terrain 1", activite: "volleyFemmeSemi1", fin: "21:00" },
+        { site: "cegepHeritage", terrain: "Gym\\Terrain 2", activite: "volleyFemmeSemi2", fin: "21:00" },
         { site: "montBleu", terrain: "Terrain Nat 1", activite: "soccerQuart3", fin: "21:00" },
         { site: "montBleu", terrain: "Terrain Nat 2", activite: "soccerQuart4", fin: "21:00" }
       ]
