@@ -393,6 +393,7 @@ export const sportsData = {
     categorie: "volleyballFemmes",
     slug: "volleyball-femme",
     inscriptionEquipeFermee: true,
+    InscriptionIndividuelleFermee: true,
     lienInscriptionEquipe:
       "https://docs.google.com/forms/d/e/1FAIpQLScN65egh-Z7wn0hpw_PjhbfVj-mSYUebkFYLAHKoom2x1k29Q/viewform",
     lienInscriptionIndividuelle:
@@ -442,6 +443,7 @@ export const sportsData = {
     categorie: "volleyballHommes",
     slug: "volleyball-homme",
     inscriptionEquipeFermee: true,
+    InscriptionIndividuelleFermee: true,
     lienInscriptionEquipe:
       "https://docs.google.com/forms/d/e/1FAIpQLSfT09A96ShXcNBVKH8FldchESx-f1aRDHsxFh5Vdpe4FEIaEw/viewform",
     lienInscriptionIndividuelle:
