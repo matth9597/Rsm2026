@@ -24,8 +24,8 @@ export default function Stand() {
       },
       {
         nom: "lieux",
-        texteFR: "Collège Mont-Bleu et Collège Heritage — Zone Extérieure (Restauration) ou Zone Intérieure (Services/Produits)",
-        texteEN: "Mont-Bleu College and Heritage College — Outdoor Zone (Catering) or Indoor Zone (Services/Products)"
+        texteFR: "Collège Mont-Bleu et Collège Heritage",
+        texteEN: "Mont-Bleu College and Heritage College"
       },
       {
         nom: "contact",
