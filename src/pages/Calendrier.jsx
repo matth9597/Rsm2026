@@ -14,7 +14,7 @@ export default function Calendrier({
 
   useEffect(() => {
     if (!clesJours.includes(jourSelectionne) && clesJours.length > 0) {
-      setJourSelectionne(clesJours[0]);
+      setJourSelectionne(clesJours);
     }
   }, [jourSelectionne, clesJours, setJourSelectionne]);
 
@@ -35,61 +35,26 @@ export default function Calendrier({
 
   const validerFiltres = (act) => {
     const coordSite = siteFiltre === 'all' || act.site === siteFiltre;
-    const disc = obtenirInfosDiscipline(act.activite);
-    const coordSport = sportFiltre === 'all' || disc.id === sportFiltre;
+    
+    let discId = act.disciplineId; 
+    if (!discId) {
+      const disc = obtenirInfosDiscipline(act.activite);
+      discId = disc.id;
+    }
+    
+    const coordSport = sportFiltre === 'all' || discId === sportFiltre;
     return coordSite && coordSport;
   };
 
-  const obtenirTimelineFusionnee = () => {
-    const heuresTriees = Object.keys(programmeDuJour).sort();
-    const evenementsFusionnes = [];
-
-    heuresTriees.forEach((heure) => {
-      const activites = programmeDuJour[heure];
-
-      activites.forEach((act) => {
-        const disc = obtenirInfosDiscipline(act.activite);
-        if (!validerFiltres(act)) return;
-
-        const matchPrecedent = evenementsFusionnes.find(
-          (prev) =>
-            prev.site === act.site &&
-            prev.terrain === act.terrain &&
-            prev.activite === act.activite &&
-            prev.heureFin === heure
-        );
-
-        if (matchPrecedent) {
-          matchPrecedent.heureFin = act.fin;
-        } else {
-          evenementsFusionnes.push({
-            ...act,
-            heureDebut: heure,
-            heureFin: act.fin,
-            discipline: disc
-          });
-        }
-      });
-    });
-
-    const timelineRegroupee = {};
-    evenementsFusionnes.forEach((evt) => {
-      if (!timelineRegroupee[evt.heureDebut]) {
-        timelineRegroupee[evt.heureDebut] = [];
-      }
-      timelineRegroupee[evt.heureDebut].push(evt);
-    });
-
-    return timelineRegroupee;
-  };
-
-  const timelineData = obtenirTimelineFusionnee();
-  const heuresDebutTriees = Object.keys(timelineData).sort();
+  const heuresDebutTriees = Object.keys(programmeDuJour).sort();
 
   const obtenirFormatBrut = (activite, disciplineNom) => {
     const cle = activite.toLowerCase();
     
-    // 1. RE-CALIBRAGE DES DEMIS DU DIMANCHE MATIN
+    if (cle.includes('vs') && !cle.includes('5evs6e') && !cle.includes('10evs11e') && !cle.includes('12evs13e')) {
+      return activite;
+    }
+    
     if (jourSelectionne === 'dimanche') {
       if (cle === 'basketdemi1' || cle === 'basketdemi2') {
         const phaseNum = cle.slice(-1);
@@ -101,7 +66,6 @@ export default function Calendrier({
       }
     }
 
-    // 2. EXTRACTION ET FORMATAGE DE TOUTES LES PHASES (SAMEDI & DIMANCHE)
     let phaseTrouvee = "";
     if (cle.includes('quart')) phaseTrouvee = "quart" + (activite.match(/\d+/) || "");
     if (cle.includes('semi')) phaseTrouvee = "semi" + (activite.match(/\d+/) || "");
@@ -118,7 +82,6 @@ export default function Calendrier({
       if (cle.includes('veterans')) precision = " Vétérans";
       if (cle.includes('kids')) precision = " Kids";
 
-      // CORRECTIF PHASES DU SOCCER SENIOR : Si c'est du soccer senior sans précision, c'est d'office "Homme"
       if (cle.startsWith('soccer') && !precision) {
         precision = " Homme";
       }
@@ -130,7 +93,6 @@ export default function Calendrier({
       return `${nomSportAffiche}${precision} - ${phaseTrouvee}`;
     }
 
-    // 3. GESTION DE LA PÉTANQUE (Samedi)
     if (cle.startsWith('petanque')) {
       let phaseNettoyee = activite.replace(/^petanque/i, '');
       if (phaseNettoyee === 'Classement1') phaseNettoyee = 'classement 1';
@@ -142,7 +104,6 @@ export default function Calendrier({
       return `Pétanque - ${phaseNettoyee}`;
     }
 
-    // 4. GESTION DES FINALES MAJEURES
     if (cle.includes('finale')) {
       let precision = "";
       if (cle.includes('femme')) precision = " Femme";
@@ -150,7 +111,6 @@ export default function Calendrier({
       if (cle.includes('veterans')) precision = " Vétérans";
       if (cle.includes('kids')) precision = " Kids";
 
-      // Si c'est la finale de soccer senior, on force la mention Homme
       if (cle === 'soccerfinale') {
         precision = " Homme";
       }
@@ -159,7 +119,6 @@ export default function Calendrier({
       return `${nomSportAffiche}${precision} - Finale`;
     }
 
-    // 5. ENFANTS JUNIOR / KIDS
     if (cle.includes('junior') || cle.includes('kids')) {
       const texteDeBase = t(activite);
       if (jourSelectionne === 'dimanche') {
@@ -170,6 +129,10 @@ export default function Calendrier({
     
     return t(activite);
   };
+
+  const aDesActivitesFiltrees = heuresDebutTriees.some(heure => 
+    (programmeDuJour[heure] || []).some(act => validerFiltres(act))
+  );
 
   return (
     <>
@@ -198,29 +161,91 @@ export default function Calendrier({
         </div>
       </div>
 
-      {/* TIMELINE */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-        {heuresDebutTriees.map((hDebut) => (
-          <div key={hDebut} style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-            {timelineData[hDebut].map((item, idx) => (
-              <div key={idx} style={{ backgroundColor: COULEURS.grisCarte, padding: '14px', borderRadius: '10px', border: `1px solid ${COULEURS.grisBordure}`, display: 'flex', alignItems: 'center', gap: '12px', boxShadow: '0 1px 4px rgba(0,0,0,0.04)' }}>
-                <div style={{ width: '4px', height: '48px', backgroundColor: item.discipline.couleur, borderRadius: '4px', flexShrink: 0 }} />
-                <div style={{ flexGrow: 1 }}>
-                  <div style={{ fontSize: '13px', fontWeight: '800', color: COULEURS.noirText, marginBottom: '4px', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                    <span style={{ backgroundColor: item.discipline.couleur, width: '5px', height: '5px', borderRadius: '50%' }}></span>
-                    {item.heureDebut} — {item.heureFin}
-                  </div>
-                  <div style={{ fontWeight: '700', color: COULEURS.noirText, fontSize: '14px' }}>
-                    {obtenirFormatBrut(item.activite, item.discipline.nom)}
-                  </div>
-                  <div style={{ fontSize: '12px', color: '#64748b', marginTop: '4px' }}>📍 {calendarData.sites[item.site]?.nom} <span style={{ color: '#cbd5e1' }}>|</span> <b>{item.terrain}</b></div>
-                </div>
-              </div>
-            ))}
-          </div>
-        ))}
+      {/* TIMELINE DE RENDU DYNAMIQUE */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+        {heuresDebutTriees.map((heure) => {
+          const activitesDeLHeure = (programmeDuJour[heure] || []).filter(act => validerFiltres(act));
+          
+          if (activitesDeLHeure.length === 0) return null;
 
-        {heuresDebutTriees.length === 0 && (
+          // Regroupement par Site, puis par Terrain
+          const structureRegroupee = {};
+          activitesDeLHeure.forEach(act => {
+            if (!structureRegroupee[act.site]) {
+              structureRegroupee[act.site] = {};
+            }
+            if (!structureRegroupee[act.site][act.terrain]) {
+              structureRegroupee[act.site][act.terrain] = [];
+            }
+            structureRegroupee[act.site][act.terrain].push(act);
+          });
+
+          return (
+            <div key={heure} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              
+              {Object.entries(structureRegroupee).map(([siteKey, terrains]) => (
+                <div key={siteKey} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                  
+                  {/* AFFICHAGE DU LIEU EN TITRE UNIQUE */}
+                  <div style={{ fontSize: '12px', fontWeight: '800', color: COULEURS.rougeActif, textTransform: 'uppercase', letterSpacing: '0.5px', paddingLeft: '4px' }}>
+                    📍 {calendarData.sites[siteKey]?.nom}
+                  </div>
+
+                  {/* BOUCLE SUR CHAQUE CONFIGURATION DE TERRAIN */}
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '12px' }}>
+                    {Object.entries(terrains).map(([terrainNom, matchs]) => {
+                      const discPremierMatch = matchs[0]?.disciplineId === 'basket' 
+                        ? { couleur: '#ea580c', nom: 'Basketball' }
+                        : obtenirInfosDiscipline(matchs[0]?.activite || "");
+
+                      let nomPouleExtrait = "";
+                      let terrainNettoye = terrainNom;
+                      if (terrainNom.includes('—')) {
+                        const parties = terrainNom.split('—');
+                        nomPouleExtrait = parties[0].trim(); // Récupère "Pool A"
+                        terrainNettoye = parties[1].trim();   // Garde uniquement "Gym 1"
+                      }
+
+                      return (
+                        <div key={terrainNom} style={{ backgroundColor: COULEURS.grisCarte, padding: '16px', borderRadius: '12px', border: `1px solid ${COULEURS.grisBordure}`, boxShadow: '0 1px 4px rgba(0,0,0,0.04)', display: 'flex', gap: '14px' }}>
+                          <div style={{ width: '4px', backgroundColor: discPremierMatch.couleur, borderRadius: '4px', flexShrink: 0 }} />
+                          
+                          <div style={{ flexGrow: 1, display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                            
+                            {/* EN-TÊTE CORRIGÉ : Heure de début + Nom de la poule côte à côte */}
+                            <div style={{ fontSize: '13px', fontWeight: '800', color: COULEURS.noirText, display: 'flex', alignItems: 'center', gap: '6px', borderBottom: '1px solid #f1f5f9', paddingBottom: '8px' }}>
+                              <span style={{ backgroundColor: discPremierMatch.couleur, width: '5px', height: '5px', borderRadius: '50%' }}></span>
+                              ~ {heure} {nomPouleExtrait ? `| ${nomPouleExtrait}` : ""}
+                            </div>
+
+                            {/* LISTE DES AFFICHES DE MATCHS */}
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                              {matchs.map((item, idx) => (
+                                <div key={idx} style={{ fontWeight: '700', color: COULEURS.noirText, fontSize: '13.5px', lineHeight: '1.4' }}>
+                                  {obtenirFormatBrut(item.activite, discPremierMatch.nom)}
+                                </div>
+                              ))}
+                            </div>
+
+                            {/* LE TERRAIN NETTOYÉ APPARAÎT TOUT EN BAS */}
+                            <div style={{ fontSize: '11.5px', color: '#64748b', marginTop: '2px', borderTop: '1px dashed #f1f5f9', paddingTop: '6px' }}>
+                              🏅 Gymnase : <b>{terrainNettoye}</b>
+                            </div>
+
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                </div>
+              ))}
+
+            </div>
+          );
+        })}
+
+        {!aDesActivitesFiltrees && (
           <div style={{ textAlign: 'center', padding: '40px 20px', color: '#94a3b8', fontSize: '14px', backgroundColor: '#fff', borderRadius: '10px', border: `1px solid ${COULEURS.grisBordure}` }}>
             {t('aucunMatch')}
           </div>
