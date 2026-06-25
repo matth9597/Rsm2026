@@ -37,7 +37,11 @@ export default function Calendrier({
     const coordSite = siteFiltre === 'all' || act.site === siteFiltre;
     
     let discId = act.disciplineId; 
-    if (!discId) {
+    if (discId && discId.startsWith('basket')) {
+      discId = 'basket';
+    } else if (discId && discId.startsWith('volley')) {
+      discId = 'volley';
+    } else if (!discId) {
       const disc = obtenirInfosDiscipline(act.activite);
       discId = disc.id;
     }
@@ -49,6 +53,7 @@ export default function Calendrier({
   const heuresDebutTriees = Object.keys(programmeDuJour).sort();
 
   const obtenirFormatBrut = (activite, disciplineNom) => {
+    if (!activite) return ""; 
     const cle = activite.toLowerCase();
     
     if (cle.includes('vs') && !cle.includes('5evs6e') && !cle.includes('10evs11e') && !cle.includes('12evs13e')) {
@@ -76,21 +81,7 @@ export default function Calendrier({
     if (cle.includes('12evs13e')) phaseTrouvee = "12e vs 13e";
     
     if (phaseTrouvee) {
-      let precision = "";
-      if (cle.includes('femme')) precision = " Femme";
-      if (cle.includes('homme')) precision = " Homme";
-      if (cle.includes('veterans')) precision = " Vétérans";
-      if (cle.includes('kids')) precision = " Kids";
-
-      if (cle.startsWith('soccer') && !precision) {
-        precision = " Homme";
-      }
-      if (cle.startsWith('baskethommequart') && !precision) {
-        precision = " Homme";
-      }
-
-      const nomSportAffiche = disciplineNom === 'Basketball' ? 'Basket' : (disciplineNom === 'Volleyball' ? 'Volley' : disciplineNom);
-      return `${nomSportAffiche}${precision} - ${phaseTrouvee}`;
+      return phaseTrouvee.charAt(0).toUpperCase() + phaseTrouvee.slice(1);
     }
 
     if (cle.startsWith('petanque')) {
@@ -105,18 +96,7 @@ export default function Calendrier({
     }
 
     if (cle.includes('finale')) {
-      let precision = "";
-      if (cle.includes('femme')) precision = " Femme";
-      if (cle.includes('homme')) precision = " Homme";
-      if (cle.includes('veterans')) precision = " Vétérans";
-      if (cle.includes('kids')) precision = " Kids";
-
-      if (cle === 'soccerfinale') {
-        precision = " Homme";
-      }
-
-      const nomSportAffiche = disciplineNom === 'Basketball' ? 'Basket' : (disciplineNom === 'Volleyball' ? 'Volley' : disciplineNom);
-      return `${nomSportAffiche}${precision} - Finale`;
+      return "Finale";
     }
 
     if (cle.includes('junior') || cle.includes('kids')) {
@@ -161,14 +141,13 @@ export default function Calendrier({
         </div>
       </div>
 
-      {/* TIMELINE DE RENDU DYNAMIQUE */}
+      {/* TIMELINE PRINCIPALE AVEC REGROUPEMENT */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
         {heuresDebutTriees.map((heure) => {
           const activitesDeLHeure = (programmeDuJour[heure] || []).filter(act => validerFiltres(act));
           
           if (activitesDeLHeure.length === 0) return null;
 
-          // Regroupement par Site, puis par Terrain
           const structureRegroupee = {};
           activitesDeLHeure.forEach(act => {
             if (!structureRegroupee[act.site]) {
@@ -182,54 +161,113 @@ export default function Calendrier({
 
           return (
             <div key={heure} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-              
-              {Object.entries(structureRegroupee).map(([siteKey, terrains]) => (
-                <div key={siteKey} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                  
-                  {/* AFFICHAGE DU LIEU EN TITRE UNIQUE */}
-                  <div style={{ fontSize: '12px', fontWeight: '800', color: COULEURS.rougeActif, textTransform: 'uppercase', letterSpacing: '0.5px', paddingLeft: '4px' }}>
-                    📍 {calendarData.sites[siteKey]?.nom}
-                  </div>
+              {Object.entries(structureRegroupee).map(([siteKey, lesTerrainsDuSite]) => {
+                const nomDuSite = calendarData.sites[siteKey]?.nom;
 
-                  {/* BOUCLE SUR CHAQUE CONFIGURATION DE TERRAIN */}
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '12px' }}>
-                    {Object.entries(terrains).map(([terrainNom, matchs]) => {
-                      const discPremierMatch = matchs[0]?.disciplineId === 'basket' 
-                        ? { couleur: '#ea580c', nom: 'Basketball' }
-                        : obtenirInfosDiscipline(matchs[0]?.activite || "");
+                return (
+                  <div key={siteKey} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                    {Object.entries(lesTerrainsDuSite).map(([terrainNom, matchs]) => {
+                      const premierMatch = matchs[0] || matchs;
+                      
+                      let disciplineAffichee = "";
+                      let couleurPastille = "#ea580c"; 
+
+                      const activiteBruteBas = premierMatch?.activite?.toLowerCase() || "";
+                      const disciplineIdBrute = premierMatch?.disciplineId || "";
+
+                      if (disciplineIdBrute === 'basket-homme') {
+                        disciplineAffichee = "Basket Homme";
+                        couleurPastille = "#ea580c";
+                      } else if (disciplineIdBrute === 'basket-femme' || activiteBruteBas.includes('basketfemme')) {
+                        disciplineAffichee = "Basket Femme";
+                        couleurPastille = "#ea580c";
+                      } else if (disciplineIdBrute === 'basket') {
+                        if (activiteBruteBas.includes('junior')) {
+                          disciplineAffichee = "Basket Junior";
+                        } else if (activiteBruteBas.includes('kids') || activiteBruteBas.includes('u12')) {
+                          disciplineAffichee = "Basket Enfants";
+                        } else if (jourSelectionne === 'samedi' && heure === '10:00') {
+                          disciplineAffichee = "Basket Femme";
+                        } else {
+                          disciplineAffichee = "Basket Homme";
+                        }
+                        couleurPastille = "#ea580c";
+                      } else if (activiteBruteBas.includes('basketballjunior')) {
+                        disciplineAffichee = "Basket Junior";
+                        couleurPastille = "#ea580c";
+                      } else if (activiteBruteBas.includes('basketballkids')) {
+                        disciplineAffichee = "Basket Enfants";
+                        couleurPastille = "#ea580c";
+                      } else if (disciplineIdBrute === 'soccer' || activiteBruteBas.includes('soccer')) {
+                        if (activiteBruteBas.includes('veteran')) {
+                          disciplineAffichee = "Soccer Vétérans";
+                        } else if (activiteBruteBas.includes('kids')) {
+                          disciplineAffichee = "Soccer Enfants";
+                        } else {
+                          disciplineAffichee = "Soccer Homme";
+                        }
+                        couleurPastille = "#10b981";
+                      } else if (disciplineIdBrute === 'volley-femme' || activiteBruteBas.includes('volleyfemme') || activiteBruteBas.includes('semi-final 1 vs')) {
+                        disciplineAffichee = "Volley Femme";
+                        couleurPastille = "#2563eb"; 
+                      } else if (disciplineIdBrute === 'volley' || activiteBruteBas.includes('volleyhomme') || activiteBruteBas.includes('volleyballhommes')) {
+                        disciplineAffichee = "Volley Homme";
+                        couleurPastille = "#2563eb";
+                      } else {
+                        const disc = obtenirInfosDiscipline(premierMatch?.activite || "");
+                        disciplineAffichee = disc.nom;
+                        couleurPastille = disc.couleur;
+                      }
 
                       let nomPouleExtrait = "";
                       let terrainNettoye = terrainNom;
                       if (terrainNom.includes('—')) {
                         const parties = terrainNom.split('—');
-                        nomPouleExtrait = parties[0].trim(); // Récupère "Pool A"
-                        terrainNettoye = parties[1].trim();   // Garde uniquement "Gym 1"
+                        nomPouleExtrait = parties[0]?.trim() || ""; 
+                        terrainNettoye = parties[1]?.trim() || terrainNom;   
                       }
 
+                      const texteEnteteComplet = `📍 ${nomDuSite}  |  ${terrainNettoye}`;
+
                       return (
-                        <div key={terrainNom} style={{ backgroundColor: COULEURS.grisCarte, padding: '16px', borderRadius: '12px', border: `1px solid ${COULEURS.grisBordure}`, boxShadow: '0 1px 4px rgba(0,0,0,0.04)', display: 'flex', gap: '14px' }}>
-                          <div style={{ width: '4px', backgroundColor: discPremierMatch.couleur, borderRadius: '4px', flexShrink: 0 }} />
+                        <div key={terrainNom} style={{ backgroundColor: COULEURS.grisCarte, padding: '16px', borderRadius: '12px', border: `1px solid ${COULEURS.grisBordure}`, boxShadow: '0 1px 4px rgba(0,0,0,0.04)', display: 'flex', gap: '14px', overflow: 'hidden' }}>
+                          <div style={{ width: '4px', backgroundColor: couleurPastille, borderRadius: '4px', flexShrink: 0 }} />
                           
-                          <div style={{ flexGrow: 1, display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                          {/* minWidth: 0 et overflowHidden sont obligatoires pour permettre le scroll interne de ses enfants */}
+                          <div style={{ flexGrow: 1, display: 'flex', flexDirection: 'column', gap: '12px', minWidth: 0, width: '100%' }}>
                             
-                            {/* EN-TÊTE CORRIGÉ : Heure de début + Nom de la poule côte à côte */}
-                            <div style={{ fontSize: '13px', fontWeight: '800', color: COULEURS.noirText, display: 'flex', alignItems: 'center', gap: '6px', borderBottom: '1px solid #f1f5f9', paddingBottom: '8px' }}>
-                              <span style={{ backgroundColor: discPremierMatch.couleur, width: '5px', height: '5px', borderRadius: '50%' }}></span>
-                              ~ {heure} {nomPouleExtrait ? `| ${nomPouleExtrait}` : ""}
+                            {/* EN-TÊTE DU HAUT : Défilable horizontalement si l'écran est petit */}
+                            <div style={{ borderBottom: '1px solid #f1f5f9', paddingBottom: '6px', width: '100%', overflowX: 'auto', overflowY: 'hidden', whiteSpace: 'nowrap', fontWeight: '800', color: COULEURS.noirText, fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.3px', WebkitOverflowScrolling: 'touch' }}>
+                              {texteEnteteComplet}
                             </div>
 
-                            {/* LISTE DES AFFICHES DE MATCHS */}
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                            {/* EN-TÊTE HORAIRE */}
+                            <div style={{ fontSize: '13px', fontWeight: '800', color: COULEURS.noirText, display: 'flex', alignItems: 'center', gap: '6px', marginTop: '-4px' }}>
+                              <span style={{ backgroundColor: couleurPastille, width: '5px', height: '5px', borderRadius: '50%' }}></span>
+                              ~ {heure} | {disciplineAffichee} {nomPouleExtrait ? `| ${nomPouleExtrait}` : ""}
+                            </div>
+
+                            {/* LISTE DES MATCHS : Taille fixe à 13.5px mais slider horizontal (scroll) si la ligne déborde */}
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '4px', width: '100%', overflow: 'hidden' }}>
                               {matchs.map((item, idx) => (
-                                <div key={idx} style={{ fontWeight: '700', color: COULEURS.noirText, fontSize: '13.5px', lineHeight: '1.4' }}>
-                                  {obtenirFormatBrut(item.activite, discPremierMatch.nom)}
+                                <div 
+                                  key={idx} 
+                                  style={{ 
+                                    fontWeight: '700', 
+                                    color: COULEURS.noirText, 
+                                    whiteSpace: 'nowrap',
+                                    display: 'block',
+                                    width: '100%',
+                                    fontSize: '13.5px', 
+                                    overflowX: 'auto', // Permet le slide horizontal
+                                    overflowY: 'hidden',
+                                    paddingBottom: '2px',
+                                    WebkitOverflowScrolling: 'touch' // Rend le scroll fluide sur iPhone/Android
+                                  }}
+                                >
+                                  {obtenirFormatBrut(item.activite, disciplineAffichee)}
                                 </div>
                               ))}
-                            </div>
-
-                            {/* LE TERRAIN NETTOYÉ APPARAÎT TOUT EN BAS */}
-                            <div style={{ fontSize: '11.5px', color: '#64748b', marginTop: '2px', borderTop: '1px dashed #f1f5f9', paddingTop: '6px' }}>
-                              🏅 Gymnase : <b>{terrainNettoye}</b>
                             </div>
 
                           </div>
@@ -237,10 +275,8 @@ export default function Calendrier({
                       );
                     })}
                   </div>
-
-                </div>
-              ))}
-
+                );
+              })}
             </div>
           );
         })}
