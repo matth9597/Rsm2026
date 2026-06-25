@@ -59,6 +59,10 @@ export default function Calendrier({
     if (cle.includes('vs') && !cle.includes('5evs6e') && !cle.includes('10evs11e') && !cle.includes('12evs13e')) {
       return activite;
     }
+
+    if (cle.includes('classement') || cle.includes('quart de finale') || cle.includes('demi-finale')) {
+      return activite;
+    }
     
     if (jourSelectionne === 'dimanche') {
       if (cle === 'basketdemi1' || cle === 'basketdemi2') {
@@ -169,6 +173,7 @@ export default function Calendrier({
                     {Object.entries(lesTerrainsDuSite).map(([terrainNom, matchs]) => {
                       const premierMatch = matchs[0] || matchs;
                       
+                      // 1. Détection stricte et finale des genres et des catégories pour l'en-tête
                       let disciplineAffichee = "";
                       let couleurPastille = "#ea580c"; 
 
@@ -199,9 +204,11 @@ export default function Calendrier({
                         disciplineAffichee = "Basket Enfants";
                         couleurPastille = "#ea580c";
                       } else if (disciplineIdBrute === 'soccer' || activiteBruteBas.includes('soccer')) {
-                        if (activiteBruteBas.includes('veteran')) {
+                        if (activiteBruteBas.includes('mixte')) {
+                          disciplineAffichee = "Soccer Mixte";
+                        } else if (activiteBruteBas.includes('veteran')) {
                           disciplineAffichee = "Soccer Vétérans";
-                        } else if (activiteBruteBas.includes('kids')) {
+                        } else if (activiteBruteBas.includes('kids') || activiteBruteBas.includes('enfants')) {
                           disciplineAffichee = "Soccer Enfants";
                         } else {
                           disciplineAffichee = "Soccer Homme";
@@ -213,6 +220,9 @@ export default function Calendrier({
                       } else if (disciplineIdBrute === 'volley' || activiteBruteBas.includes('volleyhomme') || activiteBruteBas.includes('volleyballhommes')) {
                         disciplineAffichee = "Volley Homme";
                         couleurPastille = "#2563eb";
+                      } else if (disciplineIdBrute === 'petanque') {
+                        disciplineAffichee = "Pétanque";
+                        couleurPastille = "#a855f7"; 
                       } else {
                         const disc = obtenirInfosDiscipline(premierMatch?.activite || "");
                         disciplineAffichee = disc.nom;
