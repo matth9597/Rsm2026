@@ -163,7 +163,7 @@ export default function Calendrier({
             structureRegroupee[act.site][act.terrain].push(act);
           });
 
-          return (
+                    return (
             <div key={heure} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {Object.entries(structureRegroupee).map(([siteKey, lesTerrainsDuSite]) => {
                 const nomDuSite = calendarData.sites[siteKey]?.nom;
@@ -173,7 +173,6 @@ export default function Calendrier({
                     {Object.entries(lesTerrainsDuSite).map(([terrainNom, matchs]) => {
                       const premierMatch = matchs[0] || matchs;
                       
-                      // 1. Détection stricte et finale des genres et des catégories pour l'en-tête
                       let disciplineAffichee = "";
                       let couleurPastille = "#ea580c"; 
 
@@ -233,32 +232,47 @@ export default function Calendrier({
                       let terrainNettoye = terrainNom;
                       if (terrainNom.includes('—')) {
                         const parties = terrainNom.split('—');
-                        nomPouleExtrait = parties[0]?.trim() || ""; 
-                        terrainNettoye = parties[1]?.trim() || terrainNom;   
+                        nomPouleExtrait = parties[0] ? parties[0].trim() : ""; 
+                        terrainNettoye = parties[1] ? parties[1].trim() : terrainNom;   
                       }
 
                       const texteEnteteComplet = `📍 ${nomDuSite}  |  ${terrainNettoye}`;
 
                       return (
-                        <div key={terrainNom} style={{ backgroundColor: COULEURS.grisCarte, padding: '16px', borderRadius: '12px', border: `1px solid ${COULEURS.grisBordure}`, boxShadow: '0 1px 4px rgba(0,0,0,0.04)', display: 'flex', gap: '14px', overflow: 'hidden' }}>
+                        <div 
+                          key={terrainNom} 
+                          className="scroll-container-global"
+                          style={{ 
+                            backgroundColor: COULEURS.grisCarte, 
+                            padding: '16px', 
+                            borderRadius: '12px', 
+                            border: `1px solid ${COULEURS.grisBordure}`, 
+                            boxShadow: '0 1px 4px rgba(0,0,0,0.04)', 
+                            display: 'flex', 
+                            gap: '14px', 
+                            overflowX: 'auto', 
+                            overflowY: 'hidden',
+                            WebkitOverflowScrolling: 'touch',
+                            scrollbarWidth: 'none',
+                            msOverflowStyle: 'none'
+                          }}
+                        >
+                          <style>{`.scroll-container-global::-webkit-scrollbar { display: none; }`}</style>
+
                           <div style={{ width: '4px', backgroundColor: couleurPastille, borderRadius: '4px', flexShrink: 0 }} />
                           
-                          {/* minWidth: 0 et overflowHidden sont obligatoires pour permettre le scroll interne de ses enfants */}
-                          <div style={{ flexGrow: 1, display: 'flex', flexDirection: 'column', gap: '12px', minWidth: 0, width: '100%' }}>
+                          <div style={{ flexGrow: 1, flexShrink: 0, display: 'flex', flexDirection: 'column', gap: '12px', width: 'max-content', minWidth: '100%' }}>
                             
-                            {/* EN-TÊTE DU HAUT : Défilable horizontalement si l'écran est petit */}
-                            <div style={{ borderBottom: '1px solid #f1f5f9', paddingBottom: '6px', width: '100%', overflowX: 'auto', overflowY: 'hidden', whiteSpace: 'nowrap', fontWeight: '800', color: COULEURS.noirText, fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.3px', WebkitOverflowScrolling: 'touch' }}>
+                            <div style={{ borderBottom: '1px solid #f1f5f9', paddingBottom: '6px', width: '100%', whiteSpace: 'nowrap', fontWeight: '800', color: COULEURS.noirText, fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.3px' }}>
                               {texteEnteteComplet}
                             </div>
 
-                            {/* EN-TÊTE HORAIRE */}
                             <div style={{ fontSize: '13px', fontWeight: '800', color: COULEURS.noirText, display: 'flex', alignItems: 'center', gap: '6px', marginTop: '-4px' }}>
                               <span style={{ backgroundColor: couleurPastille, width: '5px', height: '5px', borderRadius: '50%' }}></span>
                               ~ {heure} | {disciplineAffichee} {nomPouleExtrait ? `| ${nomPouleExtrait}` : ""}
                             </div>
 
-                            {/* LISTE DES MATCHS : Taille fixe à 13.5px mais slider horizontal (scroll) si la ligne déborde */}
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '4px', width: '100%', overflow: 'hidden' }}>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '4px', width: '100%' }}>
                               {matchs.map((item, idx) => (
                                 <div 
                                   key={idx} 
@@ -268,11 +282,7 @@ export default function Calendrier({
                                     whiteSpace: 'nowrap',
                                     display: 'block',
                                     width: '100%',
-                                    fontSize: '13.5px', 
-                                    overflowX: 'auto', // Permet le slide horizontal
-                                    overflowY: 'hidden',
-                                    paddingBottom: '2px',
-                                    WebkitOverflowScrolling: 'touch' // Rend le scroll fluide sur iPhone/Android
+                                    fontSize: '13.5px'
                                   }}
                                 >
                                   {obtenirFormatBrut(item.activite, disciplineAffichee)}
