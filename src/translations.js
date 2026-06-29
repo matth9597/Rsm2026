@@ -53,12 +53,13 @@ export const translations = {
     paiement: "Paiement",
     contact: "Contact",
     contactezNous: "Contactez-nous",
-    programmationMessage: "Vous trouverez ici le programme et les lieux des activités une fois les inscriptions closes et le programme finalisé.",
+    programmationMessage:
+      "Vous trouverez ici le programme et les lieux des activités une fois les inscriptions closes et le programme finalisé.",
     parkingPayant: "Parking Payant",
     stand: "stand",
     caution: "Caution",
     equipement: "Equipement",
-    lieux : "Lieux",
+    lieux: "Lieux",
     directions: "Plan",
     planningTitre: "Planning des Matchs",
     filtrerLieu: "Filtrer par Lieu",
@@ -95,7 +96,7 @@ export const translations = {
     sites: "Sites",
     calendrierGlobal: "Calendrier Global",
     calendrierDetaille: "Calendrier Détaillé",
-
+    repas: "Repas",
   },
   en: {
     disciplines: "Disciplines",
@@ -151,12 +152,13 @@ export const translations = {
     paiement: "Payment",
     contact: "Contact",
     contactezNous: "Contact Us",
-    programmationMessage: "Here you will find the schedule and locations of activities once registration is closed and the schedule is finalized.",
+    programmationMessage:
+      "Here you will find the schedule and locations of activities once registration is closed and the schedule is finalized.",
     parkingPayant: "Paid parking",
     stand: "stand",
     caution: "Deposit",
     equipement: "Equipment",
-    lieux : "Place(s)",
+    lieux: "Place(s)",
     directions: "Directions",
     planningTitre: "Match Schedule",
     filtrerLieu: "Filter by Location",
@@ -193,6 +195,6 @@ export const translations = {
     sites: "Locations",
     calendrierGlobal: "Global Schedule",
     calendrierDetaille: "Detailed Schedule",
+    repas: "Meals",
   },
 };
-

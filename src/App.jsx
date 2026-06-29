@@ -18,6 +18,7 @@ import { useLanguage } from "./LanguageContext";
 import Contact from "./pages/Contact";
 import Paiement from "./pages/Paiement";
 import Stand from "./pages/Stand";
+import Repas from "./pages/Repas";
 import ReglementSoccerHomme from "./pages/reglementsSports/Soccer/ReglementSoccerHomme";
 import ReglementSoccerVeteran from "./pages/reglementsSports/Soccer/ReglementSoccerVeteran";
 import ReglementSoccerMixed from "./pages/reglementsSports/Soccer/ReglementSoccerMixed";
@@ -47,7 +48,8 @@ export default function App() {
     location.pathname !== "/programmation" &&
     //location.pathname !== "/directions" &&
     location.pathname !== "/contact" &&
-    location.pathname !== "/paiement" && 
+    location.pathname !== "/paiement" &&
+    location.pathname !== "/repas" &&
     location.pathname !== "/stand";
 
   return (
@@ -102,15 +104,17 @@ export default function App() {
                     ? "JOM"
                     : location.pathname === "/programmation"
                       ? t("programmation")
-                      // : location.pathname === "/directions"
-                      //   ? t("directions")
-                        : location.pathname === "/paiement"
-                          ? t("paiement")
-                            : location.pathname === "/stand"
-                            ? t("stand")
-                                : location.pathname === "/contact"
-                                ? t("contact")
-                                : t("disciplines")}
+                      : // : location.pathname === "/directions"
+                        //   ? t("directions")
+                        location.pathname === "/paiement"
+                        ? t("paiement")
+                        : location.pathname === "/stand"
+                          ? t("stand")
+                          : location.pathname === "/contact"
+                            ? t("contact")
+                            : location.pathname === "/repas"
+                              ? t("repas")
+                              : t("disciplines")}
           </span>
           <nav className={`bande-nav ${isMenuOpen ? "open" : ""}`}>
             <NavLink
@@ -176,7 +180,6 @@ export default function App() {
             >
               {t("paiement")}
             </NavLink>
-
             <NavLink
               to="/stand"
               onClick={() => setIsMenuOpen(false)}
@@ -185,6 +188,16 @@ export default function App() {
               }
             >
               {t("stand")}
+            </NavLink>
+
+            <NavLink
+              to="/repas"
+              onClick={() => setIsMenuOpen(false)}
+              className={({ isActive }) =>
+                isActive ? "nav-item active" : "nav-item"
+              }
+            >
+              {t("repas")}
             </NavLink>
           </nav>
         </div>
@@ -219,6 +232,7 @@ export default function App() {
           <Route path="/paiement" element={<Paiement />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/stand" element={<Stand />} />.
+          <Route path="/repas" element={<Repas />} />
           <Route
             path="/soccer-homme/reglement"
             element={<ReglementSoccerHomme />}
@@ -260,13 +274,21 @@ export default function App() {
             element={<ReglementVolleyballFemme />}
           />
           <Route path="/petanque/reglement" element={<ReglementPetanque />} />
-          <Route path="/tennis-simple/reglement" element={<ReglementTennis />} />
-          <Route path="/tennis-double/reglement" element={<ReglementTennis />} />
-          <Route path="/tennis-de-table/reglement" element={<ReglementTennisDeTable />} />
+          <Route
+            path="/tennis-simple/reglement"
+            element={<ReglementTennis />}
+          />
+          <Route
+            path="/tennis-double/reglement"
+            element={<ReglementTennis />}
+          />
+          <Route
+            path="/tennis-de-table/reglement"
+            element={<ReglementTennisDeTable />}
+          />
           <Route path="/:slug/equipe/:teamName" element={<TeamPlayers />} />
         </Routes>
       </main>
     </div>
   );
 }
-

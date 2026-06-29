@@ -421,7 +421,6 @@ body {
   white-space: pre-line; /* <--- C'est cette ligne qui active les \n */
 }
 
-
 /* Info + Teams shared card */
 .details-card {
   background: #ffffff;
@@ -912,9 +911,15 @@ body {
 }
 
 @keyframes pulse-border {
-  0% { border-color: #f59e0b; }
-  50% { border-color: #dc2626; }
-  100% { border-color: #f59e0b; }
+  0% {
+    border-color: #f59e0b;
+  }
+  50% {
+    border-color: #dc2626;
+  }
+  100% {
+    border-color: #f59e0b;
+  }
 }
 
 .btn-inscription-ferme:disabled {
@@ -922,6 +927,199 @@ body {
   color: #cbd5e1 !important;
   opacity: 0.7;
   cursor: not-allowed;
-  transform: none !important; 
+  transform: none !important;
   box-shadow: none !important;
+}
+
+/* ─── REPAS PAGE ─────────────────────────────────────────────── */
+.repas-countdown {
+  display: flex;
+  gap: 12px;
+}
+
+.repas-countdown__unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #9f1617;
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 8px 14px;
+  min-width: 56px;
+}
+
+.repas-countdown__number {
+  font-size: 1.4rem;
+  font-weight: 700;
+  font-family: "Poppins";
+  line-height: 1;
+}
+
+.repas-countdown__label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 4px;
+  opacity: 0.8;
+}
+
+.repas-dish-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 1px solid #f3f4f6;
+  gap: 16px;
+}
+
+.repas-dish-row:last-child {
+  border-bottom: none;
+}
+
+.repas-dish-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 3px;
+}
+
+.repas-dish-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.repas-dish-desc {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.repas-dish-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.repas-dish-price {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.repas-qty {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.repas-qty__btn {
+  background: #f9fafb;
+  border: none;
+  width: 32px;
+  height: 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+
+.repas-qty__btn:hover:not(:disabled) {
+  background: #e5e7eb;
+}
+
+.repas-qty__btn:disabled {
+  color: #d1d5db;
+  cursor: not-allowed;
+}
+
+.repas-qty__val {
+  width: 32px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #111827;
+  border-left: 1px solid #e5e7eb;
+  border-right: 1px solid #e5e7eb;
+  line-height: 32px;
+}
+
+.repas-field {
+  margin-bottom: 16px;
+}
+
+.repas-field:last-child {
+  margin-bottom: 0;
+}
+
+.repas-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.repas-input {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #111827;
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+}
+
+.repas-input:focus {
+  outline: none;
+  border-color: #9f1617;
+}
+
+.repas-input--error {
+  border-color: #dc2626;
+}
+
+.repas-error {
+  font-size: 0.8rem;
+  color: #dc2626;
+  margin: 4px 0 0;
+}
+
+@media (max-width: 480px) {
+  .repas-countdown {
+    gap: 8px;
+  }
+
+  .repas-countdown__unit {
+    min-width: 44px;
+    padding: 6px 10px;
+  }
+
+  .repas-countdown__number {
+    font-size: 1.1rem;
+  }
+
+  .repas-dish-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .repas-dish-controls {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+  }
 }
