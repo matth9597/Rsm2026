@@ -4,7 +4,7 @@ import { ForkKnife } from "@phosphor-icons/react";
 
 const PRICE_PER_MEAL = 17;
 const ORDER_DEADLINE = new Date("2026-07-02T23:59:59-04:00");
-const INTERAC_EMAIL = "rsmottawagatineau@gmail.com";
+const INTERAC_EMAIL = "rasamia.a@gmail.com";
 
 // ── Fill these in after creating the Google Form ──
 const GOOGLE_FORM_ACTION =
