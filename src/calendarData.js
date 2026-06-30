@@ -99,9 +99,6 @@ export const calendarData = {
       "10:30": [
         { site: "cegepHeritage", terrain: "Studio", activite: "tennisDeTable", fin: "19:30" }
       ],
-      "11:00": [
-        { site: "cegepHeritage", terrain: "Classroom", activite: "soratononina", fin: "19:30" }
-      ],
       "13:30": [
         // ---------- CÉGEP DE L'OUTAOUAIS (POOL A) ----------
         { site: "cegepOutaouais", terrain: "Pool A — Gym 1", activite: "ZandryKely vs Massalgy bleu — Table : CO", disciplineId: "basket-homme"  },
@@ -134,6 +131,9 @@ export const calendarData = {
         { site: "cegepHeritage", terrain: "Pool D — Gym 2", activite: "Southwest vs Air force — Table : Voay", disciplineId: "basket-homme"  },
         { site: "cegepHeritage", terrain: "Pool D — Gym 2", activite: "Southwest vs Voay — Table : Lôfo", disciplineId: "basket-homme"  },
         { site: "cegepHeritage", terrain: "Pool D — Gym 2", activite: "Voay vs Air force — Table : B-mi-1", disciplineId: "basket-homme"  }
+      ],
+      "14:00": [
+        { site: "cegepHeritage", terrain: "Classroom", activite: "soratononina", fin: "19:30" }
       ],
       "14:30": [
         { site: "cegepHeritage", terrain: "1/2 Nat 1", activite: "soccerVeterans", fin: "19:30" },
