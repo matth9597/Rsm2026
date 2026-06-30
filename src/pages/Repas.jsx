@@ -192,26 +192,33 @@ export default function Repas() {
 
   function validate() {
     const errs = {};
+
     if (totalPortions === 0)
       errs.dishes =
         lang === "fr"
           ? "Veuillez sélectionner au moins un plat."
           : "Please select at least one dish.";
+
     if (!nom.trim())
       errs.nom =
         lang === "fr"
           ? "Veuillez entrer votre nom complet."
           : "Please enter your full name.";
-    if (!email.trim() || !email.includes("@"))
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email.trim() || !emailRegex.test(email.trim()))
       errs.email =
         lang === "fr"
           ? "Veuillez entrer une adresse courriel valide."
           : "Please enter a valid email address.";
-    if (!tel.trim())
+
+    const phoneRegex = /^[\d\s+\-().]{7,20}$/;
+    if (!tel.trim() || !phoneRegex.test(tel.trim()))
       errs.tel =
         lang === "fr"
-          ? "Veuillez entrer votre numéro de téléphone."
-          : "Please enter your phone number.";
+          ? "Veuillez entrer un numéro de téléphone valide (chiffres, espaces, +, -, () acceptés)."
+          : "Please enter a valid phone number (digits, spaces, +, -, () accepted).";
+
     return errs;
   }
 
