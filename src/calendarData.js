@@ -142,7 +142,6 @@ export const calendarData = {
       "17:00": [
         { site: "cegepOutaouais", terrain: "Gym 1", activite: "basketballJunior", fin: "18:00" },
         { site: "cegepOutaouais", terrain: "Gym 2", activite: "basketballKids", fin: "18:00" },
-        { site: "montBleu", terrain: "Gym 1", activite: "defileMode", fin: "17:30" },
         { site: "nouvellesFrontieres", terrain: "Gym 1", activite: "zumba", fin: "17:30" },
         { site: "cegepHeritage", terrain: "Gym\\Terrain 1", activite: "kata", fin: "17:30" },
       ],
@@ -209,9 +208,6 @@ export const calendarData = {
       ],
       "16:30": [
         { site: "montBleu", terrain: "1/2 Synth 1", activite: "soccerFinale" } 
-      ],
-      "17:30": [
-        { site: "montBleu", terrain: "Gym 1", activite: "zumba" }
       ],
       "19:00": [
         { site: "montBleu", terrain: "Gym 1", activite: "ceremonieCloture" }
