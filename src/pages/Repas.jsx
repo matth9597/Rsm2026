@@ -369,7 +369,7 @@ export default function Repas() {
               className="section-row__value"
               style={{ color: "#374151", fontWeight: 600 }}
             >
-              {summary.nom} — Repas RSM 2026
+              {summary.nom} - Repas RSM 2026
             </span>
           </div>
         </div>
@@ -620,7 +620,7 @@ export default function Repas() {
               {lang === "fr" ? ` avec le message : ` : ` with the message: `}
               <strong style={{ color: "#374151" }}>
                 {nom.trim() || (lang === "fr" ? "[Votre nom]" : "[Your name]")}{" "}
-                — Repas RSM 2026
+                - Repas RSM 2026
               </strong>
             </p>
           </div>
