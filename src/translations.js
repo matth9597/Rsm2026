@@ -96,7 +96,7 @@ export const translations = {
     sites: "Sites",
     calendrierGlobal: "Calendrier Global",
     calendrierDetaille: "Calendrier Détaillé",
-    repas: "Repas",
+    repas: "Repas clôture",
   },
   en: {
     disciplines: "Disciplines",
@@ -195,6 +195,6 @@ export const translations = {
     sites: "Locations",
     calendrierGlobal: "Global Schedule",
     calendrierDetaille: "Detailed Schedule",
-    repas: "Meals",
+    repas: "Closing Meal",
   },
 };

@@ -63,10 +63,10 @@ const CATERERS = [
       },
       {
         id: "manara_molotra",
-        nameMG: "Manara-molotra",
+        nameMG: "Manara-molotra (lelan'omby, vorovoron-kena, hen'omby)",
         descFR:
-          "Assortiment de viandes mijotées (langue de bœuf, volaille, bœuf)",
-        descEN: "Slow-cooked meat assortment (beef tongue, poultry, beef)",
+          "Assortiment de viandes mijotées (langue de bœuf, tripes, bœuf)",
+        descEN: "Slow-cooked meat assortment (beef tongue, tripes, beef)",
         fieldEntry: "entry.406632911",
       },
       {
@@ -92,9 +92,9 @@ const CATERERS = [
       },
       {
         id: "henomby_tsaramaso",
-        nameMG: "Hen'omby sy tsaramaso Kabaro",
-        descFR: "Bœuf mijoté aux haricots blancs de Madagascar",
-        descEN: "Slow-cooked beef with Malagasy white beans",
+        nameMG: "Hen'omby sy kabaro",
+        descFR: "Bœuf mijoté aux pois du Cap",
+        descEN: "Slow-cooked beef with butter beans",
         fieldEntry: "entry.584857316",
       },
     ],
