@@ -97,6 +97,20 @@ const CATERERS = [
         descEN: "Slow-cooked beef with butter beans",
         fieldEntry: "entry.584857316",
       },
+      {
+        id: "henomby_tsaramaso",
+        nameMG: "Hen'omby sy tsaramaso",
+        descFR: "Bœuf mijoté aux haricots blancs",
+        descEN: "Slow-cooked beef with white beans",
+        fieldEntry: "entry.1841744165",
+      },
+      {
+        id: "henomby_voanjobory",
+        nameMG: "Hen'omby sy voanjobory",
+        descFR: "Bœuf mijoté aux pois bambara",
+        descEN: "Slow-cooked beef with bambara groundnut",
+        fieldEntry: "entry.1541936625",
+      },
     ],
   },
 ];
