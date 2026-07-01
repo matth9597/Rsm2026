@@ -3,7 +3,7 @@ import { useLanguage } from "../LanguageContext";
 import { ForkKnife } from "@phosphor-icons/react";
 
 const PRICE_PER_MEAL = 17;
-const ORDER_DEADLINE = new Date("2026-07-02T23:59:59-04:00");
+const ORDER_DEADLINE = new Date("2026-07-03T23:59:59-04:00");
 const INTERAC_EMAIL = "rasamia.a@gmail.com";
 
 // ── Fill these in after creating the Google Form ──
@@ -91,7 +91,7 @@ const CATERERS = [
         fieldEntry: "entry.477929591",
       },
       {
-        id: "henomby_tsaramaso",
+        id: "henomby_kabaro",
         nameMG: "Hen'omby sy kabaro",
         descFR: "Bœuf mijoté aux pois du Cap",
         descEN: "Slow-cooked beef with butter beans",
@@ -434,8 +434,8 @@ export default function Repas() {
               }}
             >
               {lang === "fr"
-                ? "⏳ Date limite : 2 juillet 2026"
-                : "⏳ Deadline: July 2, 2026"}
+                ? "⏳ Date limite : 3 juillet 2026"
+                : "⏳ Deadline: July 3, 2026"}
             </p>
             <Countdown lang={lang} />
           </div>
