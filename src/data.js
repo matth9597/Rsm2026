@@ -389,6 +389,23 @@ export const sportsData = {
     equipes: [{ nom: "ASC Zato", lienForm: "https://google.com" }],
   },
 
+  basketball_v: {
+    categorie: "basketballVeterans",
+    slug: "basketball-veterans",
+    sections: [
+      {
+        nom: "format",
+        texteFR: "Exhibition ",
+        texteEN: "Exhibition",
+      },
+      {
+        nom: "frais",
+        texteFR: "Inscription sur place (10$ par joueur)",
+        texteEN: "Registration on site ($10 per player)",
+      },
+    ],
+  },
+
   volleyball_f: {
     categorie: "volleyballFemmes",
     slug: "volleyball-femme",
