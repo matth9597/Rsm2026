@@ -6,7 +6,8 @@ const PRICE_PER_MEAL = 17;
 const ORDER_DEADLINE = new Date("2026-07-03T23:59:59-04:00");
 const INTERAC_EMAIL = "rasamia.a@gmail.com";
 
-// ── Fill these in after creating the Google Form ──
+const PAYPAL_ME = "https://paypal.me/rsm0726";
+
 const GOOGLE_FORM_ACTION =
   "https://docs.google.com/forms/d/e/1FAIpQLSdrwKmi3y1ZWQkD_wP2rwcWmjDqanMTXyLsDhdwR4Fybw5J0Q/formResponse";
 const FIELD_NOM = "entry.1600742868";
@@ -169,10 +170,9 @@ export default function Repas() {
   const [tel, setTel] = useState("");
   const [errors, setErrors] = useState({});
   const [submitting, setSubmitting] = useState(false);
+  const allDishes = CATERERS.flatMap((c) => c.dishes);
   const [submitted, setSubmitted] = useState(false);
   const [summary, setSummary] = useState(null);
-
-  const allDishes = CATERERS.flatMap((c) => c.dishes);
   const totalPortions = allDishes.reduce(
     (s, d) => s + (quantities[d.id] || 0),
     0,
@@ -319,8 +319,12 @@ export default function Repas() {
           <p className="details-card__label">
             {lang === "fr" ? "Récapitulatif de la commande" : "Order summary"}
           </p>
-          {summary.lines.map((line, i) => (
-            <div key={i} className="section-row">
+          {summary.lines.map((line, i, arr) => (
+            <div
+              key={i}
+              className="section-row"
+              style={i === arr.length - 1 ? { borderBottom: "none" } : {}}
+            >
               <span className="section-row__key">{line.mg}</span>
               <span className="section-row__value" style={{ color: "#374151" }}>
                 {line.qty} × {PRICE_PER_MEAL} CAD
@@ -351,6 +355,19 @@ export default function Repas() {
               style={{ fontWeight: 700, color: "#9f1617", fontSize: "1.1rem" }}
             >
               {summary.total} CAD
+              <span
+                style={{
+                  display: "block",
+                  fontSize: "0.8rem",
+                  color: "#6366f1",
+                  fontWeight: 500,
+                  marginTop: "2px",
+                }}
+              >
+                {lang === "fr"
+                  ? `PayPal (+ 5%) : ${Math.ceil(summary.total * 1.05)} CAD`
+                  : `PayPal (+ 5%): ${Math.ceil(summary.total * 1.05)} CAD`}
+              </span>
             </span>
           </div>
         </div>
@@ -393,6 +410,73 @@ export default function Repas() {
               {summary.nom} - Repas RSM 2026
             </span>
           </div>
+        </div>
+        {/* PayPal instructions */}
+        <div className="details-card">
+          <p className="details-card__label">
+            {lang === "fr"
+              ? "🇺🇸 Paiement PayPal (USA uniquement)"
+              : "🇺🇸 PayPal Payment (USA only)"}
+          </p>
+          <div
+            style={{
+              padding: "12px 20px",
+              background: "#f0f4ff",
+              margin: "16px 20px",
+              borderLeft: "4px solid #4f46e5",
+              borderRadius: "6px",
+            }}
+          >
+            <p
+              style={{
+                fontSize: "0.85rem",
+                color: "#3730a3",
+                fontWeight: 600,
+                marginBottom: "8px",
+              }}
+            >
+              {lang === "fr"
+                ? "⚠️ Utilisez uniquement ce lien PayPal. N'envoyez pas de paiement à l'adresse Interac."
+                : "⚠️ Use this PayPal link only. Do not send payment to the Interac address."}
+            </p>
+            <a
+              href={`${PAYPAL_ME}/${summary.total}CAD`}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-block",
+                fontSize: "0.95rem",
+                color: "#4f46e5",
+                fontWeight: 700,
+                textDecoration: "underline",
+              }}
+            >
+              {PAYPAL_ME.replace("https://", "")}/{summary.total} CAD →
+            </a>
+          </div>
+          <div className="section-row">
+            <span className="section-row__key">
+              {lang === "fr" ? "Message" : "Message"}
+            </span>
+            <span
+              className="section-row__value"
+              style={{ color: "#374151", fontWeight: 600 }}
+            >
+              {summary.nom} - Repas RSM 2026
+            </span>
+          </div>
+          <p
+            style={{
+              fontSize: "0.8rem",
+              color: "#6b7280",
+              padding: "0 20px",
+              lineHeight: 1.5,
+            }}
+          >
+            {lang === "fr"
+              ? "ℹ️ Veuillez ajouter environ 5% au montant pour couvrir les frais de traitement PayPal (ex: 51 CAD → 54 CAD)."
+              : "ℹ️ Please add approximately 5% to the total to cover PayPal processing fees (e.g. $51 CAD → $54 CAD)."}
+          </p>
         </div>
       </div>
     );
@@ -526,8 +610,12 @@ export default function Repas() {
               <p className="details-card__label">
                 {lang === "fr" ? "Récapitulatif" : "Summary"}
               </p>
-              {buildSummaryLines().map((line, i) => (
-                <div key={i} className="section-row">
+              {buildSummaryLines().map((line, i, arr) => (
+                <div
+                  key={i}
+                  className="section-row"
+                  style={i === arr.length - 1 ? { borderBottom: "none" } : {}}
+                >
                   <span className="section-row__key">{line.mg}</span>
                   <span className="section-row__value">
                     {line.qty} × {PRICE_PER_MEAL} CAD ={" "}
@@ -554,6 +642,19 @@ export default function Repas() {
                   }}
                 >
                   {totalPrice} CAD
+                  <span
+                    style={{
+                      display: "block",
+                      fontSize: "0.8rem",
+                      color: "#6366f1",
+                      fontWeight: 500,
+                      marginTop: "2px",
+                    }}
+                  >
+                    {lang === "fr"
+                      ? `PayPal (+ 5%) : ${Math.ceil(totalPrice * 1.05)} CAD`
+                      : `PayPal (+ 5%): ${Math.ceil(totalPrice * 1.05)} CAD`}
+                  </span>
                 </span>
               </div>
             </div>
@@ -644,6 +745,71 @@ export default function Repas() {
                 - Repas RSM 2026
               </strong>
             </p>
+            <div
+              style={{
+                margin: "12px 20px 20px",
+                padding: "12px 16px",
+                background: "#f0f4ff",
+                borderLeft: "4px solid #4f46e5",
+                borderRadius: "6px",
+              }}
+            >
+              <p
+                style={{
+                  fontSize: "0.9rem",
+                  color: "#3730a3",
+                  fontWeight: 600,
+                  marginBottom: "6px",
+                }}
+              >
+                🇺🇸{" "}
+                {lang === "fr"
+                  ? "Participants des États-Unis"
+                  : "US Participants"}
+              </p>
+              <p
+                style={{
+                  fontSize: "0.85rem",
+                  color: "#4338ca",
+                  lineHeight: 1.6,
+                }}
+              >
+                {lang === "fr"
+                  ? "Utilisez uniquement le lien PayPal ci-dessous. N'envoyez pas de paiement à l'adresse Interac."
+                  : "Use the PayPal link below only. Do not send payment to the Interac address."}
+                <br />
+                <a
+                  href={PAYPAL_ME}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    color: "#4f46e5",
+                    fontWeight: 700,
+                    textDecoration: "underline",
+                  }}
+                >
+                  {PAYPAL_ME.replace("https://", "")} →
+                </a>
+                <br />
+                <span
+                  style={{
+                    display: "block",
+                    fontSize: "0.8rem",
+                    color: "#6366f1",
+                    marginTop: "6px",
+                  }}
+                >
+                  {lang === "fr"
+                    ? "ℹ️ Ajoutez environ 5% au montant pour couvrir les frais PayPal."
+                    : "ℹ️ Add approximately 5% to the total to cover PayPal fees."}
+                </span>
+                <span style={{ fontSize: "0.8rem", color: "#6366f1" }}>
+                  {lang === "fr"
+                    ? `Indiquez dans le message : ${nom.trim() || "[Votre nom]"} - Repas RSM 2026`
+                    : `Include in the message: ${nom.trim() || "[Your name]"} - Repas RSM 2026`}
+                </span>
+              </p>
+            </div>
           </div>
 
           {/* ── Submit ── */}
@@ -672,8 +838,8 @@ export default function Repas() {
             }}
           >
             {lang === "fr"
-              ? "⚠️ Les commandes sans paiement Interac reçu avant le 2 juillet ne seront pas garanties."
-              : "⚠️ Orders without Interac payment received before July 2 will not be guaranteed."}
+              ? "⚠️ Les commandes sans paiement Interac ou PayPal reçu avant le 3 juillet ne seront pas garanties."
+              : "⚠️ Orders without Interac or Paypal payment received before July 3 will not be guaranteed."}
           </p>
         </>
       )}
