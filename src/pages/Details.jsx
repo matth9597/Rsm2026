@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { sportsData } from "../data";
-import { UserIcon, UsersIcon } from "@phosphor-icons/react";
+import { UserIcon, UsersIcon, CalendarIcon } from "@phosphor-icons/react";
 import { useLanguage } from "../LanguageContext";
 import { useTeams } from "../hooks/useTeams";
 import { usePlayers } from "../hooks/usePlayers";
@@ -100,6 +100,28 @@ export default function Details() {
         )}
       </div>
 
+      {info.lienFichierProgrammation && (
+        <button
+          className="btn-inscription"
+          onClick={() => window.open(info.lienFichierProgrammation, "_blank")}
+          style={{
+            marginTop: '12px',
+            marginBottom: '12px',
+            backgroundColor: '#7c3aed', 
+            boxShadow: '0 4px 6px -1px rgba(124, 58, 237, 0.2)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '8px'
+          }}
+        >
+          <CalendarIcon size={22} color="#ffffff" weight="duotone" />
+          <span>
+            {lang === 'fr' ? 'Programmation détaillée' : 'Detailed Schedule'}
+          </span>
+        </button>
+      )}
+
       {/* ── Info sections ── */}
       {info.sections && info.sections.length > 0 && (
         <div className="details-card">
@@ -129,6 +151,7 @@ export default function Details() {
           ))}
         </div>
       )}
+
 
       {/* ── Registered List ── */}
       <div className="details-card">
