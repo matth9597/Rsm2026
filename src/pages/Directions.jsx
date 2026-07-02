@@ -10,7 +10,8 @@ export default function Directions() {
     { nom: "Cégep de l'Outaouais", adresse: "333 Boulevard de la Cité-des-Jeunes, Gatineau, Québec J8Y 6L5", parkingWaring: true },
     { nom: "Collège Heritage", adresse: "325 Boulevard de la Cité-des-Jeunes, Gatineau, Québec J8Y 6T3" },
     { nom: "Collège Nouvelles Frontières", adresse: "250 Rue Gamelin, Gatineau, QC J8Y 1W9" },
-    { nom: "Parc Bisson (Tennis)", adresse: "36 Thérien Street, Gatineau, QC, J8Y 1H8" }
+    { nom: "Parc Bisson (Tennis)", adresse: "36 Thérien Street, Gatineau, QC, J8Y 1H8" },
+    { nom: "Centre Ernest Lattion", adresse: "30 Rue COURT, GATINEAU, QC, J9H 4L6 " }
   ];
 
   return (

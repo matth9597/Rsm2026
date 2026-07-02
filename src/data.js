@@ -400,8 +400,8 @@ export const sportsData = {
       },
       {
         nom: "conditions",
-        texteFR: "4 vs 4",
-        texteEN: "4 vs 4",
+        texteFR: "4 vs 4, Mixte si pas assez de joueurs",
+        texteEN: "4 vs 4, Mixed if not enough players",
       },
       {
         nom: "terrain",
@@ -531,9 +531,14 @@ export const sportsData = {
         texteEN: "Exhibition",
       },
       {
+        nom: "conditions",
+        texteFR: "Mixte si pas assez de joueurs",
+        texteEN: "Mixed if not enough players",
+      },
+      {
         nom: "lieuHeure",
-        texteFR: "College Heritage. Samedi 4 Juillet a 19h",
-        texteEN: "College Heritage. Saturday, July 4th at 7 p.m.",
+        texteFR: "Ecole Secondaire Mont-Bleu, Samedi 4 Juillet vers 18h30",
+        texteEN: "Ecole Secondaire Mont-Bleu. Saturday, July 4th around 6:30 p.m.",
       },
       {
         nom: "frais",
