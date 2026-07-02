@@ -10,7 +10,7 @@ export const TIERS = [
       {
         name: "TSAK-TSAK",
         logo: "/sponsors/tsak-tsak.png",
-        link: "https://tsak-tsak.com",
+        link: "https://www.facebook.com/TsakTsakMtl/",
       },
     ],
   },
