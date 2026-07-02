@@ -1365,3 +1365,9 @@ body {
     transform: translateX(-25%);
   }
 }
+
+@media (max-width: 768px) {
+  .sponsor-ticker__track {
+    gap: 20px;
+  }
+}
