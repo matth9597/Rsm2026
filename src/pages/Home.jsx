@@ -38,6 +38,7 @@ const sportCategories = [
       { id: "basketball_h", label: "adulteHommes" },
       { id: "basketball_j", label: "juniorU15" },
       { id: "basketball_k", label: "kids" },
+      { id: "basketball_v", label: "veterans" },
     ],
   },
   {

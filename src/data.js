@@ -389,6 +389,23 @@ export const sportsData = {
     equipes: [{ nom: "ASC Zato", lienForm: "https://google.com" }],
   },
 
+  basketball_v: {
+    categorie: "basketballVeterans",
+    slug: "basketball-veterans",
+    sections: [
+      {
+        nom: "format",
+        texteFR: "Exhibition ",
+        texteEN: "Exhibition",
+      },
+      {
+        nom: "frais",
+        texteFR: "Inscription sur place (10$ par joueur)",
+        texteEN: "Registration on site ($10 per player)",
+      },
+    ],
+  },
+
   volleyball_f: {
     categorie: "volleyballFemmes",
     slug: "volleyball-femme",
@@ -492,6 +509,7 @@ export const sportsData = {
   tennis_s: {
     categorie: "tennisSimple",
     slug: "tennis-simple",
+    lienFichierProgrammation: 'https://drive.google.com/file/d/19xJPRHFmCJdzGbf_r7ZBqVlKgyqXICft/view?usp=drive_link',
     lienInscriptionIndividuelle:
       "https://docs.google.com/forms/d/e/1FAIpQLScI0UHtJYlz7xSU-yzKiDCj44efVJmcpNoAWImfj4LZWVVTCA/viewform",
     sections: [
@@ -538,6 +556,7 @@ export const sportsData = {
   tennis_d: {
     categorie: "tennisDouble",
     slug: "tennis-double",
+    lienFichierProgrammation: 'https://drive.google.com/file/d/19xJPRHFmCJdzGbf_r7ZBqVlKgyqXICft/view?usp=drive_link',
     inscriptionEquipeFermee: true,
     lienInscriptionEquipe:
       "https://docs.google.com/forms/d/e/1FAIpQLSfDomLQIl4WC0ohNN0JvSfGb8weEdx76jTjVT9szo-FDIYCig/viewform",
