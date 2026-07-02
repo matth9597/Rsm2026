@@ -32,6 +32,50 @@ import ReglementPetanque from "./pages/reglementsSports/Other/ReglementPetanque"
 import ReglementTennis from "./pages/reglementsSports/Tennis/ReglementTennis";
 import ReglementTennisDeTable from "./pages/reglementsSports/Tennis/ReglementTennisDeTable";
 import TeamPlayers from "./pages/TeamPlayers";
+import { TIERS } from "./data/sponsors.js";
+
+function SponsorTicker() {
+  const allSponsors = TIERS.flatMap((tier) => tier.sponsors);
+  const repeated = [
+    ...allSponsors,
+    ...allSponsors,
+    ...allSponsors,
+    ...allSponsors,
+  ];
+
+  return (
+    <div className="sponsor-ticker">
+      <div className="sponsor-ticker__track">
+        {repeated.map((s, i) => (
+          <a
+            key={i}
+            href={s.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            title={s.name}
+            className="sponsor-ticker__item"
+          >
+            <img
+              src={s.logo}
+              alt={s.name}
+              className="sponsor-ticker__img"
+              onError={(e) => {
+                e.target.style.display = "none";
+                e.target.nextSibling.style.display = "block";
+              }}
+            />
+            <span
+              className="sponsor-ticker__fallback"
+              style={{ display: "none" }}
+            >
+              {s.name}
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function App() {
   const { lang, toggleLang, t } = useLanguage();
@@ -202,6 +246,9 @@ export default function App() {
           </nav>
         </div>
       </div>
+
+      <SponsorTicker />
+
       {notInMainMenuItem && (
         <div className="sub-header-info">
           <div className="bande-content">
@@ -289,6 +336,42 @@ export default function App() {
           <Route path="/:slug/equipe/:teamName" element={<TeamPlayers />} />
         </Routes>
       </main>
+      <footer className="site-footer">
+        <div className="footer-content">
+          <div className="footer-logos">
+            {TIERS.flatMap((tier) => tier.sponsors).map((s) => (
+              <a
+                key={s.name}
+                href={s.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={s.name}
+                className="footer-logo-link"
+              >
+                <img
+                  src={s.logo}
+                  alt={s.name}
+                  className="footer-logo-img"
+                  onError={(e) => {
+                    e.target.style.display = "none";
+                    e.target.nextSibling.style.display = "block";
+                  }}
+                />
+                <span
+                  className="footer-logo-fallback"
+                  style={{ display: "none" }}
+                >
+                  {s.name}
+                </span>
+              </a>
+            ))}
+          </div>
+          <p className="footer-copy">
+            © 2026 RSM Ottawa-Gatineau.{" "}
+            {lang === "fr" ? "Tous droits réservés." : "All rights reserved."}
+          </p>
+        </div>
+      </footer>
     </div>
   );
 }

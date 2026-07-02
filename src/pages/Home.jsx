@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { sportsData } from "../data";
-import { useLanguage } from '../LanguageContext';
+import { useLanguage } from "../LanguageContext";
 import {
   BasketballIcon,
   VolleyballIcon,
@@ -10,6 +10,8 @@ import {
   CheckerboardIcon,
   SphereIcon,
 } from "@phosphor-icons/react";
+
+import { TIERS } from "../data/sponsors.js";
 
 const sportCategories = [
   {
@@ -53,7 +55,7 @@ const sportCategories = [
       { id: "volleyball_h", label: "adulteHommes" },
     ],
   },
-    {
+  {
     id: "tennis",
     label: "tennis",
     icon: TennisBallIcon,
@@ -63,8 +65,8 @@ const sportCategories = [
     variants: [
       { id: "tennis_s", label: "tennisSimple" },
       { id: "tennis_d", label: "tennisDouble" },
-      { id: "tableTennis", label: "tennisDeTable" }
-    ]
+      { id: "tableTennis", label: "tennisDeTable" },
+    ],
   },
   {
     id: "autres",
@@ -77,15 +79,41 @@ const sportCategories = [
       { id: "petanque", label: "petanque" },
       { id: "soraTononina", label: "soraTononina" },
       { id: "marche", label: "marche5Km" },
-      //{ id: "fanorona", label: "fanorona" },
       { id: "zumba", label: "zumba" },
     ],
   },
 ];
 
+function SponsorLogo({ name, logo, link }) {
+  return (
+    <a
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="sponsor-logo-link"
+      title={name}
+    >
+      <div className="sponsor-logo-wrapper">
+        <img
+          src={logo}
+          alt={name}
+          className="sponsor-logo-img"
+          onError={(e) => {
+            e.target.style.display = "none";
+            e.target.nextSibling.style.display = "flex";
+          }}
+        />
+        <div className="sponsor-logo-fallback" style={{ display: "none" }}>
+          {name}
+        </div>
+      </div>
+    </a>
+  );
+}
+
 export default function Home() {
   const navigate = useNavigate();
-  const { lang, toggleLang, t } = useLanguage();
+  const { lang, t } = useLanguage();
 
   const navSport = (id) => {
     const sportSlug = sportsData[id].slug;
@@ -146,6 +174,36 @@ export default function Home() {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* ── Sponsors section ── */}
+      <div className="sponsors-section">
+        <h2 className="sponsors-title">
+          {lang === "fr" ? "Nos partenaires" : "Our partners"}
+        </h2>
+        <div className="sponsors-tiers">
+          {TIERS.map((tier) => (
+            <div key={tier.id} className="sponsors-tier">
+              <div
+                className="sponsors-tier__label"
+                style={{ color: tier.color, borderColor: tier.borderColor }}
+              >
+                {lang === "fr" ? tier.labelFR : tier.labelEN}
+              </div>
+              <div
+                className="sponsors-tier__logos"
+                style={{
+                  background: tier.bgColor,
+                  borderColor: tier.borderColor,
+                }}
+              >
+                {tier.sponsors.map((s) => (
+                  <SponsorLogo key={s.name} {...s} />
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
