@@ -18,9 +18,9 @@ export const TIERS = [
     id: "platine",
     labelFR: "Partenaire Platine",
     labelEN: "Platinum Partner",
-    color: "#4B5563",
-    bgColor: "#f8fafc",
-    borderColor: "#9ca3af",
+    color: "#9DB4CC",
+    bgColor: "#f0f5fa",
+    borderColor: "#9DB4CC",
     sponsors: [
       {
         name: "Ora Protections",
