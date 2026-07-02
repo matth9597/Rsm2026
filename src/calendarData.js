@@ -7,7 +7,8 @@ export const calendarData = {
     cegepOutaouais: { nom: "Cégep de l'Outaouais", adresse: "333 Boulevard de la Cité-des-Jeunes, Gatineau, Quebec J8Y 6L5" },
     cegepHeritage: { nom: "Cégep Heritage", adresse: "325 Boulevard de la Cité-des-Jeunes, Gatineau, Quebec J8Y 6T3" },
     nouvellesFrontieres: { nom: "Collège Nouvelle Frontières", adresse: "250 Rue Gamelin, Gatineau, QC J8Y 1W9" },
-    parcBisson: { nom: "Parc Bisson", adresse: "Rue Froment, Gatineau, QC J8Y 6G2" }
+    parcBisson: { nom: "Parc Bisson", adresse: "Rue Froment, Gatineau, QC J8Y 6G2" },
+    ernestLattion : { nom: "CENTRE ERNEST LATTION", adresse: "30 Rue COURT, GATINEAU, QC, J9H 4L6 " }
   },
 
   programme: {
@@ -41,7 +42,7 @@ export const calendarData = {
 
     "samedi": {
       "08:00": [
-        { site: "montBleu", terrain: "Gym 1", activite: "ceremonieOuverture", fin: "10:00" }
+        { site: "montBleu", activite: "ceremonieOuverture" }
       ],
 
       "10:00": [
@@ -66,12 +67,12 @@ export const calendarData = {
         { site: "montBleu", terrain: "Terrain Nat 2", activite: "Quart 2", disciplineId: "soccer" },
         { site: "montBleu", terrain: "Terrain Nat 2", activite: "Quart 4", disciplineId: "soccer" },
 
-        { site: "cegepHeritage", terrain: "Gym\\Terrain 1", activite: "Atrika Fireball vs FORMATION — Table : Gassikeb", disciplineId: "volley-femme" },
-        { site: "cegepHeritage", terrain: "Gym\\Terrain 1", activite: "Atrika Fireball vs Gassikeb — Table : ZATO SMASHIES", disciplineId: "volley-femme" },
-        { site: "cegepHeritage", terrain: "Gym\\Terrain 1", activite: "ZATO SMASHIES vs Gassikeb — Table : FORMATION", disciplineId: "volley-femme" },
-        { site: "cegepHeritage", terrain: "Gym\\Terrain 2", activite: "Atrika Thunder vs ZATO SMASHIES — Table : Gassikeb", disciplineId: "volley-femme" },
-        { site: "cegepHeritage", terrain: "Gym\\Terrain 2", activite: "FORMATION vs Atrika Thunder — Table : ZATO SMASHIES", disciplineId: "volley-femme" },
-        { site: "cegepHeritage", terrain: "Gym\\Terrain 2", activite: "Atrika Fireball vs Atrika Thunder — Table : FORMATION", disciplineId: "volley-femme" },
+        { site: "cegepHeritage", terrain: "Gym 1", activite: "Atrika Fireball vs FORMATION — Table : Gassikeb", disciplineId: "volley-femme" },
+        { site: "cegepHeritage", terrain: "Gym 1", activite: "Atrika Fireball vs Gassikeb — Table : ZATO SMASHIES", disciplineId: "volley-femme" },
+        { site: "cegepHeritage", terrain: "Gym 1", activite: "ZATO SMASHIES vs Gassikeb — Table : FORMATION", disciplineId: "volley-femme" },
+        { site: "cegepHeritage", terrain: "Gym 2", activite: "Atrika Thunder vs ZATO SMASHIES — Table : Gassikeb", disciplineId: "volley-femme" },
+        { site: "cegepHeritage", terrain: "Gym 2", activite: "FORMATION vs Atrika Thunder — Table : ZATO SMASHIES", disciplineId: "volley-femme" },
+        { site: "cegepHeritage", terrain: "Gym 2", activite: "Atrika Fireball vs Atrika Thunder — Table : FORMATION", disciplineId: "volley-femme" },
         { site: "montBleu", terrain: "Gym 1", activite: "Quick Main Libre vs. VKebs — Table : Oye Oye", disciplineId: "volley" },
         { site: "montBleu", terrain: "Gym 1", activite: "VKebs vs. Oye Oye — Table : Quick Main Libre", disciplineId: "volley" },
         { site: "montBleu", terrain: "Gym 1", activite: "Quick Main Libre vs. Oye Oye — Table : VKebs", disciplineId: "volley" },
@@ -84,21 +85,26 @@ export const calendarData = {
         { site: "nouvellesFrontieres", terrain: "Pool B — Gym 2", activite: "Massalgy vs Gassikebs OG — Table : STK QC", disciplineId: "basket-femme" },
         { site: "nouvellesFrontieres", terrain: "Pool B — Gym 2", activite: "Gassikebs OG vs STK QC — Table : Massalgy", disciplineId: "basket-femme" },
         { site: "nouvellesFrontieres", terrain: "Pool B — Gym 2", activite: "Massalgy vs STK QC — Table : Gassikebs OG", disciplineId: "basket-femme" },
-        { site: "montBleu", terrain: "Relais Plein-air", activite: "marche5Km", fin: "14:30" },
-        { site: "cegepHeritage", terrain: "1/2 Nat 1", activite: "soccerKids", fin: "12:00" },
-        { site: "cegepHeritage", terrain: "1/2 Nat 2", activite: "soccerMixte", fin: "12:00" },
+        { site: "montBleu", terrain: "Relais Plein-air", activite: "marche5Km" },
+        { site: "cegepHeritage", terrain: "1/2 Nat 1", activite: "soccerKids" },
+        { site: "cegepHeritage", terrain: "1/2 Nat 2", activite: "soccerMixte" },
         { site: "cegepOutaouais", terrain: "Stationnement 7A", activite: "Classement 1", disciplineId: "petanque" },
         { site: "cegepOutaouais", terrain: "Stationnement 7A", activite: "Classement 2", disciplineId: "petanque" },
         { site: "cegepOutaouais", terrain: "Stationnement 7A", activite: "Classement 3", disciplineId: "petanque" },
         { site: "cegepOutaouais", terrain: "Stationnement 7A", activite: "Quart de finale", disciplineId: "petanque" },
         { site: "cegepOutaouais", terrain: "Stationnement 7A", activite: "Demi-finale", disciplineId: "petanque" },
         { site: "cegepOutaouais", terrain: "Stationnement 7A", activite: "Finale", disciplineId: "petanque" },
-        { site: "parcBisson", terrain: "Terrain de Tennis", activite: "tennisSimple", fin: "19:30" }
+        { site: "parcBisson", terrain: "Terrain de Tennis", activite: "tennisSimple" }
       ],
 
       "10:30": [
-        { site: "cegepHeritage", terrain: "Studio", activite: "tennisDeTable", fin: "19:30" }
+        { site: "cegepHeritage", terrain: "Studio", activite: "tennisDeTable" }
       ],
+
+      "13:00": [
+        { site: "cegepHeritage", terrain: "Exterieur", activite: "basketballVeterans" }
+      ],
+
       "13:30": [
         // ---------- CÉGEP DE L'OUTAOUAIS (POOL A) ----------
         { site: "cegepOutaouais", terrain: "Pool A — Gym 1", activite: "ZandryKely vs Massalgy bleu — Table : CO", disciplineId: "basket-homme"  },
@@ -133,23 +139,26 @@ export const calendarData = {
         { site: "cegepHeritage", terrain: "Pool D — Gym 2", activite: "Voay vs Air force — Table : B-mi-1", disciplineId: "basket-homme"  }
       ],
       "14:00": [
-        { site: "cegepHeritage", terrain: "Classroom", activite: "soratononina", fin: "19:30" }
+        { site: "cegepHeritage", terrain: "Classroom", activite: "soratononina" }
       ],
       "14:30": [
-        { site: "cegepHeritage", terrain: "1/2 Nat 1", activite: "soccerVeterans", fin: "19:30" },
-        { site: "cegepHeritage", terrain: "1/2 Nat 2", activite: "soccerVeterans", fin: "19:30" }
+        { site: "cegepHeritage", terrain: "1/2 Nat 1", activite: "soccerVeterans" },
+        { site: "cegepHeritage", terrain: "1/2 Nat 2", activite: "soccerVeterans" }
       ],
       "17:00": [
-        { site: "cegepOutaouais", terrain: "Gym 1", activite: "basketballJunior", fin: "18:00" },
-        { site: "cegepOutaouais", terrain: "Gym 2", activite: "basketballKids", fin: "18:00" },
-        { site: "nouvellesFrontieres", terrain: "Gym 1", activite: "zumba", fin: "17:30" },
-        { site: "cegepHeritage", terrain: "Gym\\Terrain 1", activite: "kata", fin: "17:30" },
+        { site: "cegepOutaouais", terrain: "Gym 1", activite: "basketballJunior" },
+        { site: "cegepOutaouais", terrain: "Gym 2", activite: "basketballKids" },
+        { site: "nouvellesFrontieres", terrain: "Gym 1", activite: "zumba" },
+        { site: "montBleu", terrain: "Gym 1", activite: "kata" },
+
+        { site: "cegepHeritage", terrain: "Gym 1", activite: "Atrika Fireball vs ZATO SMASHIES — Table : Atrika Thunder", disciplineId: "volley-femme" },
+        { site: "cegepHeritage", terrain: "Gym 1", activite: "Atrika Thunder vs Gassikebs — Table : Atrika Fireball", disciplineId: "volley-femme" },
+        { site: "cegepHeritage", terrain: "Gym 2", activite: "FORMATION vs Gassikeb — Table : Atrika Thunder", disciplineId: "volley-femme" },
+        { site: "cegepHeritage", terrain: "Gym 2", activite: "FORMATION vs ZATO SMASHIES — Table : Atrika Fireball", disciplineId: "volley-femme" },
+        { site: "cegepHeritage", terrain: "Gym 1", activite: "SF1 : 1st Place vs 4th Place", disciplineId: "volley-femme" },
+        { site: "cegepHeritage", terrain: "Gym 2", activite: "SF2 : 2nd Place vs 3rd Place", disciplineId: "volley-femme" },
       ],
       "17:30": [
-        { site: "cegepHeritage", terrain: "Gym\\Terrain 1", activite: "Atrika Fireball vs ZATO SMASHIES — Table : Atrika Thunder", disciplineId: "volley-femme" },
-        { site: "cegepHeritage", terrain: "Gym\\Terrain 1", activite: "Atrika Thunder vs Gassikebs — Table : Atrika Fireball", disciplineId: "volley-femme" },
-        { site: "cegepHeritage", terrain: "Gym\\Terrain 2", activite: "FORMATION vs Gassikeb — Table : Atrika Thunder", disciplineId: "volley-femme" },
-        { site: "cegepHeritage", terrain: "Gym\\Terrain 2", activite: "FORMATION vs ZATO SMASHIES — Table : Atrika Fireball", disciplineId: "volley-femme" },
 
         { site: "nouvellesFrontieres", terrain: "Gym 1", activite: "basketFemmeSemi1", disciplineId: "basket-femme" },
         { site: "nouvellesFrontieres", terrain: "Gym 1", activite: "5e vs 6e : Pool A 3rd vs Pool B 3rd", disciplineId: "basket-femme" },
@@ -158,8 +167,7 @@ export const calendarData = {
         { site: "montBleu", terrain: "Gym 1", activite: "volleyHommeSemi1" }, 
         { site: "montBleu", terrain: "Gym 2", activite: "volleyHommeSemi2" },  
         { site: "montBleu", terrain: "Gym 1", activite: "volleyHomme5eVs6e" },
-        { site: "cegepHeritage", terrain: "Gym\\Terrain 1", activite: "SF1 : 1st Place vs 4th Place", disciplineId: "volley-femme" },
-        { site: "cegepHeritage", terrain: "Gym\\Terrain 2", activite: "SF2 : 2nd Place vs 3rd Place", disciplineId: "volley-femme" },
+        { site: "montBleu", terrain: "Gym 2", activite: "volleyVeterans" },  
       ],
 
       "18:00": [
@@ -168,14 +176,25 @@ export const calendarData = {
         { site: "cegepOutaouais", terrain: "Gym 2", activite: "QF2 : Pool B 1st vs Pool A 2nd", disciplineId: "basket-homme" },
         { site: "cegepOutaouais", terrain: "Gym 2", activite: "QF4 : Pool D 1st vs Pool C 2nd", disciplineId: "basket-homme" },
       ],
+
+      "18:30": [
+        { site: "ernestLattion", activite: "Soiree MPIANAKAM'S" }
+      ]
     },
 
 
     "dimanche": {
       "08:30": [
-        { site: "montBleu", terrain: "Gym 1", activite: "SF1 : Winner QF1 vs Winner QF3", disciplineId: "basket-homme" },
-        { site: "montBleu", terrain: "Gym 2", activite: "SF2 : Winner QF2 vs Winner QF4", disciplineId: "basket-homme" }
+        { site: "nouvellesFrontieres", terrain: "Gym 1", activite: "SF1 : Winner QF1 vs Winner QF3", disciplineId: "basket-homme" },
+        { site: "nouvellesFrontieres", terrain: "Gym 2", activite: "SF2 : Winner QF2 vs Winner QF4", disciplineId: "basket-homme" },
+
+        { site: "montBleu", terrain: "Gym 1", activite: "basketballKids" }
       ],
+
+      "09:30": [
+        { site: "montBleu", terrain: "Gym 1", activite: "basketballJunior" }
+      ],
+
       "09:00": [
         { site: "montBleu", terrain: "1/2 Synth 1", activite: "soccerVeteransDemi1" }, 
         { site: "montBleu", terrain: "1/2 Synth 2", activite: "soccerVeteransDemi2" },
@@ -189,11 +208,9 @@ export const calendarData = {
       ],
       "10:30": [
         { site: "montBleu", terrain: "Gym 1", activite: "Final : Winner Semi-Final 1 vs Winner Semi-Final 2", disciplineId: "volley-femme" },
-        { site: "montBleu", terrain: "Gym 2", activite: "basketballKids" }
       ],
       "12:00": [
         { site: "montBleu", terrain: "Gym 1", activite: "volleyballHommesFinale" },
-        { site: "montBleu", terrain: "Gym 2", activite: "basketballJunior" }
       ],
       "13:30": [
         { site: "cegepHeritage", terrain: "Studio", activite: "tennisDeTable" }
@@ -210,7 +227,7 @@ export const calendarData = {
         { site: "montBleu", terrain: "1/2 Synth 1", activite: "soccerFinale" } 
       ],
       "19:00": [
-        { site: "montBleu", terrain: "Gym 1", activite: "ceremonieCloture" }
+        { site: "nouvellesFrontieres", activite: "ceremonieCloture" }
       ]
     }
 

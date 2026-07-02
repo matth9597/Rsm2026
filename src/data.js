@@ -395,8 +395,23 @@ export const sportsData = {
     sections: [
       {
         nom: "format",
-        texteFR: "Exhibition ",
+        texteFR: "Exhibition",
         texteEN: "Exhibition",
+      },
+      {
+        nom: "conditions",
+        texteFR: "4 vs 4",
+        texteEN: "4 vs 4",
+      },
+      {
+        nom: "terrain",
+        texteFR: "Exterieur",
+        texteEN: "Exterior",
+      },
+      {
+        nom: "lieuHeure",
+        texteFR: "College Heritage. Samedi 4 Juillet a 13h",
+        texteEN: "College Heritage. Saturday, July 4th at 1 p.m.",
       },
       {
         nom: "frais",
@@ -506,9 +521,32 @@ export const sportsData = {
     equipes: [{ nom: "ASC Zato", lienForm: "https://google.com" }],
   },
 
+  volleyball_v: {
+    categorie: "volleyVeterans",
+    slug: "volleyball-veterans",
+    sections: [
+      {
+        nom: "format",
+        texteFR: "Exhibition",
+        texteEN: "Exhibition",
+      },
+      {
+        nom: "lieuHeure",
+        texteFR: "College Heritage. Samedi 4 Juillet a 19h",
+        texteEN: "College Heritage. Saturday, July 4th at 7 p.m.",
+      },
+      {
+        nom: "frais",
+        texteFR: "Inscription sur place (10$ par joueur)",
+        texteEN: "Registration on site ($10 per player)",
+      },
+    ],
+  },
+
   tennis_s: {
     categorie: "tennisSimple",
     slug: "tennis-simple",
+    InscriptionIndividuelleFermee: true,
     lienFichierProgrammation: 'https://drive.google.com/file/d/19xJPRHFmCJdzGbf_r7ZBqVlKgyqXICft/view?usp=drive_link',
     lienInscriptionIndividuelle:
       "https://docs.google.com/forms/d/e/1FAIpQLScI0UHtJYlz7xSU-yzKiDCj44efVJmcpNoAWImfj4LZWVVTCA/viewform",
@@ -558,6 +596,7 @@ export const sportsData = {
     slug: "tennis-double",
     lienFichierProgrammation: 'https://drive.google.com/file/d/19xJPRHFmCJdzGbf_r7ZBqVlKgyqXICft/view?usp=drive_link',
     inscriptionEquipeFermee: true,
+    InscriptionIndividuelleFermee: true,
     lienInscriptionEquipe:
       "https://docs.google.com/forms/d/e/1FAIpQLSfDomLQIl4WC0ohNN0JvSfGb8weEdx76jTjVT9szo-FDIYCig/viewform",
     lienInscriptionIndividuelle:

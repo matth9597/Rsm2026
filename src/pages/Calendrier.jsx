@@ -236,7 +236,9 @@ export default function Calendrier({
                         terrainNettoye = parties[1] ? parties[1].trim() : terrainNom;   
                       }
 
-                      const texteEnteteComplet = `📍 ${nomDuSite}  |  ${terrainNettoye}`;
+                      const texteEnteteComplet = (terrainNettoye && String(terrainNettoye).toLowerCase() !== "undefined")
+                      ? `📍 ${nomDuSite}  |  ${terrainNettoye}` 
+                      : `📍 ${nomDuSite}`;
 
                       return (
                         <div 
