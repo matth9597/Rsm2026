@@ -68,9 +68,9 @@ export const TIERS = [
     id: "bronze",
     labelFR: "Partenaire Bronze",
     labelEN: "Bronze Partner",
-    color: "#92400E",
-    bgColor: "#fef3c7",
-    borderColor: "#d97706",
+    color: "#CD7F32",
+    bgColor: "#fdf6ee",
+    borderColor: "#CD7F32",
     sponsors: [
       {
         name: "Salon du Palais",
