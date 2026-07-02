@@ -53,6 +53,7 @@ const sportCategories = [
     variants: [
       { id: "volleyball_f", label: "adulteFemmes" },
       { id: "volleyball_h", label: "adulteHommes" },
+      { id: "volleyball_v", label: "veterans" },
     ],
   },
   {
