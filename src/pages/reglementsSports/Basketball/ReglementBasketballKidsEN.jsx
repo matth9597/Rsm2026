@@ -68,10 +68,9 @@ export default function ReglementBasketballKidsEN() {
 
       <h3>Art. 13 Technical Regulations of RSM 2026</h3>
       <p><strong>13.1 Playing time, tie score, and overtime</strong></p>
-      <p>13.1.1 The match consists of:</p>
-      <p>Matches consist of two (2) periods of nine (9) minutes. The clock stops during the last 3 minutes of the second half if the score difference is less than 10 points.</p>
-      <p>The clock only stops for free throws during final phases.</p>
-      <p>13.1.2. There is a two (2) minute halftime interval.</p>
+      <p>13.1.1 The elimination phase consists of::</p>
+      <p>5 periods of 3 minutes each, and playing time must be distributed equally among all members. No player may appear more than 3 times in the 5 periods played.</p>
+      <p>13.1.2. The format of the final will be decided during the tournament.</p>
       <p>13.1.3 If the score is tied at the expiration of playing time in the last period, play must continue with as many two (2) minute overtimes as necessary for a positive result to be obtained during elimination phases and four (4) minutes during final phases starting from the semi-finals. Since there is overtime and the differential of less than 10 points is in progress, the stopped clock rule applies.</p>
 
       <p><strong>13.2 Time-out</strong></p>
