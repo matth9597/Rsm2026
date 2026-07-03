@@ -66,8 +66,7 @@ export default function ReglementBasketballKidsFR() {
       <p><strong>13.1 Temps de jeu, score nul et prolongations</strong></p>
       <p>13.1.1 La rencontre consiste en :</p>
       <ul>
-        <li>deux (2) périodes de neuf (9) minutes pour tout le tournoi. Si le différentiel au niveau du score est à moins de 10 points pour les 3 dernières minutes de la deuxième mi-temps, le chrono sera arrêté.</li>
-        <li>Les lancers-franc ne seront arrêtés que lors des phases finales.</li>
+        <li> 5 périodes de 3 minutes et le temps de jeu doit être réparti équitablement entre tous les membres . aucun joueur ne peut apparaître plus de 3 fois sur les 5 périodes jouées.</li>
       </ul>
       <p>13.1.2 Il doit y avoir un intervalle de deux (2) minutes à la mi-temps.</p>
       <p>13.1.3 Si le score est à égalité à l’expiration du temps de jeu de la dernière période, le jeu doit continuer par autant de prolongations de deux (2) minutes nécessaires pour qu’un résultat positif soit obtenu lors des phases éliminatoires et quatre (4) minutes lors des phases finales à partir des demi-finales. Comme il y a prolongation et que le différentiel de moins de 10 points est en cours, la règle du chrono arrêté s’applique.</p>
