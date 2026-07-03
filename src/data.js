@@ -100,6 +100,8 @@ export const sportsData = {
   soccer_m: {
     categorie: "soccerMixte",
     slug: "soccer-mixte",
+    inscriptionEquipeFermee: true,
+    InscriptionIndividuelleFermee: true,
     lienInscriptionEquipe:
       "https://docs.google.com/forms/d/e/1FAIpQLSdNcD3uD10LzAHyvprNNc9iKJmU8bEOIPqDm4xplEfmRorQNA/viewform",
     lienInscriptionIndividuelle:
