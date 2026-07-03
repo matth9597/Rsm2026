@@ -105,13 +105,6 @@ const CATERERS = [
         descEN: "Slow-cooked beef with white beans",
         fieldEntry: "entry.1841744165",
       },
-      {
-        id: "henomby_voanjobory",
-        nameMG: "Hen'omby sy voanjobory",
-        descFR: "Bœuf mijoté aux pois bambara",
-        descEN: "Slow-cooked beef with bambara groundnut",
-        fieldEntry: "entry.1541936625",
-      },
     ],
   },
 ];
