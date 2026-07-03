@@ -141,13 +141,11 @@ export const calendarData = {
       "14:00": [
         { site: "cegepHeritage", terrain: "Classroom", activite: "soratononina" }
       ],
-      "14:30": [
+      "15:00": [
         { site: "cegepHeritage", terrain: "1/2 Nat 1", activite: "soccerVeterans" },
         { site: "cegepHeritage", terrain: "1/2 Nat 2", activite: "soccerVeterans" }
       ],
       "17:00": [
-        { site: "cegepOutaouais", terrain: "Gym 1", activite: "basketballJunior" },
-        { site: "cegepOutaouais", terrain: "Gym 2", activite: "basketballKids" },
         { site: "nouvellesFrontieres", terrain: "Gym 1", activite: "zumba" },
         { site: "montBleu", terrain: "Gym 1", activite: "kata" },
 
@@ -160,6 +158,9 @@ export const calendarData = {
       ],
       "17:30": [
 
+        { site: "cegepOutaouais", terrain: "Gym 1", activite: "basketballJunior" },
+        { site: "cegepOutaouais", terrain: "Gym 2", activite: "basketballKids" },
+
         { site: "nouvellesFrontieres", terrain: "Gym 1", activite: "basketFemmeSemi1", disciplineId: "basket-femme" },
         { site: "nouvellesFrontieres", terrain: "Gym 1", activite: "5e vs 6e : Pool A 3rd vs Pool B 3rd", disciplineId: "basket-femme" },
         { site: "nouvellesFrontieres", terrain: "Gym 2", activite: "basketFemmeSemi2", disciplineId: "basket-femme" },
@@ -170,14 +171,11 @@ export const calendarData = {
         { site: "montBleu", terrain: "Gym 2", activite: "volleyVeterans" },  
       ],
 
-      "18:00": [
+      "18:30": [
         { site: "cegepOutaouais", terrain: "Gym 1", activite: "QF1 : Pool A 1st vs Pool B 2nd", disciplineId: "basket-homme" },
         { site: "cegepOutaouais", terrain: "Gym 1", activite: "QF3 : Pool C 1st vs Pool D 2nd", disciplineId: "basket-homme" },
         { site: "cegepOutaouais", terrain: "Gym 2", activite: "QF2 : Pool B 1st vs Pool A 2nd", disciplineId: "basket-homme" },
         { site: "cegepOutaouais", terrain: "Gym 2", activite: "QF4 : Pool D 1st vs Pool C 2nd", disciplineId: "basket-homme" },
-      ],
-
-      "18:30": [
         { site: "ernestLattion", activite: "Soiree MPIANAKAM'S" }
       ]
     },
