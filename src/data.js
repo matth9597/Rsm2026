@@ -51,7 +51,7 @@ export const sportsData = {
   soccer_v: {
     categorie: "soccerVeterans",
     slug: "soccer-veteran",
-    //inscriptionEquipeFermee: true,
+    inscriptionEquipeFermee: true,
     lienInscriptionEquipe:
       "https://docs.google.com/forms/d/e/1FAIpQLSf14r9P71mofDVNvdTPwZxS9vh9Xbh47x31dQ7NPXIFs85ljQ/viewform",
     lienInscriptionIndividuelle:
