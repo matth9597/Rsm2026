@@ -161,7 +161,7 @@ export default function App() {
                               : t("disciplines")}
           </span>
           <nav className={`bande-nav ${isMenuOpen ? "open" : ""}`}>
-            <NavLink
+            {/* <NavLink
               to="/"
               onClick={() => setIsMenuOpen(false)}
               className={({ isActive }) => {
@@ -193,7 +193,7 @@ export default function App() {
               }
             >
               {t("programmation")}
-            </NavLink>
+            </NavLink> */}
 
             {/* <NavLink
               to="/directions"
@@ -215,7 +215,7 @@ export default function App() {
               {t("contact")}
             </NavLink>
 
-            <NavLink
+            {/* <NavLink
               to="/paiement"
               onClick={() => setIsMenuOpen(false)}
               className={({ isActive }) =>
@@ -242,7 +242,7 @@ export default function App() {
               }
             >
               {t("repas")}
-            </NavLink>
+            </NavLink> */}
           </nav>
         </div>
       </div>
@@ -271,7 +271,9 @@ export default function App() {
       )}
       <main className="main-content">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Contact />} />
+          <Route path="/contact" element={<Contact />} />
+          {/* <Route path="/" element={<Home />} />
           <Route path="/jom" element={<ReglementJOM />} />
           <Route path="/programmation" element={<Programmation />} />
           <Route path="/directions" element={<Directions />} />
@@ -333,7 +335,7 @@ export default function App() {
             path="/tennis-de-table/reglement"
             element={<ReglementTennisDeTable />}
           />
-          <Route path="/:slug/equipe/:teamName" element={<TeamPlayers />} />
+          <Route path="/:slug/equipe/:teamName" element={<TeamPlayers />} /> */}
         </Routes>
       </main>
       <footer className="site-footer">
